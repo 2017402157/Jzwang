@@ -1,0 +1,89 @@
+[{
+	"title" : "后台首页",
+	"icon" : "icon-computer",
+	"href" : "page/main.html",
+	"spread" : false
+},{
+	"title" : "基础信息",
+	"icon" : "&#xe630;",
+	"href" : "",
+	"spread" : true,
+	"children" : [
+	{
+			"title" : "用户信息列表",
+			"icon" : "&#xe61c;",
+			"href" : "admin/userInfo",
+			"spread" : false
+		},
+		{
+			"title" : "学校信息列表",
+			"icon" : "&#xe61c;",
+			"href" : "admin/school",
+			"spread" : false
+		},
+		{
+			"title" : "学校楼房信息列表",
+			"icon" : "&#xe61c;",
+			"href" : "admin/building",
+			"spread" : false
+		},
+		{
+			"title" : "房间/教室信息列表",
+			"icon" : "&#xe61c;",
+			"href" : "admin/room",
+			"spread" : false
+		},
+		{
+			"title" : "部门信息列表",
+			"icon" : "&#xe609;",
+			"href" : "admin/department",
+			"spread" : false
+		},{
+			"title" : "专业信息列表",
+			"icon" : "&#xe61c;",
+			"href" : "admin/major",
+			"spread" : false
+		},{
+			"title" : "班级信息列表",
+			"icon" : "&#xe61c;",
+			"href" : "admin/classes",
+			"spread" : false
+		}
+	]
+},{
+	"title" : "系统信息",
+	"icon" : "&#xe630;",
+	"href" : "",
+	"spread" : true,
+	"children" : [
+	{
+			"title" : "用户登录记录",
+			"icon" : "&#xe61c;",
+			"href" : "admin/loginLog",
+			"spread" : false
+		},
+		{
+			"title" : "开发人员信息",
+			"icon" : "&#xe609;",
+			"href" : "admin/openDepms",
+			"spread" : false
+		},{
+			"title" : "任务列表",
+			"icon" : "&#xe61c;",
+			"href" : "admin/openTaskList",
+			"spread" : false
+		},
+		{
+			"title" : "角色列表",
+			"icon" : "&#xe61c;",
+			"href" : "admin/role",
+			"spread" : false
+		},
+		{
+			"title" : "404页面",
+			"icon" : "&#xe61c;",
+			"href" : "page/404.html",
+			"spread" : false
+		}
+	]
+}]
