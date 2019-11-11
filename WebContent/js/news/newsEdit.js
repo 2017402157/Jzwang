@@ -10,7 +10,7 @@ layui.config({
 		var id=$("input[name='id']").val();
 		//加载页面数据
 		$.get("getNews?id="+id, function(data){
-			var m=data.result;
+			var m=data.m;
 //			var obj = $.parseJSON(m.permission);
 	        //执行加载数据的方法
 			$("input[name='title']").val(m.title);

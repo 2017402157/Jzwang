@@ -8,6 +8,7 @@ import com.jfinal.core.Controller;
 import com.jfinal.plugin.activerecord.Page;
 import com.wz.Interceptor.AdminInterceptor;
 import com.wz.model.LogsModel;
+import com.wz.model.MessageModel;
 import com.wz.model.NewsModel;
 import com.wz.model.RoleModel;
 import com.wz.model.ShowactivityModel;
@@ -74,11 +75,17 @@ public class AdminControll extends Controller {
 	}
 	
 	public void openEditUser() {
-		render("user/userEdit.html");
+		String id = getPara("id");
+		UserModel m = UserModel.getById(id);
+		setAttr("m", m);
+		renderFreeMarker("user/userEdit.html");
 	}
 	
 	public void openUpdateUserPassword() {
-		render("user/uppassword.html");
+		String id = getPara("id");
+		UserModel m = UserModel.getById(id);
+		setAttr("m", m);
+		renderFreeMarker("user/uppassword.html");
 	}
 	
 	public void queryUser() {
@@ -147,7 +154,10 @@ public class AdminControll extends Controller {
 		render("news/newsAdd.html");
 	}
 	public void openEditNews() {
-		render("news/newsEdit.html");
+		String id = getPara("id");
+		NewsModel m = NewsModel.getNewsId(id);
+		setAttr("m", m);
+		renderFreeMarker("news/newsEdit.html");
 	}
 	public void queryNews() {
 		// 获取页面查询的关键字
@@ -211,7 +221,10 @@ public class AdminControll extends Controller {
 		render("role/roleAdd.html");
 	}
 	public void openEditRole() {
-		render("role/roleEdit.html");
+		String id = getPara("id");
+		RoleModel m = RoleModel.getById(id);
+		setAttr("m", m);
+		renderFreeMarker("role/roleEdit.html");
 	}
 	public void queryRole() {
 		// 获取页面查询的关键字
@@ -262,7 +275,9 @@ public class AdminControll extends Controller {
 		render("show/showAdd.html");
 	}
 	public void openEditShow() {
-		render("show/showEdit.html");
+		String id = getPara("id");
+		ShowactivityModel m = ShowactivityModel.getById(id);
+		renderFreeMarker("show/showEdit.html");
 	}
 	public void queryShow() {
 		// 获取页面查询的关键字
@@ -301,6 +316,65 @@ public class AdminControll extends Controller {
 	public void deleShow() {
 		String id = getPara("id");
 		boolean result = ShowactivityModel.delete(id);
+		setAttr("result", result);
+		renderJson();
+	}
+	
+	/**
+	 * 留言表
+	 */
+	public void openMessage() {
+		render("mes/messageinfo.html");
+	}
+	public void openAddMessage() {
+		render("mes/messageAdd.html");
+	}
+	public void openEditMessage() {
+		String id = getPara("id");
+		setAttr("id", id);
+		renderFreeMarker("mes/messageEdit.html");
+	}
+	public void queryMessage() {
+		// 获取页面查询的关键字
+		String key = getPara("key");
+		int limit = getParaToInt("limit");
+		int page = getParaToInt("page");
+		Page<ShowactivityModel> list = ShowactivityModel.getList(page, limit, key);
+		setAttr("code", 0);
+		setAttr("count", list.getTotalRow());
+		setAttr("data", list.getList());
+		renderJson();
+	}
+	public void getMessage() {
+		String id = getPara("id");
+		MessageModel result = MessageModel.getById(id);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void saveMessage() {
+		String title = getPara("title");
+		String massage = getPara("massage");
+		String username = getPara("username");
+		String phone = getPara("phone");
+		String email = getPara("email");
+		boolean result = MessageModel.save(title, username, massage, phone, email);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void updateMessage() {
+		String id = getPara("id");
+		String title = getPara("title");
+		String massage = getPara("massage");
+		String username = getPara("username");
+		String phone = getPara("phone");
+		String email = getPara("email");
+		boolean result = MessageModel.update(id, title, username, massage, phone, email);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void deleMessage() {
+		String id = getPara("id");
+		boolean result = MessageModel.delById(id);
 		setAttr("result", result);
 		renderJson();
 	}

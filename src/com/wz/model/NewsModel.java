@@ -133,7 +133,7 @@ public class NewsModel extends Model<NewsModel> {
 		m.setMassage(massage);
 		m.setCreattime(new Date());
 		m.setUserid(userid);
-		m.setStatus(0);
+		m.setStatus(-1);
 		m.setLabel(0);
 		return m.save();
 	}
@@ -152,7 +152,7 @@ public class NewsModel extends Model<NewsModel> {
 		m.setMassage(massage);
 		m.setCreattime(new Date());
 		m.setUserid(userid);
-		m.setStatus(-1);
+		m.setStatus(0);
 		m.setLabel(0);
 		return m.update();
 	}
