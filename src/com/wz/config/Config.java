@@ -10,7 +10,11 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.template.Engine;
 import com.wz.controll.AdminControll;
+import com.wz.model.LogsModel;
 import com.wz.model.NewsModel;
+import com.wz.model.RoleModel;
+import com.wz.model.ShowactivityModel;
+import com.wz.model.UserModel;
 
 public class Config extends JFinalConfig {
 
@@ -46,6 +50,10 @@ public class Config extends JFinalConfig {
 		arpMysql.setShowSql(Showsql);
 		{
 			arpMysql.addMapping("news", NewsModel.class);
+			arpMysql.addMapping("user", UserModel.class);
+			arpMysql.addMapping("role", RoleModel.class);
+			arpMysql.addMapping("logs", LogsModel.class);
+			arpMysql.addMapping("showactivity", ShowactivityModel.class);
 		}
 		me.add(mysql);
 		me.add(arpMysql);
