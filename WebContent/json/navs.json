@@ -32,6 +32,18 @@
 			"icon" : "&#xe61c;",
 			"href" : "admin/openRole",
 			"spread" : false
+		},
+		{
+			"title" : "留言表〃",
+			"icon" : "&#xe61c;",
+			"href" : "admin/openMessage",
+			"spread" : false
+		},
+		{
+			"title" : "联系我们表〃",
+			"icon" : "&#xe61c;",
+			"href" : "admin/openContact",
+			"spread" : false
 		}
 	]
 },{

@@ -7,6 +7,7 @@ import com.jfinal.aop.Clear;
 import com.jfinal.core.Controller;
 import com.jfinal.plugin.activerecord.Page;
 import com.wz.Interceptor.AdminInterceptor;
+import com.wz.model.ContactModel;
 import com.wz.model.LogsModel;
 import com.wz.model.MessageModel;
 import com.wz.model.NewsModel;
@@ -331,7 +332,8 @@ public class AdminControll extends Controller {
 	}
 	public void openEditMessage() {
 		String id = getPara("id");
-		setAttr("id", id);
+		MessageModel m = MessageModel.getById(id);
+		setAttr("m", m);
 		renderFreeMarker("mes/messageEdit.html");
 	}
 	public void queryMessage() {
@@ -339,7 +341,7 @@ public class AdminControll extends Controller {
 		String key = getPara("key");
 		int limit = getParaToInt("limit");
 		int page = getParaToInt("page");
-		Page<ShowactivityModel> list = ShowactivityModel.getList(page, limit, key);
+		Page<MessageModel> list = MessageModel.getList(page, limit, key);
 		setAttr("code", 0);
 		setAttr("count", list.getTotalRow());
 		setAttr("data", list.getList());
@@ -378,4 +380,67 @@ public class AdminControll extends Controller {
 		setAttr("result", result);
 		renderJson();
 	}
+	
+	/**
+	 * 联系我们表
+	 */
+	public void openContact() {
+		render("cont/contactinfo.html");
+	}
+	public void openAddContact() {
+		render("cont/contactAdd.html");
+	}
+	public void openEditContact() {
+		String id = getPara("id");
+		ContactModel m = ContactModel.getById(id);
+		setAttr("m", m);
+		renderFreeMarker("cont/contactEdit.html");
+	}
+	public void queryContact() {
+		// 获取页面查询的关键字
+		String key = getPara("key");
+		int limit = getParaToInt("limit");
+		int page = getParaToInt("page");
+		Page<ContactModel> list = ContactModel.getList(page, limit, key);
+		setAttr("code", 0);
+		setAttr("count", list.getTotalRow());
+		setAttr("data", list.getList());
+		renderJson();
+	}
+	public void getContact() {
+		String id = getPara("id");
+		ContactModel result = ContactModel.getById(id);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void saveContact() {
+		String name = getPara("name");
+		String addr = getPara("addr");
+		String inteteraddr = getPara("inteteraddr");
+		String phone = getPara("phone");
+		String postcode = getPara("postcode");
+		String email = getPara("email");
+		boolean result = ContactModel.save(name, phone, addr, inteteraddr, postcode, email);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void updateContact() {
+		String id = getPara("id");
+		String name = getPara("name");
+		String addr = getPara("addr");
+		String inteteraddr = getPara("inteteraddr");
+		String phone = getPara("phone");
+		String postcode = getPara("postcode");
+		String email = getPara("email");
+		boolean result = ContactModel.update(id, name, phone, addr, inteteraddr, postcode, email);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void deleContact() {
+		String id = getPara("id");
+		boolean result = ContactModel.delById(id);
+		setAttr("result", result);
+		renderJson();
+	}
+	
 }
