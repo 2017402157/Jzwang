@@ -11,8 +11,10 @@ import com.wz.model.ContactModel;
 import com.wz.model.LogsModel;
 import com.wz.model.MessageModel;
 import com.wz.model.NewsModel;
+import com.wz.model.PostitionModel;
 import com.wz.model.RoleModel;
 import com.wz.model.ShowactivityModel;
+import com.wz.model.TypeModel;
 import com.wz.model.UserModel;
 
 @Before(AdminInterceptor.class)
@@ -77,15 +79,13 @@ public class AdminControll extends Controller {
 	
 	public void openEditUser() {
 		String id = getPara("id");
-		UserModel m = UserModel.getById(id);
-		setAttr("m", m);
+		setAttr("id", id);
 		renderFreeMarker("user/userEdit.html");
 	}
 	
 	public void openUpdateUserPassword() {
 		String id = getPara("id");
-		UserModel m = UserModel.getById(id);
-		setAttr("m", m);
+		setAttr("id", id);
 		renderFreeMarker("user/uppassword.html");
 	}
 	
@@ -157,7 +157,7 @@ public class AdminControll extends Controller {
 	public void openEditNews() {
 		String id = getPara("id");
 		NewsModel m = NewsModel.getNewsId(id);
-		setAttr("m", m);
+		setAttr("id", id);
 		renderFreeMarker("news/newsEdit.html");
 	}
 	public void queryNews() {
@@ -224,7 +224,7 @@ public class AdminControll extends Controller {
 	public void openEditRole() {
 		String id = getPara("id");
 		RoleModel m = RoleModel.getById(id);
-		setAttr("m", m);
+		setAttr("id", id);
 		renderFreeMarker("role/roleEdit.html");
 	}
 	public void queryRole() {
@@ -278,6 +278,7 @@ public class AdminControll extends Controller {
 	public void openEditShow() {
 		String id = getPara("id");
 		ShowactivityModel m = ShowactivityModel.getById(id);
+		setAttr("id", id);
 		renderFreeMarker("show/showEdit.html");
 	}
 	public void queryShow() {
@@ -333,7 +334,7 @@ public class AdminControll extends Controller {
 	public void openEditMessage() {
 		String id = getPara("id");
 		MessageModel m = MessageModel.getById(id);
-		setAttr("m", m);
+		setAttr("id", id);
 		renderFreeMarker("mes/messageEdit.html");
 	}
 	public void queryMessage() {
@@ -393,7 +394,7 @@ public class AdminControll extends Controller {
 	public void openEditContact() {
 		String id = getPara("id");
 		ContactModel m = ContactModel.getById(id);
-		setAttr("m", m);
+		setAttr("id", id);
 		renderFreeMarker("cont/contactEdit.html");
 	}
 	public void queryContact() {
@@ -443,4 +444,105 @@ public class AdminControll extends Controller {
 		renderJson();
 	}
 	
+	/**
+	 * 新闻类型
+	 */
+	public void openType() {
+		render("typ/typeinfo.html");
+	}
+	public void openAddType() {
+		render("typ/typeAdd.html");
+	}
+	public void openEditType() {
+		String id = getPara("id");
+		setAttr("id", id);
+		renderFreeMarker("typ/typeEdit.html");
+	}
+	public void queryType() {
+		// 获取页面查询的关键字
+		String key = getPara("key");
+		int limit = getParaToInt("limit");
+		int page = getParaToInt("page");
+		Page<TypeModel> list = TypeModel.getList(page, limit, key);
+		setAttr("code", 0);
+		setAttr("count", list.getTotalRow());
+		setAttr("data", list.getList());
+		renderJson();
+	}
+	public void getType() {
+		String id = getPara("id");
+		TypeModel result = TypeModel.getById(id);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void saveType() {
+		String name = getPara("name");
+		boolean result = TypeModel.save(name);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void updateType() {
+		String id = getPara("id");
+		String name = getPara("name");
+		boolean result = TypeModel.update(id, name);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void deleType() {
+		String id = getPara("id");
+		boolean result = TypeModel.delById(id);
+		setAttr("result", result);
+		renderJson();
+	}
+	
+	/**
+	 * 职位表
+	 */
+	public void openPostition() {
+		render("pos/postitioninfo.html");
+	}
+	public void openAddPostition() {
+		render("pos/postitionAdd.html");
+	}
+	public void openEditPostition() {
+		String id = getPara("id");
+		setAttr("id", id);
+		renderFreeMarker("pos/postitionEdit.html");
+	}
+	public void queryPostition() {
+		// 获取页面查询的关键字
+		String key = getPara("key");
+		int limit = getParaToInt("limit");
+		int page = getParaToInt("page");
+		Page<PostitionModel> list = PostitionModel.getList(page, limit, key);
+		setAttr("code", 0);
+		setAttr("count", list.getTotalRow());
+		setAttr("data", list.getList());
+		renderJson();
+	}
+	public void getPostition() {
+		String id = getPara("id");
+		PostitionModel result = PostitionModel.getById(id);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void savePostition() {
+		String name = getPara("name");
+		boolean result = PostitionModel.save(name);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void updatePostition() {
+		String id = getPara("id");
+		String name = getPara("name");
+		boolean result = PostitionModel.update(id, name);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void delePostition() {
+		String id = getPara("id");
+		boolean result = PostitionModel.delById(id);
+		setAttr("result", result);
+		renderJson();
+	}
 }

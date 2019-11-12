@@ -44,6 +44,18 @@
 			"icon" : "&#xe61c;",
 			"href" : "admin/openContact",
 			"spread" : false
+		},
+		{
+			"title" : "新闻类型表〃",
+			"icon" : "&#xe61c;",
+			"href" : "admin/openType",
+			"spread" : false
+		},
+		{
+			"title" : "职位表〃",
+			"icon" : "&#xe61c;",
+			"href" : "admin/openPostition",
+			"spread" : false
 		}
 	]
 },{

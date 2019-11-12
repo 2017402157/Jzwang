@@ -14,8 +14,10 @@ import com.wz.model.ContactModel;
 import com.wz.model.LogsModel;
 import com.wz.model.MessageModel;
 import com.wz.model.NewsModel;
+import com.wz.model.PostitionModel;
 import com.wz.model.RoleModel;
 import com.wz.model.ShowactivityModel;
+import com.wz.model.TypeModel;
 import com.wz.model.UserModel;
 
 public class Config extends JFinalConfig {
@@ -58,6 +60,8 @@ public class Config extends JFinalConfig {
 			arpMysql.addMapping("showactivity", ShowactivityModel.class);
 			arpMysql.addMapping("message", MessageModel.class);
 			arpMysql.addMapping("contact", ContactModel.class);
+			arpMysql.addMapping("type", TypeModel.class);
+			arpMysql.addMapping("position", PostitionModel.class);
 		}
 		me.add(mysql);
 		me.add(arpMysql);
