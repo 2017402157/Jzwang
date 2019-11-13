@@ -7,7 +7,10 @@ import com.jfinal.aop.Clear;
 import com.jfinal.core.Controller;
 import com.jfinal.plugin.activerecord.Page;
 import com.wz.Interceptor.AdminInterceptor;
+import com.wz.model.CandidateModel;
+import com.wz.model.CompanyModel;
 import com.wz.model.ContactModel;
+import com.wz.model.InviteModel;
 import com.wz.model.LogsModel;
 import com.wz.model.MessageModel;
 import com.wz.model.NewsModel;
@@ -542,6 +545,189 @@ public class AdminControll extends Controller {
 	public void delePostition() {
 		String id = getPara("id");
 		boolean result = PostitionModel.delById(id);
+		setAttr("result", result);
+		renderJson();
+	}
+	
+	/**
+	 * 招聘表
+	 */
+	public void openInvite() {
+		render("inv/inviteinfo.html");
+	}
+	public void openAddInvite() {
+		render("inv/inviteAdd.html");
+	}
+	public void openEditInvite() {
+		String id = getPara("id");
+		setAttr("id", id);
+		renderFreeMarker("inv/inviteEdit.html");
+	}
+	public void queryInvite() {
+		// 获取页面查询的关键字
+		String key = getPara("key");
+		int limit = getParaToInt("limit");
+		int page = getParaToInt("page");
+		Page<InviteModel> list = InviteModel.getList(page, limit, key);
+		setAttr("code", 0);
+		setAttr("count", list.getTotalRow());
+		setAttr("data", list.getList());
+		renderJson();
+	}
+	public void getInvite() {
+		String id = getPara("id");
+		InviteModel result = InviteModel.getById(id);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void saveInvite() {
+		String name = getPara("name");
+		String addr = getPara("addr");
+		int number = getParaToInt("number");
+		String workexp = getPara("workexp");
+		String education = getPara("education");
+		String worktime = getPara("worktime");
+		String reward = getPara("reward");
+		String company = getPara("company");
+		String type = getPara("type");
+		int label = getParaToInt("label");
+		boolean result = InviteModel.save(name, addr, number, workexp, education, worktime, reward, company, type, label);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void updateInvite() {
+		String id = getPara("id");
+		String name = getPara("name");
+		String addr = getPara("addr");
+		int number = getParaToInt("number");
+		String workexp = getPara("workexp");
+		String education = getPara("education");
+		String worktime = getPara("worktime");
+		String reward = getPara("reward");
+		String company = getPara("company");
+		String type = getPara("type");
+		int label = getParaToInt("label");
+		boolean result = InviteModel.update(id, name, addr, number, workexp, education, worktime, reward, company, type, label);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void deleInvite() {
+		String id = getPara("id");
+		boolean result = InviteModel.delById(id);
+		setAttr("result", result);
+		renderJson();
+	}
+	
+	/**
+	 * 公司表
+	 */
+	public void openCompany() {
+		render("com/companyinfo.html");
+	}
+	public void openAddCompany() {
+		render("com/companyAdd.html");
+	}
+	public void openEditCompany() {
+		String id = getPara("id");
+		setAttr("id", id);
+		renderFreeMarker("com/companyEdit.html");
+	}
+	public void queryCompany() {
+		// 获取页面查询的关键字
+		String key = getPara("key");
+		int limit = getParaToInt("limit");
+		int page = getParaToInt("page");
+		Page<CompanyModel> list = CompanyModel.getList(page, limit, key);
+		setAttr("code", 0);
+		setAttr("count", list.getTotalRow());
+		setAttr("data", list.getList());
+		renderJson();
+	}
+	public void getCompany() {
+		String id = getPara("id");
+		CompanyModel result = CompanyModel.getById(id);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void saveCompany() {
+		String name = getPara("name");
+		String brief = getPara("brief");
+		String phone = getPara("phone");
+		String email = getPara("email");
+		boolean result = CompanyModel.save(name, brief, phone, email);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void updateCompany() {
+		String id = getPara("id");
+		String name = getPara("name");
+		String brief = getPara("brief");
+		String phone = getPara("phone");
+		String email = getPara("email");
+		boolean result = CompanyModel.update(id, name, brief, phone, email);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void deleCompany() {
+		String id = getPara("id");
+		boolean result = CompanyModel.delById(id);
+		setAttr("result", result);
+		renderJson();
+	}
+	
+	/**
+	 * 应聘表
+	 */
+	public void openCondidate() {
+		render("cond/condidateinfo.html");
+	}
+	public void openAddCondidate() {
+		render("cond/condidateAdd.html");
+	}
+	public void openEditCondidate() {
+		String id = getPara("id");
+		setAttr("id", id);
+		renderFreeMarker("cond/condidateEdit.html");
+	}
+	public void queryCondidate() {
+		// 获取页面查询的关键字
+		String key = getPara("key");
+		int limit = getParaToInt("limit");
+		int page = getParaToInt("page");
+		Page<CandidateModel> list = CandidateModel.getList(page, limit, key);
+		setAttr("code", 0);
+		setAttr("count", list.getTotalRow());
+		setAttr("data", list.getList());
+		renderJson();
+	}
+	public void getCondidate() {
+		String id = getPara("id");
+		CandidateModel result = CandidateModel.getById(id);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void saveCondidate() {
+		String name = getPara("name");
+		int sex = getParaToInt("sex");
+		String phone = getPara("phone");
+		String addr = getPara("addr");
+		boolean result = CandidateModel.save(name, sex, phone, addr);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void updateCondidate() {
+		String id = getPara("id");
+		String name = getPara("name");
+		int sex = getParaToInt("sex");
+		String phone = getPara("phone");
+		String addr = getPara("addr");
+		boolean result = CandidateModel.update(id, name, sex, phone, addr);
+		setAttr("result", result);
+		renderJson();
+	}
+	public void deleCondidate() {
+		String id = getPara("id");
+		boolean result = CandidateModel.delById(id);
 		setAttr("result", result);
 		renderJson();
 	}

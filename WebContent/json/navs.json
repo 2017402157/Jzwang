@@ -56,6 +56,24 @@
 			"icon" : "&#xe61c;",
 			"href" : "admin/openPostition",
 			"spread" : false
+		},
+		{
+			"title" : "招聘表",
+			"icon" : "&#xe61c;",
+			"href" : "admin/openInvite",
+			"spread" : false
+		},
+		{
+			"title" : "公司表",
+			"icon" : "&#xe61c;",
+			"href" : "admin/openCompany",
+			"spread" : false
+		},
+		{
+			"title" : "应聘表",
+			"icon" : "&#xe61c;",
+			"href" : "admin/openCondidate",
+			"spread" : false
 		}
 	]
 },{

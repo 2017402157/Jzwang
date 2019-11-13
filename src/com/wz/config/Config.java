@@ -10,7 +10,10 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.template.Engine;
 import com.wz.controll.AdminControll;
+import com.wz.model.CandidateModel;
+import com.wz.model.CompanyModel;
 import com.wz.model.ContactModel;
+import com.wz.model.InviteModel;
 import com.wz.model.LogsModel;
 import com.wz.model.MessageModel;
 import com.wz.model.NewsModel;
@@ -62,6 +65,9 @@ public class Config extends JFinalConfig {
 			arpMysql.addMapping("contact", ContactModel.class);
 			arpMysql.addMapping("type", TypeModel.class);
 			arpMysql.addMapping("position", PostitionModel.class);
+			arpMysql.addMapping("invite", InviteModel.class);
+			arpMysql.addMapping("company", CompanyModel.class);
+			arpMysql.addMapping("candidate", CandidateModel.class);
 		}
 		me.add(mysql);
 		me.add(arpMysql);
