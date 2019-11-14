@@ -10,13 +10,34 @@ layui.config({
 		var id=$("input[name='id']").val();
 		//加载页面数据
 		$.get("getNews?id="+id, function(data){
-			var m=data.m;
+			var m=data.result;
 //			var obj = $.parseJSON(m.permission);
 	        //执行加载数据的方法
 			$("input[name='title']").val(m.title);
 			$("input[name='massage']").val(m.massage);
-			$("input[name='userid']").val(m.userid);
-		})
+			$.get("getUsers", function(data){
+				var d = data.m;
+				for(var i=0;i<d.length;i++){
+					if(d[i].id==m.userid){
+						$("#selectId").append("<option selected='true' value='"+d[i].id+"'>"+d[i].username+"</option>");
+    				}else{
+    					$("#selectId").append("<option value='"+d[i].id+"'>"+d[i].username+"</option>");
+    				}
+				}
+				form.render();
+			});
+			$.get("getTypes", function(data){
+				var d = data.m;
+				for(var i=0;i<d.length;i++){
+					if(d[i].id==m.type){
+						$("#typeid").append("<option selected='true' value='"+d[i].id+"'>"+d[i].name+"</option>");
+    				}else{
+    					$("#typeid").append("<option value='"+d[i].id+"'>"+d[i].name+"</option>");
+    				}
+				}
+				form.render();
+			});
+		});
 
  	form.on("submit(update)",function(data){
  		var index;

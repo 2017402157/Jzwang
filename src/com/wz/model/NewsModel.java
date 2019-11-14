@@ -126,7 +126,7 @@ public class NewsModel extends Model<NewsModel> {
 	 * @param massage
 	 * @return
 	 */
-	public static boolean saveNews(String title, String userid, String massage) {
+	public static boolean saveNews(String title, String userid, String massage, String type) {
 		NewsModel m = new NewsModel();
 		m.setId(StringUtil.getId());
 		m.setTitle(title);
@@ -134,6 +134,7 @@ public class NewsModel extends Model<NewsModel> {
 		m.setCreattime(new Date());
 		m.setUserid(userid);
 		m.setStatus(-1);
+		m.setType(type);
 		m.setLabel(0);
 		return m.save();
 	}
@@ -146,13 +147,14 @@ public class NewsModel extends Model<NewsModel> {
 	 * @param time
 	 * @return
 	 */
-	public static boolean updateNews(String id, String title, String userid, String massage) {
+	public static boolean updateNews(String id, String title, String userid, String massage, String type) {
 		NewsModel m = NewsModel.getNewsId(id);
 		m.setTitle(title);
 		m.setMassage(massage);
 		m.setCreattime(new Date());
 		m.setUserid(userid);
 		m.setStatus(0);
+		m.setType(type);
 		m.setLabel(0);
 		return m.update();
 	}

@@ -22,8 +22,8 @@ layui.config({
 	      ,{field: 'userid', title: '作者',align:'center' }
 	      ,{field: 'creattime', title: '编写时间',align:'center' }
 	      ,{field: 'releastime', title: '发布时间',align:'center' }
-	      ,{field: 'releasesuser', title: '审核者',align:'center' }
 	      ,{field: 'status', title: '状态',align:'center' }
+	      ,{field: 'type', title: '类型',align:'center' }
 	      ,{fixed: 'right', align:'center',title:'操作', toolbar: '#barDemo'}
 	    ]]
 	  });

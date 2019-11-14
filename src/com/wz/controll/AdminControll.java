@@ -1,6 +1,7 @@
 package com.wz.controll;
 
 import java.util.Date;
+import java.util.List;
 
 import com.jfinal.aop.Before;
 import com.jfinal.aop.Clear;
@@ -112,6 +113,12 @@ public class AdminControll extends Controller {
 		renderJson();
 	}
 	
+	public void getUsers() {
+		List<UserModel> m = UserModel.getListAll();
+		setAttr("m", m);
+		renderJson();
+	}
+	
 	public void saveUserInfo() {
 		String username = getPara("username");
 		String password = getPara("password");
@@ -159,7 +166,6 @@ public class AdminControll extends Controller {
 	}
 	public void openEditNews() {
 		String id = getPara("id");
-		NewsModel m = NewsModel.getNewsId(id);
 		setAttr("id", id);
 		renderFreeMarker("news/newsEdit.html");
 	}
@@ -186,7 +192,8 @@ public class AdminControll extends Controller {
 		String title = getPara("title");
 		String userid = getPara("userid");
 		String massage = getPara("massage");
-		boolean result = NewsModel.saveNews(title, userid, massage);
+		String type = getPara("type");
+		boolean result = NewsModel.saveNews(title, userid, massage, type);
 		setAttr("result", result);
 		renderJson();
 	}
@@ -196,7 +203,8 @@ public class AdminControll extends Controller {
 		String title = getPara("title");
 		String userid = getPara("userid");
 		String massage = getPara("massage");
-		boolean result = NewsModel.updateNews(id, title, userid, massage);
+		String type = getPara("type");
+		boolean result = NewsModel.updateNews(id, title, userid, massage, type);
 		setAttr("result", result);
 		renderJson();		
 	}
@@ -476,6 +484,11 @@ public class AdminControll extends Controller {
 		String id = getPara("id");
 		TypeModel result = TypeModel.getById(id);
 		setAttr("result", result);
+		renderJson();
+	}
+	public void getTypes() {
+		List<TypeModel> m = TypeModel.getListAll();
+		setAttr("m", m);
 		renderJson();
 	}
 	public void saveType() {

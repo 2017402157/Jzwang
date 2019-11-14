@@ -7,15 +7,21 @@ layui.config({
 		laypage = layui.laypage;
 		$ = layui.jquery
 		,laydate = layui.laydate;
-	  
-	  //日期
-	  laydate.render({
-	    elem: '#date'
-	  });
-	  
-	  laydate.render({
-		    elem: '#data'
-		  });
+		
+		$.get("getUsers", function(data){
+			var m = data.m;
+			for(var i=0;i<m.length;i++){
+				$("#selectId").append("<option value='"+m[i].id+"'>"+m[i].username+"</option>");
+			}
+			form.render();
+		});
+		$.get("getTypes", function(data){
+			var m=data.m;
+			for(var i=0;i<m.length;i++){
+				$("#typeid").append("<option value='"+m[i].id+"'>"+m[i].name+"</option>");
+			}
+			form.render();
+		});
 		
 		
  	form.on("submit(add)",function(data){
