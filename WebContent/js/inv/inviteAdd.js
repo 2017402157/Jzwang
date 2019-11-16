@@ -16,6 +16,21 @@ layui.config({
 	  laydate.render({
 		    elem: '#data'
 		  });
+	  
+	  $.get("getTypes", function(data){
+			var m=data.m;
+			for(var i=0;i<m.length;i++){
+				$("#typeid").append("<option value='"+m[i].id+"'>"+m[i].name+"</option>");
+			}
+			form.render();
+		});
+	  $.get("getCompanys", function(data){
+			var m=data.m;
+			for(var i=0;i<m.length;i++){
+				$("#companyid").append("<option value='"+m[i].id+"'>"+m[i].name+"</option>");
+			}
+			form.render();
+		});
 		
 		
  	form.on("submit(add)",function(data){

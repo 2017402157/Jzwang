@@ -16,7 +16,30 @@ layui.config({
 	        $("input[name='username']").val(d.username);
 	        $("input[name='password']").val(d.password);
 	        $("input[name='phone']").val(d.phone);
-	        $("input[name='positioned']").val(d.positioned);
+	        $.get("getRoles", function(data){
+	        	var m = data.m;
+	        	for(var i=0;i<m.length;i++){
+	        		if(d.roleid == m[i].id){
+	        			$("#roleId").append("<option selected='true' value='"+m[i].id+"'>"+m[i].rolename+"</option>");
+	        		}
+	        		else{
+	        			$("#roleId").append("<option value='"+m[i].id+"'>"+m[i].rolename+"</option>");
+	        		}
+	        		form.render();
+	        	}
+	        });
+	        $.get("getPostitions", function(data){
+	        	var m = data.m;
+	        	for(var i=0;i<m.length;i++){
+	        		if(d.posititoned == m[i].id){
+	        			$("#selectId").append("<option selected='true' value='"+m[i].id+"'>"+m[i].name+"</option>");
+	        		}
+	        		else{
+	        			$("#selectId").append("<option value='"+m[i].id+"'>"+m[i].name+"</option>");
+	        		}
+	        	}
+	        	form.render();
+	        })
 		});
 
  	form.on("submit(addUser)",function(data){console.log(data.field);

@@ -58,7 +58,7 @@ public class AdminControll extends Controller {
 		else {
 			setAttr("result", 2);//用户名不存在
 		}
-		LogsModel.save(username, status);
+//		LogsModel.save(username, status);
 		renderJson();
 	}
 	
@@ -133,9 +133,10 @@ public class AdminControll extends Controller {
 	public void updateUser() {
 		String id = getPara("id");
 		String username = getPara("username");
+		String roleid = getPara("roleid");
 		String phone = getPara("phone");
-		String posititoned = getPara("positioned");
-		boolean result = UserModel.update(id, username, phone, posititoned);
+		String posititoned = getPara("posititoned");
+		boolean result = UserModel.update(id, username, roleid, phone, posititoned);
 		setAttr("result", result);
 		renderJson();
 	}
@@ -253,6 +254,12 @@ public class AdminControll extends Controller {
 		String id = getPara("id");
 		RoleModel result = RoleModel.getById(id);
 		setAttr("result", result);
+		renderJson();
+	}
+	
+	public void getRoles() {
+		List<RoleModel> m = RoleModel.getListAll();
+		setAttr("m", m);
 		renderJson();
 	}
 	public void saveRole() {
@@ -542,6 +549,11 @@ public class AdminControll extends Controller {
 		setAttr("result", result);
 		renderJson();
 	}
+	public void getPostitions() {
+		List<PostitionModel> m = PostitionModel.getListAll();
+		setAttr("m", m);
+		renderJson();
+	}
 	public void savePostition() {
 		String name = getPara("name");
 		boolean result = PostitionModel.save(name);
@@ -660,6 +672,11 @@ public class AdminControll extends Controller {
 		String id = getPara("id");
 		CompanyModel result = CompanyModel.getById(id);
 		setAttr("result", result);
+		renderJson();
+	}
+	public void getCompanys() {
+		List<CompanyModel> m = CompanyModel.getListAll();
+		setAttr("m", m);
 		renderJson();
 	}
 	public void saveCompany() {

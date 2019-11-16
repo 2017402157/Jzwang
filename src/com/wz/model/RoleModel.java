@@ -77,7 +77,7 @@ public class RoleModel extends Model<RoleModel> {
 		}
 	}
 	
-	public static List<RoleModel> getLists() {
+	public static List<RoleModel> getListAll() {
 		String select_sql = "select * from " + tableName;
 		return dao.find(select_sql);
 	}

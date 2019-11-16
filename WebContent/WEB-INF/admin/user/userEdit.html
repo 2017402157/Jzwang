@@ -28,6 +28,17 @@
 		      <input type="text" name="username" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
 		    </div>
 		  </div>
+		   </div>
+		  <div class="layui-form-item">
+		   <label class="layui-form-label">角色</label>
+		    <div class="layui-input-inline">
+				<div class="layui-input-inline">
+					<select name="roleid"  id="roleId" lay-filter="state">
+					  <option value="-1">请选择角色</option>
+		      		</select>
+				</div>
+			</div>
+		  </div>
 		  </div>
 		  <div class="layui-form-item">
 		    <label class="layui-form-label">电话号码</label>
@@ -40,9 +51,7 @@
 		    <div class="layui-input-inline">
 				<div class="layui-input-inline">
 					<select name="posititoned"  id="selectId" lay-filter="state">
-					  <option value="-1">董事长</option>
-					  <option value="0">总经理</option>
-					  <option value="1">秘书</option>
+					  <option value="-1">请选择职位</option>
 		      		</select>
 				</div>
 			</div>

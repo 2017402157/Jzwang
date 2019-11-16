@@ -59,6 +59,13 @@
 			</div>
 		</div>
 		<div class="layui-form-item">
+			<label class="layui-form-label">兼职类型</label>
+			<div class="layui-input-inline">
+				<select name="type"  id="typeid" lay-filter="state">
+			      <option value="-1">兼职类型</option>
+			</div>
+		</div>
+		<div class="layui-form-item">
 			<label class="layui-form-label">工资待遇</label>
 			<div class="layui-input-inline">
 				<input type="text" class="layui-input" name="reward"  lay-verify="required" placeholder="请输入工资待遇"  autocomplete="off">
@@ -67,13 +74,8 @@
 		<div class="layui-form-item">
 			<label class="layui-form-label">招聘公司</label>
 			<div class="layui-input-inline">
-				<input type="text" class="layui-input" name="company"  lay-verify="required" placeholder="请输入招聘公司"  autocomplete="off">
-			</div>
-		</div>
-		<div class="layui-form-item">
-			<label class="layui-form-label">兼职类型</label>
-			<div class="layui-input-inline">
-				<input type="text" class="layui-input" name="type"  lay-verify="required" placeholder="请输入兼职类型"  autocomplete="off">
+				<select name="company"  id="companyid" lay-filter="state">
+			      <option value="-1">请选择招聘公司</option>
 			</div>
 		</div>
 		<div class="layui-form-item">
@@ -82,6 +84,7 @@
 				<input type="text" class="layui-input" name="label"  lay-verify="required" placeholder="请输入兼职类型"  autocomplete="off">
 			</div>
 		</div>
+		
 		<div class="layui-form-item">
 			<div class="layui-input-block">
 				<button class="layui-btn" lay-submit="" lay-filter="update">保存修改</button>

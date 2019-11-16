@@ -1,6 +1,7 @@
 package com.wz.model;
 
 import java.util.Date;
+import java.util.List;
 
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Model;
@@ -90,5 +91,11 @@ public class CompanyModel extends Model<CompanyModel> {
 			e.printStackTrace();
 			return false;
 		}
+	}
+	
+	public static List<CompanyModel> getListAll() {
+		StringBuffer sql=new StringBuffer();
+		sql.append("select *  from ").append(tableName);
+		return dao.find(sql.toString());
 	}
 }
