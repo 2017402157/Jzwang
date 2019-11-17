@@ -10,6 +10,7 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.template.Engine;
 import com.wz.controll.AdminControll;
+import com.wz.controll.JzControl;
 import com.wz.model.CandidateModel;
 import com.wz.model.CompanyModel;
 import com.wz.model.ContactModel;
@@ -35,6 +36,7 @@ public class Config extends JFinalConfig {
 	public void configRoute(Routes me) {
 		me.setBaseViewPath("WEB-INF");
 		me.add("/admin", AdminControll.class, "admin");
+		me.add("/", JzControl.class, "jz");
 		
 	}
 
