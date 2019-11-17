@@ -22,10 +22,31 @@ layui.config({
 			$("input[name='reward']").val(m.reward);
 			$("input[name='releasetime']").val(m.releasetime);
 			$("input[name='pageview']").val(m.pageview);
-			$("input[name='company']").val(m.company);
-			$("input[name='type']").val(m.type);
 			$("input[name='label']").val(m.label);
-		})
+			$.get("getTypes", function(data){
+				var d = data.m;
+				for(var i=0;i<d.length;i++){
+					if(d[i].id==m.type){
+						$("#typeid").append("<option selected='true' value='"+d[i].id+"'>"+d[i].name+"</option>");
+    				}else{
+    					$("#typeid").append("<option value='"+d[i].id+"'>"+d[i].name+"</option>");
+    				}
+				}
+				form.render();
+			});
+			
+			$.get("getCompanys", function(data){
+				var d = data.m;
+				for(var i=0;i<d.length;i++){
+					if(m.company==d[i].id){
+						$("#companyid").append("<option selected='true' value='"+d[i].id+"'>"+d[i].name+"</option>");
+    				}else{
+    					$("#companyid").append("<option value='"+d[i].id+"'>"+d[i].name+"</option>");
+    				}
+				}
+				form.render();
+			});
+		});
 
  	form.on("submit(update)",function(data){
  		var index;

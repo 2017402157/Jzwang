@@ -1,5 +1,7 @@
 package com.wz.model;
 
+import java.util.List;
+
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Model;
 import com.jfinal.plugin.activerecord.Page;
@@ -64,5 +66,10 @@ public class PostitionModel extends Model<PostitionModel> {
 			e.printStackTrace();
 			return false;
 		}
+	}
+	
+	public static List<PostitionModel> getListAll() {
+		String select_sql = "select * from " + tableName;
+		return dao.find(select_sql);
 	}
 }

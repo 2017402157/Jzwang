@@ -88,13 +88,14 @@ public class UserModel extends Model<UserModel> {
 		return m.update();
 	}
 	
-	public static boolean update(String id, String username, String phone, String posititoned) {
+	public static boolean update(String id, String username,String roleid, String phone, String posititoned) {
 		UserModel model = UserModel.getById(id);
 		if (model == null) {
 			return false;
 		}
 		model.setId(id);
 		model.setUsername(username);
+		model.setRoleId(roleid);
 		model.setPosititoned(posititoned);
 		model.setPhone(phone);
 		try {

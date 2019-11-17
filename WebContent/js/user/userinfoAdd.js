@@ -5,6 +5,22 @@ layui.config({
 	var form = layui.form,
 		layer = parent.layer === undefined ? layui.layer : parent.layer,
 		$ = layui.jquery;
+	
+	$.get("getRoles", function(data){
+		var m = data.m;
+		for(var i=0;i<m.length;i++){
+			$("#roleId").append("<option value='"+m[i].id+"'>"+m[i].rolename+"</option>");
+		}
+		form.render();
+	});
+	
+	$.get("getPostitions", function(data){
+		var m = data.m;
+		for(var i=0;i<m.length;i++){
+			$("#selectId").append("<option value='"+m[i].id+"'>"+m[i].name+"</option>");
+		}
+		form.render();
+	})
 
  	form.on("submit(addUser)",function(data){
  		var index;
