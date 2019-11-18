@@ -17,18 +17,15 @@
 <body>
 <div id="hd">
   <div class="wp">
-    <div class="logo"><a href="../../index.html" ><img src="../../skin/images/logo.png"  alt=""></a></div>
+    <div class="logo"><a href="index" ><img src="../../skin/images/logo.png"  alt=""></a></div>
     <div id="nav">
       <ul>
-        
-        <li><a href="../service/index.htm" >服务项目</a></li>
-        
-        <li><a href="../about/index.htm" >关于我们</a></li>
-        
-        <li><a href="../news/index.htm" >新闻动态</a></li>
-        <li><a href="index.htm"   class='mycur'><span>活动剪影</span></a></li>
-		<li><a href="../recruit/index.htm" >最新招聘</a></li>
-        <li><a href="../contact/index.htm" >联系我们</a></li>
+        <li><a href="index" >首页</a></li> 
+      	<li><a href="recruit" >最新招聘</a></li>
+      	<li><a href="photos" ><span>活动剪影</span></a></li>   
+        <li><a href="service" >服务项目</a></li>
+        <li><a href="news" >新闻动态</a></li>        
+        <li><a href="contact" >关于我们</a></li>
 
       </ul>
     </div>
@@ -37,20 +34,15 @@
 </div>
 <!-- end #hd -->
 <div class="c"></div>
-<div id="m-hd"> <a href="../../index.html"  class="m-logo"><img src="../../skin/images/logo.png"  alt=""></a>
+<div id="m-hd"> <a href="index"  class="m-logo"><img src="../../skin/images/logo.png"  alt=""></a>
   <div class="m-trigger"></div>
   <ul class="m-nav">
-    <li><a href="../../index.htm"  class="v1">首页 </a></li>
-    
-    <li><a href="../service/index.htm"  class="v1">服务项目</a></li>
-    
-    <li><a href="../about/index.htm"  class="v1">关于我们</a></li>
-    
-    <li><a href="../news/index.htm"  class="v1">新闻动态</a></li>
-    <li><a href="index.htm"   class='mycur'><span>活动剪影</span></a></li>
-	<li><a href="../recruit/index.htm" >最新招聘</a></li>  
-    <li><a href="../contact/index.htm"  class="v1">联系我们</a></li>
-  
+    <li><a href="index"  class="v1">首页 </a></li>    
+    <li><a href="recruit"  class="v1">最新招聘</a></li>    
+    <li><a href="service"  class="v1">服务项目</a></li>
+	<li><a href="photos" class="v1"><span>活动剪影</span></a></li>
+    <li><a href="news"   class='v1'>新闻动态</a></li>
+    <li><a href="contact"  class="v1">关于我们</a></li>  
   </ul>
 </div>
 
@@ -65,7 +57,7 @@
       <h5><span>Work</span> study &nbsp;silhouette</h5>
     </div>
 
-    <div class="c"></div>
+<!--     <div class="c"></div>
     <ul class="ul-case">
       <li>
         <div class="block">
@@ -79,9 +71,12 @@
             </a> </div>
         </div>
 		</li>    
-    </ul>
-<!--
-    <div class="c"></div>
+    </ul> -->
+
+    <div id="myphotos"></div>
+    <div id="mypage"></div>
+
+    <!-- <div class="c"></div>
     <div class="dede_pages">
       <ul class="pagelist">
         <li>首页</li>
@@ -97,9 +92,9 @@
 
       </ul>
     </div>
-  </div>
+  </div> -->
 </div>
--->
+
 <!-- end #bd -->
 <div class="c"></div>
 <!-- begin #fd --> 
@@ -199,7 +194,10 @@
 </div>
  
 <script type="text/javascript" src="../../skin/js/jquery.js" ></script> 
-<script type="text/javascript" src="../../skin/js/lib.js" ></script> 
+<script type="text/javascript" src="../../skin/js/lib.js" ></script>
+<script type="text/javascript" src="../../skin/js/lib.js" ></script>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="../js/jz/photos/photos.js"></script> 
 <script>
 var isMobile;
 function mobileCheck(){
@@ -228,5 +226,6 @@ $(window).load(function(){
 $(window).trigger('resize');
 })
 </script>
+</div>
 </body>
 </html>

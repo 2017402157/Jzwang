@@ -29,7 +29,7 @@
 			</div>
 		</div>
 		<div class="layui-form-item">
-			<textarea id="demo" style="display: none;" name="massage"></textarea>
+			<textarea id="demo" style="display: none;" name="massage" lay-verify="massage"></textarea>
 		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">作者</label>
@@ -56,11 +56,5 @@
 	</form>
 	<script type="text/javascript" src="../../layui/layui.js"></script>
 	<script type="text/javascript" src="../js/news/newsEdit.js"></script>
-	<script>
-		layui.use('layedit', function(){
-		  var layedit = layui.layedit;
-		  layedit.build('demo'); //建立编辑器
-		});
-	</script>
 </body>
 </html>
