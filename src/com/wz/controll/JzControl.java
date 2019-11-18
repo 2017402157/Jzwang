@@ -3,7 +3,7 @@ package com.wz.controll;
 import com.jfinal.core.Controller;
 import com.jfinal.plugin.activerecord.Page;
 import com.wz.model.NewsModel;
-import com.wz.model.UserModel;
+import com.wz.model.ShowactivityModel;
 
 /**
  * 2019年11月15日21:00:07
@@ -32,6 +32,20 @@ public class JzControl extends Controller{
 	public void photos() {
 		render("page/photos/index.htm");
 	}
+	/**
+	 * 获取剪影数据
+	 */
+	public void getPhotos() {
+//		String key = getPara("key");
+//		int limit = getParaToInt("limit");
+//		int page = getParaToInt("page");
+		Page<ShowactivityModel> user = ShowactivityModel.getList(1, 10, "");
+		setAttr("m", user.getList());
+		renderJson(); 
+	}
+	
+	
+	
 	
 	/**
 	 * 服务项目首页
