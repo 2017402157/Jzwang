@@ -12,9 +12,12 @@ layui.config({
 			var arr = [];
 			    layui.each(d, function(index, item){
 			      
-			      arr.push("<h1>");
-			      arr.push("2131231241");
-			      arr.push("</h1>");
+			      arr.push("<li class='li1'>"+item.addr+"</li>");
+			      arr.push("<li class='li2'>"+item.phone+"");
+			      arr.push("</a></li>");
+			      arr.push("<li class='li3'><a href='mailto:"+item.email+"'>"+item.email+"</a></li>");
+			      
+			    
 			      
 			    });
 			    

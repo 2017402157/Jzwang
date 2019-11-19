@@ -13,11 +13,19 @@ layui.config({
 			    layui.each(d, function(index, item){
 			   
 			   
-			      arr.push("<h1");
-			      arr.push("131213131");
-			      arr.push("</h1>");
-			    
-			    
+			      arr.push("<li class='container px-0'>");
+			      arr.push("<div class='pp-gallery'>");
+			      arr.push("<div class='card-columns'>");      
+			      arr.push("<div class='card' data-groups='[&quot;nature&quot;]'><a href='image-detail.html'>");
+			      arr.push("<figure class='pp-effect'>");
+			      arr.push("<img class='img-fluid' src='images/1-nature.jpg' alt='Nature'/>");
+			      arr.push("<figcaption>");
+			      arr.push("<div class='h4'>Forest</div>");
+			      arr.push("<p>Nature</p>");
+			      arr.push("</figcaption>");
+			      arr.push("</figure></a></div>");
+			      arr.push("</div>");
+			      arr.push("</li>");			    
 			    });
 			    
 			$("#myphotos").append(arr.join(''));//从html  渲染
