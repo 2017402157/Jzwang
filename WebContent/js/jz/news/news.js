@@ -5,7 +5,17 @@ layui.config({
 	layer = parent.layer === undefined ? layui.layer : parent.layer,
 	laypage = layui.laypage,
 	$ = layui.jquery;
-	
+	//加载菜单栏
+	$.getJSON("../json/indexnvs.json", function(data){
+		var d = data;
+		var arr = [];
+		layui.each(d, function(index, item){
+		     arr.push("<li><a href="+item.href+" >"+item.title+"</a></li>");
+		      
+	    });
+		$("#myindex").append(arr.join(''));
+		form.render();
+	});
 	//加载页面数据
 	$.get("getNews", function(data){
 			var d = data.m;

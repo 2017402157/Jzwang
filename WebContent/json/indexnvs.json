@@ -1,0 +1,17 @@
+[{
+	"title" : "首页",
+	"href" : "index"
+},{
+	"title" : "最新招聘",
+	"href" : "recruit"
+},{
+	"title" : "活动剪影",
+	"href" : "photos"
+},{
+	"title" : "新闻动态",
+	"href" : "news"
+},{
+	"title" : "关于我们",
+	"href" : "contact"
+}
+]
