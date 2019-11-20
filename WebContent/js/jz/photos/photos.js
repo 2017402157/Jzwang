@@ -13,7 +13,7 @@ layui.config({
 			    layui.each(d, function(index, item){
 			   
 			   
-			      arr.push("<h1");
+			      arr.push("<h1>");
 			      arr.push("131213131");
 			      arr.push("</h1>");
 			    
