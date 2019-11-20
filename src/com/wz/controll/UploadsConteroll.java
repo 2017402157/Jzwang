@@ -1,11 +1,9 @@
 package com.wz.controll;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
 
+import com.alibaba.fastjson.JSONObject;
 import com.jfinal.core.Controller;
-import com.jfinal.render.JsonRender;
 import com.jfinal.upload.UploadFile;
 import com.wz.util.StringUtil;
 
@@ -18,9 +16,14 @@ public class UploadsConteroll extends Controller {
         String filePath = upFile.getUploadPath();
         String fileName = System.currentTimeMillis() + extName;
         file.renameTo(new File(filePath+"\\"+fileName));
+        
+        JSONObject json = new JSONObject();
+        json.put("src", "\\upload\\"+fileName);
+        json.put("title", fileName);
+        
         setAttr("msg", "上传成功");
 		setAttr("code", 0);
-		setAttr("data", file);
+		setAttr("data", json);
 		renderJson();
 	} 
 	

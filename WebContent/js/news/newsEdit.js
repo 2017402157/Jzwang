@@ -40,6 +40,12 @@ layui.config({
 				}
 				form.render();
 			});
+			layedit.set({
+				  uploadImage: {
+				    url: '/upload/uploadImg' //接口url
+				    ,type: 'post' //默认post
+				  }
+				});
 			var texts = layedit.build('demo');
 			layedit.setContent(texts,m.massage);
 			form.verify({
