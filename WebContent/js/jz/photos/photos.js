@@ -22,7 +22,7 @@ layui.config({
 			var arr = [];
 			    layui.each(d, function(index, item){
 			      arr.push("<li>");
-			      arr.push("<div class='card' data-groups='[&quot;nature&quot;]'><a href='image-detail.html'>");
+			      arr.push("<div class='card' data-groups='[&quot;nature&quot;]'><a href=''openPhotosInfo?id='111''>");
 			      arr.push("<figure class='pp-effect'>");
 			      arr.push("<img class='img-fluid' src='images/1-nature.jpg' alt='Nature'/>");
 			      arr.push("<figcaption>");
