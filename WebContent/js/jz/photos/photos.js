@@ -21,15 +21,8 @@ layui.config({
 			var d = data.m;
 			var arr = [];
 			    layui.each(d, function(index, item){
-			   
-			   
-<<<<<<< HEAD
-			      arr.push("<h1>");
-			      arr.push("131213131");
-			      arr.push("</h1>");
-			    
-			    
-=======
+
+
 			      arr.push("<li class='container px-0'>");
 			      arr.push("<div class='pp-gallery'>");
 			      arr.push("<div class='card-columns'>");      
@@ -43,7 +36,8 @@ layui.config({
 			      arr.push("</figure></a></div>");
 			      arr.push("</div>");
 			      arr.push("</li>");			    
->>>>>>> refs/remotes/origin/master
+
+
 			    });
 			    
 			$("#myphotos").append(arr.join(''));//从html  渲染
