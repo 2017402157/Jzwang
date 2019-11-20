@@ -21,11 +21,7 @@ layui.config({
 			var d = data.m;
 			var arr = [];
 			    layui.each(d, function(index, item){
-
-
-			      arr.push("<li class='container px-0'>");
-			      arr.push("<div class='pp-gallery'>");
-			      arr.push("<div class='card-columns'>");      
+			      arr.push("<li>");
 			      arr.push("<div class='card' data-groups='[&quot;nature&quot;]'><a href='image-detail.html'>");
 			      arr.push("<figure class='pp-effect'>");
 			      arr.push("<img class='img-fluid' src='images/1-nature.jpg' alt='Nature'/>");
@@ -34,10 +30,7 @@ layui.config({
 			      arr.push("<p>Nature</p>");
 			      arr.push("</figcaption>");
 			      arr.push("</figure></a></div>");
-			      arr.push("</div>");
-			      arr.push("</li>");			    
-
-
+			      arr.push("</il>");
 			    });
 			    
 			$("#myphotos").append(arr.join(''));//从html  渲染
