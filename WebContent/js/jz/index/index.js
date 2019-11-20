@@ -5,19 +5,23 @@ layui.config({
 	layer = parent.layer === undefined ? layui.layer : parent.layer,
 	laypage = layui.laypage,
 	$ = layui.jquery;
+	
 	//加载菜单栏
 	$.getJSON("../json/indexnvs.json", function(data){
 		var d = data;
 		var arr = [];
+		var arr2 = [];
 		layui.each(d, function(index, item){
 		     arr.push("<li><a href="+item.href+" >"+item.title+"</a></li>");
+		     arr2.push("<li><a href="+item.href+" class='v1'>"+item.title+"</a></li>");
 		      
 	    });
 		$("#myindex").append(arr.join(''));
+		$("#myindex2").append(arr2.join(''));
 		form.render();
 	});
 	//加载页面数据
-	$.get("getNews", function(data){
+	$.get("getindex", function(data){
 			var d = data.m;
 			var arr = [];
 			    layui.each(d, function(index, item){
