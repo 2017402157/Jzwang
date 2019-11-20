@@ -62,9 +62,12 @@ public class UserModel extends Model<UserModel> {
 	
 	
 	public static Page<UserModel> getList(int pageNumber , int pageSize, String key) {
-		String select_sql = "select * ";
+		String select_sql = "select a.*,b.rolename as roleid,c.name as posititoned ";
 		StringBuffer from_sql = new StringBuffer();
-		from_sql.append("from ").append(tableName);
+		from_sql.append("from ").append(tableName).append(" a left join ");
+		from_sql.append(RoleModel.tableName).append(" b on a.roleid=b.id ");
+		from_sql.append("left join ").append(PostitionModel.tableName).append(" c ");
+		from_sql.append("on c.id=a.posititoned ");
 		if(!StringUtil.isBlankOrEmpty(key)) {
 			from_sql.append("where username like '%"+key+"%'");
 		}

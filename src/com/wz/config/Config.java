@@ -11,6 +11,7 @@ import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.template.Engine;
 import com.wz.controll.AdminControll;
 import com.wz.controll.JzControl;
+import com.wz.controll.UploadsConteroll;
 import com.wz.model.CandidateModel;
 import com.wz.model.CompanyModel;
 import com.wz.model.ContactModel;
@@ -37,6 +38,7 @@ public class Config extends JFinalConfig {
 		me.setBaseViewPath("WEB-INF");
 		me.add("/admin", AdminControll.class, "admin");
 		me.add("/", JzControl.class, "jz");
+		me.add("/upload", UploadsConteroll.class, "file");
 		
 	}
 

@@ -6,6 +6,7 @@ layui.config({
 		layer = parent.layer === undefined ? layui.layer : parent.layer,
 		laypage = layui.laypage;
 		$ = layui.jquery;
+		layedit = layui.layedit;
 		
 		
 		var id=$("input[name='id']").val();
@@ -16,6 +17,7 @@ layui.config({
 	        //执行加载数据的方法
 			$("input[name='title']").val(m.title);
 			$("input[name='massage']").val(m.massage);
+			form.render();
 			$.get("getUsers", function(data){
 				var d = data.m;
 				for(var i=0;i<d.length;i++){
@@ -38,15 +40,16 @@ layui.config({
 				}
 				form.render();
 			});
-			var layedit = layui.layedit;
-			layedit.build('demo');
+			var texts = layedit.build('demo');
+			layedit.setContent(texts,m.massage);
 			form.verify({
 				massage: function(data){
-					return layedit.sync(texts);
+					layedit.sync(texts);
 				}
 			});
 		});
-
+		
+		
  	form.on("submit(update)",function(data){
  		var index;
  		 $.ajax({//异步请求返回给后台

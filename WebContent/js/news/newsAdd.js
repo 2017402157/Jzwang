@@ -7,15 +7,19 @@ layui.config({
 		laypage = layui.laypage;
 		$ = layui.$
 		,laydate = layui.laydate;
-		layedit = layui.layedit;
-		
-		var texts = layedit.build('demo', {
-			height:535,
-			uploadImage:{
-				url:"../../json/newsImg.json"
+		var layedit = layui.layedit;
+		layedit.set({
+			uploadImage: {
+				url: '../upload/uploadImg',
+				type: 'post'
+			}
+		})
+		var texts = layedit.build('demo');
+		form.verify({
+			massage: function(data){
+				return layedit.sync(texts);
 			}
 		}); 
-		
 		$.get("getUsers", function(data){
 			var m = data.m;
 			for(var i=0;i<m.length;i++){
@@ -30,7 +34,8 @@ layui.config({
 			}
 			form.render();
 		});
-		
+	
+	
 		
  	form.on("submit(add)",function(data){
  		var index;
@@ -59,25 +64,7 @@ layui.config({
 	           }
 	      });
  		 
- 		loading = layer.load(2, {
-            shade: [0.2, '#000'] //0.2透明度的白色背景
-        });
-
- 		 
- 		 data.field.id = GetUerParam("id");
- 		 data.field.demo = layedit.getContent(texts);
- 		$.post(url, JSON.stringify(data.field), function (result) {
-            layer.close(loading);
-            if (result.code == 0) {
-                layer.msg(result.msg, {icon: 1, time: 1000}, function () {
-                    var index = parent.layer.getFrameIndex(window.name);
-                    parent.layer.close(index);
-                    parent.location.reload();
-                });
-            } else {
-                layer.msg(result.msg, {icon: 2, anim: 6, time: 1000});
-            }
-        });
+ 		
  		return false;
  	})
 	

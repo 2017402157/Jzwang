@@ -1,13 +1,21 @@
 var $;
 layui.config({
 	base : "js/"
-}).use(['form','layer','jquery', 'laydate'],function(){
+}).use(['form','layer','jquery', 'laydate', 'layedit'],function(){
 	var form = layui.form,
 		layer = parent.layer === undefined ? layui.layer : parent.layer,
 		laypage = layui.laypage;
 		$ = layui.jquery
 		,laydate = layui.laydate;
-	  
+		var layedit = layui.layedit;
+		var texts = layedit.build('demo');
+		form.verify({
+			massage: function(data){
+				return layedit.sync(texts);
+			}
+		}); 
+		
+		
 	  //日期
 	  laydate.render({
 	    elem: '#date'

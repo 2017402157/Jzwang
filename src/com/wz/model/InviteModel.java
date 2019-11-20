@@ -97,9 +97,11 @@ public class InviteModel extends Model<InviteModel> {
 	}
 	
 	public static Page<InviteModel> getList(int pageNumber , int pageSize, String key) {
-		String select_sql = "select * ";
+		String select_sql = "select a.*,b.name as type,c.name as company ";
 		StringBuffer from_sql = new StringBuffer();
-		from_sql.append("from ").append(tableName);
+		from_sql.append("from ").append(tableName).append(" a left join ");
+		from_sql.append(TypeModel.tableName).append(" b on a.type=b.id left join ");
+		from_sql.append(CompanyModel.tableName).append(" c on c.id=a.company ");
 		if(!StringUtil.isBlankOrEmpty(key)) {
 			from_sql.append("where rolename like '%"+key+"%'");
 		}

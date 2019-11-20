@@ -11,4 +11,8 @@ public class StringUtil {
 	public static boolean isBlankOrEmpty(String string){
 		return string==null || string.trim().length() == 0;
 	}
+	
+	public static String getFileExt(String fileName) {
+        return fileName.substring(fileName.lastIndexOf('.'), fileName.length());
+    }
 }

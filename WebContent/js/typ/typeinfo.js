@@ -33,7 +33,7 @@ layui.config({
 	    id: 'testReload',
 	    cols: [[ //表头
 		      {field: 'id', title: 'ID', sort: true, fixed: 'left',width:150}
-		      ,{field: '"name"', title: '类型名称',width:150}
+		      ,{field: 'name', title: '类型名称',width:150}
 		      ,{fixed: 'right', align:'center',title:'操作', toolbar: '#barDemo'
 //		    	  templet:function(d){
 //		    	  var arr=new Array();
