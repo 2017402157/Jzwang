@@ -18,7 +18,15 @@ layui.config({
 	    cols: [[ //表头
 	      {field: 'id', title: 'ID', sort: true, fixed: 'left'}
 	      ,{field: 'name', title: '姓名', align:'center'} 
-	      ,{field: 'sex', title: '性别', align:'center'} 
+	      ,{field: 'sex', title: '性别', align:'center',
+	    	  templet:function(d){
+		    	  if(d.sex==0){
+		    		  return '<span style="color: blue">男</span>'
+		    	  }else{
+		    		  return '<span style="color: red" >女</span>'
+		    	  }
+		      }
+	      } 
 	      ,{field: 'phone', title: '联系电话',align:'center' }
 	      ,{field: 'addr', title: '邮箱',align:'center' }
 	      ,{fixed: 'right', align:'center',title:'操作', toolbar: '#barDemo'}

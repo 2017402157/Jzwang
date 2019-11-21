@@ -1,11 +1,12 @@
 var $;
 layui.config({
 	base : "js/"
-}).use(['form','layer','jquery'],function(){
+}).use(['form','layer','jquery', 'layedit'],function(){
 	var form = layui.form,
 		layer = parent.layer === undefined ? layui.layer : parent.layer,
 		laypage = layui.laypage;
 		$ = layui.jquery;
+		layedit = layui.layedit;
 		
 		var id=$("input[name='id']").val();
 		//加载页面数据
@@ -19,6 +20,14 @@ layui.config({
 			$("input[name='phone']").val(m.phone);
 			$("input[name='time']").val(m.time);
 			$("input[name='email']").val(m.email);
+			
+			var texts = layedit.build('demo');
+			layedit.setContent(texts,m.massage);
+			form.verify({
+				massage: function(data){
+					layedit.sync(texts);
+				}
+			});
 		})
 
  	form.on("submit(update)",function(data){

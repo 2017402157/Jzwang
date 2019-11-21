@@ -8,13 +8,18 @@ layui.config({
 		$ = layui.jquery
 		,laydate = layui.laydate;
 		var layedit = layui.layedit;
+		layedit.set({
+			uploadImage: {
+				url: '../upload/uploadImg',
+				type: 'post'
+			}
+		})
 		var texts = layedit.build('demo');
 		form.verify({
 			massage: function(data){
 				return layedit.sync(texts);
 			}
-		}); 
-		
+		});
 		
 	  //日期
 	  laydate.render({

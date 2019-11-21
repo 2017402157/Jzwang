@@ -31,7 +31,11 @@
 		<div class="layui-form-item">
 			<label class="layui-form-label">性别</label>
 			<div class="layui-input-inline">
-				<input type="text" class="layui-input" name="sex" lay-verify="required" placeholder="请输入性别"  autocomplete="off">
+			      	<select name="sex"  id="selectId" lay-filter="state">
+			      	<option value="0">请选择性别</option>
+			      	<option value="0">男</option>
+			      	<option value="1">女</option>
+      				</select>
 			</div>
 		</div>
 		<div class="layui-form-item">

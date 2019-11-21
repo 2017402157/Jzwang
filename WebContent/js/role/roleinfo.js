@@ -33,7 +33,7 @@ layui.config({
 	    id: 'testReload',
 	    cols: [[ //表头
 		      {field: 'id', title: 'ID', sort: true, fixed: 'left',width:150}
-		      ,{field: '"rolename"', title: '角色名称',width:150}
+		      ,{field: 'rolename', title: '角色名称',width:150}
 		      ,{field: 'permission' ,title:'权限'}
 		      ,{fixed: 'right', align:'center',title:'操作', toolbar: '#barDemo'
 //		    	  templet:function(d){
