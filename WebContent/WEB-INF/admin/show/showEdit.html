@@ -11,7 +11,23 @@
 	<meta name="format-detection" content="telephone=no">
 	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
 	<style type="text/css">
-		.layui-form { width:60%; float:left; margin-left:5%; margin-top: 3%}
+		.layui-form { width:60%; float:left; margin-left:5%; margin-top: 3%},
+		#demoText{
+			margin-left:10%; 
+			margin-top: 5%;
+			width: 300px;
+			height: 300px;
+			border-radius: 5px;
+			border:1px solid greed;
+		}
+		.myinfo{
+			margin-left:10%; "WebContent/js/show/showAdd.js"
+			margin-top: 5%;
+			width: 300px;
+			height: 100px;
+			border-radius: 5px;
+			border:3px solid black;
+		}
 	</style>
 </head>
 <body class="childrenBody">
@@ -28,7 +44,7 @@
 				<input type="text" class="layui-input" name="title"  lay-verify="required" placeholder="请输入标题"  autocomplete="off">
 			</div>
 		</div>
-		<div class="layui-form-item">
+		<!-- <div class="layui-form-item">
 			<label class="layui-form-label">图片</label>
 			<div class="layui-input-inline">
 				<input type="text" class="layui-input" name="photor"  lay-verify="required" placeholder="请输入图片"  autocomplete="off">
@@ -36,6 +52,16 @@
 			  <div class="layui-input-block" id="permission">
 				
 			</div>
+		</div> -->
+		<div class="layui-form-item" pane="">
+				<label class="layui-form-label">头像</label>
+				<div class="layui-input-block">
+					<div class="layui-upload-list">
+	    			<p id="demoText"></p>
+	  				<button type="button" class="layui-btn" id="upschool">上传图片</button>
+	  				<input id="img" name="photor" value=""/>
+	  				</div>
+				</div> 
 		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">简介</label>
