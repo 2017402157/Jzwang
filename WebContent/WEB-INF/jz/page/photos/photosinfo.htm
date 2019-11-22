@@ -12,13 +12,15 @@
 <link rel="stylesheet" href="../../../skin/css/cui.css"  />
 <link rel="stylesheet" href="../../../skin/css/style.css"  />
 <link rel="stylesheet" href="../../../skin/css/less.css"  />
+<link rel="stylesheet" href="../../skin/css/main1.css"  />
+<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
 </head>
 <body>
 <div id="hd">
   <div class="wp">
     <div class="logo"><a href="../../../index.htm" ><img src="../../../skin/images/logo.png"  alt=""></a></div>
     <div id="nav">
-      <ul id="myindex"></ul>>
+      <ul id="myindex"></ul>
     </div>
     <div class="tel">400-500-8888</div>
   </div>
@@ -34,30 +36,20 @@
 <div class="c"></div>
 <div id="bd">
   <div class="cur">
+  <input type="hidden" id="photosinfoid" value="${(id)}">
     <div class="wp">您的当前位置：<a href="'))window.location='http://localhost/'" >主页</a> > <a href="../../../page/recruit/index.htm" >活动剪影</a> > <a href="index.htm" >剪影详情</a> >  </div>
   </div>
-//实验
+
     <div class="page">
       <div class="page-content">
         <div class="container">
 <div class="container pp-section">
-  <div class="h3 font-weight-normal">Digital Photography Studio</div><img class="img-fluid mt-4" src="images/image-detail.jpg"/>
-  <div class="row mt-5">
-    <div class="col-md-3">
-      
-      <div class="h5 pt-4">Year</div>
-      <p>2017</p>
-    </div>
-    <div class="col-md-9">
-      <p>Enim duis ut penatibus est netus elementum natoque cursus, imperdiet primis montes venenatis eros neque augue himenaeos tellus, vulputate aptent quis non orci tortor sollicitudin. Eget phasellus dictum suspendisse montes mollis dis sollicitudin augue risus volutpat, consequat diam tristique pellentesque dui ut velit maecenas blandit.</p>
-      <p>Eleifend parturient potenti ut integer tempus nulla at gravida per hendrerit, ultricies nam porttitor velit vehicula quam scelerisque ultrices posuere nostra, sed id fringilla vivamus phasellus quisque enim montes mollis.</p>
-    </div>
-  </div>
+  <div id="myphotosinfo"></div>
 </div>
 </div>
       </div>
     </div>
-//结束
+
 </div>
 <!-- end #bd -->
 <div class="c"></div>
@@ -162,5 +154,8 @@
  
 <script type="text/javascript" src="../../../skin/js/jquery.js" ></script> 
 <script type="text/javascript" src="../../../skin/js/lib.js" ></script>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="../js/jz/photos/photosinfo.js"></script>
+<script type="text/javascript" src="../../skin/js/main.js"></script>
 </body>
 </html>

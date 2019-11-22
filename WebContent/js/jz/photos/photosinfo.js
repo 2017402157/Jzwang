@@ -17,23 +17,23 @@ layui.config({
 		form.render();
 	});
 	//加载页面数据
-	$.get("getPhotos", function(data){
+	var photosinfoid=$("#photosinfoid").val();
+	$.get("getPhotosInfo?id="+photosinfoid, function(data){
 			var d = data.m;
 			var arr = [];
-			    layui.each(d, function(index, item){
-			      arr.push("<li>");
-			      arr.push("<div class='card' data-groups='[&quot;nature&quot;]'><a href='openPhotosInfo?id="+item.id+"'>");
-			      arr.push("<figure class='pp-effect'>");
-			      arr.push("<img class='img-fluid' src='"+item.photor+"' alt='Nature'/>");
-			      arr.push("<figcaption>");
-			      arr.push("<div class='h4'>"+item.title+"</div>");
-			      arr.push("<p>"+item.time+"</p>");
-			      arr.push("</figcaption>");
-			      arr.push("</figure></a></div>");
-			      arr.push("</il>");
-			    });
+			      arr.push("<div class='h3 font-weight-normal'>"+d.title+"</div>");
+			      arr.push("<img class='img-fluid mt-4' src='"+d.photor+"'/>");
+			      arr.push("<div class='row mt-5'>");
+			      arr.push("<div class='col-md-3'>");
+			      arr.push("<div class='h5 pt-4'>Year</div>");
+			      arr.push("<p>"+d.time+"</p>");
+			      arr.push("</div>");
+			      arr.push("<div class='col-md-9'>");
+			      arr.push("<p>"+d.massage+"</p>");
+			      arr.push("</div>");
+			      arr.push("</div>");
 			    
-			$("#myphotos").append(arr.join(''));//从html  渲染
+			$("#myphotosinfo").append(arr.join(''));//从html  渲染
 			form.render();
 		});
 		
