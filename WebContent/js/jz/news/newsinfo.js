@@ -20,9 +20,13 @@ layui.config({
 	var myid=$("#myid").val();
 	$.get("getNewsInfo?id="+myid, function(data){
 			var d = data.m;
+			var arr = [];
+				arr.push("<h1>"+d.title+"</h1>");
+				arr.push("<p class='time'>时间："+d.releastime+"</p>");
+				arr.push("<div>"+d.massage+"</div>");
 		
 			    
-			$("#mynewsinfo").append(d.massage);
+			$("#mynewsinfo").append(arr.join(''));
 			form.render();
 		});
 		

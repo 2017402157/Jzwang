@@ -30,7 +30,7 @@ layui.config({
 			      arr.push("<div class='bor'>");
 			      arr.push("<div class='txt'>");
 			      arr.push("<div class='title'>");
-			      arr.push("<span><em>01/18</em>2019</span>");
+			      arr.push("<span><em>"+item.releastime.substring(5,10)+"</em>"+item.releastime.substring(0,4)+"</span>");
 			      arr.push("<h3><a href='openNewsInfo?id="+item.id+"' >"+item.title+"</a></h3>");
 			      arr.push("</div>");
 			      arr.push("<a href='openNewsInfo?id="+item.id+"'   style='color:#666;'>");
