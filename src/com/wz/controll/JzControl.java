@@ -58,26 +58,6 @@ public class JzControl extends Controller{
 		setAttr("m", user.getList());
 		renderJson(); 
 	}
-	/**
-	 * 打开新闻详情页面
-	 */
-	public void openPhotosInfo() {
-		String id = getPara("id");
-		setAttr("id", id);
-		renderFreeMarker("page/photos/photosinfo.htm");
-	}
-	/**
-	 * 获取新闻详情
-	 */
-//	public void getphotosInfo() {
-//		String id = getPara("id");
-//		renderJson();
-//		
-//	}
-//	public void test1() {
-//		render("page/photos/test.html");
-//	}
-	
 	
 	
 	
