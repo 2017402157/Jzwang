@@ -1,58 +1,58 @@
 [{
-	"title" : "鍚庡彴棣栭〉",
+	"title" : "首页",
 	"icon" : "icon-computer",
 	"href" : "page/main",
 	"spread" : false
 },{
-	"title" : "鍩虹淇℃伅",
+	"title" : "基础信息管理",
 	"icon" : "&#xe630;",
 	"href" : "",
 	"spread" : true,
 	"children" : [
 		{
-			"title" : "用户表〃",
+			"title" : "用户表",
 			"icon" : "&#xe61c;",
 			"href" : "admin/openUser",
 			"spread" : false
 		},
 		{
-			"title" : "勤工俭学剪影表〃",
+			"title" : "勤工俭学剪影表",
 			"icon" : "&#xe61c;",
 			"href" : "admin/openShow",
 			"spread" : false
 		},
 		{
-			"title" : "新闻表〃",
+			"title" : "新闻表",
 			"icon" : "&#xe61c;",
 			"href" : "admin/openNews",
 			"spread" : false
 		},
 		{
-			"title" : "角色表〃",
+			"title" : "角色表",
 			"icon" : "&#xe61c;",
 			"href" : "admin/openRole",
 			"spread" : false
 		},
 		{
-			"title" : "留言表〃",
+			"title" : "留言表",
 			"icon" : "&#xe61c;",
 			"href" : "admin/openMessage",
 			"spread" : false
 		},
 		{
-			"title" : "联系我们表〃",
+			"title" : "联系我们表",
 			"icon" : "&#xe61c;",
 			"href" : "admin/openContact",
 			"spread" : false
 		},
 		{
-			"title" : "新闻类型表〃",
+			"title" : "新闻类型表",
 			"icon" : "&#xe61c;",
 			"href" : "admin/openType",
 			"spread" : false
 		},
 		{
-			"title" : "职位表〃",
+			"title" : "职位表",
 			"icon" : "&#xe61c;",
 			"href" : "admin/openPostition",
 			"spread" : false
@@ -77,13 +77,13 @@
 		}
 	]
 },{
-	"title" : "绯荤粺淇℃伅",
+	"title" : "系统信息管理",
 	"icon" : "&#xe630;",
 	"href" : "",
 	"spread" : true,
 	"children" : [
 		{
-			"title" : "404椤甸潰",
+			"title" : "404页面",
 			"icon" : "&#xe61c;",
 			"href" : "page/404.html",
 			"spread" : false
