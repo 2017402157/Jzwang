@@ -17,6 +17,7 @@ layui.config({
 	        //执行加载数据的方法
 			$("input[name='title']").val(m.title);
 			$("input[name='massage']").val(m.massage);
+			$("input[name='outline']").val(m.outline);
 			form.render();
 			$.get("getUsers", function(data){
 				var d = data.m;

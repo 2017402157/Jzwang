@@ -193,7 +193,8 @@ public class AdminControll extends Controller {
 		String userid = getPara("userid");
 		String massage = getPara("massage");
 		String type = getPara("type");
-		boolean result = NewsModel.saveNews(title, userid, massage, type);
+		String outline = getPara("outline");
+		boolean result = NewsModel.saveNews(title, userid, massage, type, outline);
 		setAttr("result", result);
 		renderJson();
 	}
@@ -204,7 +205,8 @@ public class AdminControll extends Controller {
 		String userid = getPara("userid");
 		String massage = getPara("massage");
 		String type = getPara("type");
-		boolean result = NewsModel.updateNews(id, title, userid, massage, type);
+		String outline = getPara("outline");
+		boolean result = NewsModel.updateNews(id, title, userid, massage, type, outline);
 		setAttr("result", result);
 		renderJson();		
 	}

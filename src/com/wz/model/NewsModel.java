@@ -5,7 +5,6 @@ import java.util.Date;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Model;
 import com.jfinal.plugin.activerecord.Page;
-import com.mysql.fabric.xmlrpc.base.Data;
 import com.wz.util.StringUtil;
 
 public class NewsModel extends Model<NewsModel> {
@@ -90,6 +89,12 @@ public class NewsModel extends Model<NewsModel> {
 	public void setLabel(int label) {
 		set("label", label);
 	}
+	public String getOutline() {
+		return get("outline");
+	}
+	public void setOutline(String outline) {
+		set("outline", outline);
+	}
 	
 	/**
 	 * 后面要用，先放在这里。
@@ -128,7 +133,7 @@ public class NewsModel extends Model<NewsModel> {
 	 * @param massage
 	 * @return
 	 */
-	public static boolean saveNews(String title, String userid, String massage, String type) {
+	public static boolean saveNews(String title, String userid, String massage, String type, String outline) {
 		NewsModel m = new NewsModel();
 		m.setId(StringUtil.getId());
 		m.setTitle(title);
@@ -138,6 +143,7 @@ public class NewsModel extends Model<NewsModel> {
 		m.setStatus(-1);
 		m.setType(type);
 		m.setLabel(0);
+		m.setOutline(outline);
 		return m.save();
 	}
 	/**
@@ -149,7 +155,7 @@ public class NewsModel extends Model<NewsModel> {
 	 * @param time
 	 * @return
 	 */
-	public static boolean updateNews(String id, String title, String userid, String massage, String type) {
+	public static boolean updateNews(String id, String title, String userid, String massage, String type, String outline) {
 		NewsModel m = NewsModel.getNewsId(id);
 		m.setTitle(title);
 		m.setMassage(massage);
@@ -158,6 +164,7 @@ public class NewsModel extends Model<NewsModel> {
 		m.setStatus(0);
 		m.setType(type);
 		m.setLabel(0);
+		m.setOutline(outline);
 		return m.update();
 	}
 	/**

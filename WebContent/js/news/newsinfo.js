@@ -24,6 +24,7 @@ layui.config({
 	      ,{field: 'releastime', title: '发布时间',align:'center' }
 	      ,{field: 'status', title: '状态',align:'center' }
 	      ,{field: 'type', title: '类型',align:'center' }
+	      ,{field: 'outline', title: '概要',align:'center' }
 	      ,{fixed: 'right', align:'center',title:'操作', toolbar: '#barDemo'}
 	    ]]
 	  });

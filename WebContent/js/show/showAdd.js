@@ -26,7 +26,7 @@ layui.config({
 		      //预读本地文件示例，不支持ie8
 		      obj.preview(function(index, file, result){
 		    	  $('#demo1').attr('src', result); //图片链接（base64）
-		    	  $('#demoText').append('<a class="layui-upload-img" id="upload_img_'+index+'"><span><i class="iconfont">&#xe601;</i></span><img src="'+ result +'" alt="'+ file.name +'"></a>');
+		    	  $('#demoText').append('<a class="layui-upload-img" id="upload_img_'+index+'"><span><i class="iconfont">&#xe601;</i></span><img style="width:500px;heigth" src="'+ result +'" alt="'+ file.name +'"></a>');
 		      });
 		    }
 		    ,done: function(res){
