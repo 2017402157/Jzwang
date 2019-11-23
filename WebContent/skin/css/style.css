@@ -26,7 +26,7 @@ img {
 	max-width: 100%;
 }
 body {
-	font-family:"微软雅黑", "Microsoft Yahei";
+	font-family:"寰蒋闆呴粦", "Microsoft Yahei";
 }
 .wp {
 	width: 100%;
@@ -39,7 +39,7 @@ a {
 a:hover {
 	color: #e4392a;
 }
-/*头部*/
+/*澶撮儴*/
 #bd {
 	padding-top: 90px;
 }
@@ -103,7 +103,7 @@ a:hover {
 	color: #e4392a;
 	font-size: 18px;
 }
-/*手机头部*/
+/*鎵嬫満澶撮儴*/
 #m-hd {
 	display: none;
 }
@@ -169,7 +169,7 @@ a:hover {
 	border-bottom: none;
 	font-size: 13px;
 }
-/*底部*/
+/*搴曢儴*/
 #fd {
 	background: url("../images/fd_bg.png"/*tpa=http://dede05.va666.com/skin/images/fd_bg.png*/) center top no-repeat;
 	padding-top: 75px;
@@ -257,7 +257,7 @@ a:hover {
 	transition:all 0.3s;
 	background:#000022;
 	color:#fff;
-	font:16px/50px "微软雅黑";
+	font:16px/50px "寰蒋闆呴粦";
 	overflow:hidden;
 }
 .side ul li a:hover .sidebox {
@@ -460,7 +460,7 @@ a:hover {
 	bottom: -30px;
 	z-index: 60;
 }
-/*首页*/
+/*棣栭〉*/
 .tit-i {
 	text-align: center;
 	padding: 50px 0;
@@ -838,7 +838,7 @@ a:hover {
 	background-color: #63637f;
 	border: 0;
 	cursor: pointer;
-	font-family:"微软雅黑", "Microsoft Yahei";
+	font-family:"寰蒋闆呴粦", "Microsoft Yahei";
 	font-size: 16px;
 }
 .map {
@@ -912,7 +912,7 @@ a:hover {
 	height: 600px;
 	margin-top: 0;
 }
-/*内页*/
+/*鍐呴〉*/
 #ban-in {
 	position: relative;
 	background-position: center 0;
@@ -951,7 +951,7 @@ a:hover {
 	background-color: #e4392a;
 	color: #fff;
 }
-/*网思动态*/
+/*缃戞�濆姩鎬�*/
 .ul-list {
 	margin: 0 -15px;
 }
@@ -1032,7 +1032,7 @@ a:hover {
 	overflow: hidden;
 	height: 54px;
 }
-/*网思案例*/
+/*缃戞�濇渚�*/
 .sub-nav {
 	text-align: center;
 	margin-bottom: 50px;
@@ -1136,7 +1136,7 @@ a:hover {
 .ul-case li.on .txt {
 	top: 0;
 }
-/*关于网思*/
+/*鍏充簬缃戞��*/
 .about-info {
 	text-align: center;
 	font-size: 14px;
@@ -1353,10 +1353,10 @@ a:hover {
 .ul-about li.li1 .block, .ul-about li.li2 .block {
 	padding-top: 30px;
 }
-/*动态详情页*/
+/*鍔ㄦ�佽鎯呴〉*/
 .cur {
 	line-height: 76px;
-	font-family: "宋体";
+	font-family: "瀹嬩綋";
 	color: #666;
 	background-color: #f8f9fa;
 }
@@ -1392,7 +1392,7 @@ a:hover {
 	display: inline-block;
 	line-height: 37px;
 }
-/*案例详情*/
+/*妗堜緥璇︽儏*/
 .case-article {
 	line-height: 30px;
 	color: #666;
@@ -1486,7 +1486,7 @@ a:hover {
 	left: auto;
 	right: 0;
 }
-/*网思服务*/
+/*缃戞�濇湇鍔�*/
 .h50 {
 	height: 50px;
 	overflow: hidden;
@@ -2178,4 +2178,12 @@ a:hover {
 .sub-nav ul li .mycur {
 	background:url("../images/disc.jpg") left center no-repeat;
 	color:#e4392a;
+}
+.job-box {
+	position: relative;
+	overflow: hidden;
+	clear: both;
+	padding: 20px 0;
+	border-bottom: 1px solid #ccc;
+	background-color: #FFF;
 }

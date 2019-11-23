@@ -38,6 +38,14 @@ public class JzControl extends Controller{
 		setAttr("m", user.getList());
 		renderJson(); 
 	}
+	/**
+	 * 打开招聘详情页面
+	 */
+	public void openRecruitInfo() {
+		String id = getPara("id");
+		setAttr("id", id);
+		renderFreeMarker("page/recruit/recruitinfo.htm");
+	}
 	
 	
 	

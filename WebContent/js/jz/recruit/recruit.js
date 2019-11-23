@@ -21,11 +21,24 @@ layui.config({
 			var d = data.m;
 			var arr = [];
 			    layui.each(d, function(index, item){
-			      
-			      arr.push("<h1>");
-			      arr.push("2131231241");
-			      arr.push("</h1>");
-			      
+			    	arr.push("<il>");
+			    	arr.push("<div class='job-box'>");
+			    	arr.push("<div class='col-md-5 col-sm-5 col-xs-12'>");
+			    	arr.push("<div class='job-title-box'>");
+			    	arr.push("<div class='job-title'>技术文档专员</div><span class='comp-name'>公司</span></a>");
+			    	arr.push("</div>");
+			    	arr.push("</div>");
+			    	arr.push("<div class='col-md-2 col-sm-2 col-xs-6'>");
+			    	arr.push("<div class='job-location'><i class='fa fa-location-arrow'></i> 凯里</div>");
+			    	arr.push("</div>");
+			    	arr.push("<div class='col-md-2 col-sm-2 col-xs-6'>");
+			    	arr.push("<div class='job-type jt-full-time-color'><i class='fa fa-clock-o'></i> 兼职时间</div>");
+			    	arr.push("</div>");
+			    	arr.push("<div class='col-md-2 col-sm-2 col-xs-12'>");
+			    	arr.push("<a href='openRecruitInfo?id="+item.id+"'><button class='btn btn-primary btn-custom'>查看详情</button></a>");
+			    	arr.push("</div>");
+			    	arr.push("</div>");
+			    	arr.push("</il>");
 			    });
 			    
 			$("#myrecruit").append(arr.join(''));
