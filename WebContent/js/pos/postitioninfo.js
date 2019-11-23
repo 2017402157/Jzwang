@@ -33,17 +33,8 @@ layui.config({
 	    id: 'testReload',
 	    cols: [[ //表头
 		      {field: 'id', title: 'ID', sort: true, fixed: 'left',width:150}
-		      ,{field: '"name"', title: '职业名称',width:150}
-		      ,{fixed: 'right', align:'center',title:'操作', toolbar: '#barDemo'
-//		    	  templet:function(d){
-//		    	  var arr=new Array();
-//		    	  if(per==1){
-//			    	  arr.push("<a class='layui-btn layui-btn-xs layui-btn-warm' lay-event='detail'><i class='layui-icon'>&#xe615;</i>查看</a>");
-//			    	  arr.push("<a class='layui-btn layui-btn-xs' lay-event='edit'><i class='layui-icon'>&#xe642;</i>编辑</a>");
-//		    	  }
-//		    	  return arr.join("\n");
-//		      	}
-		      } //这里的toolbar值是模板元素的选择器
+		      ,{field: 'name', title: '职业名称',width:150}
+		      ,{fixed: 'right', align:'center',title:'操作', toolbar: '#barDemo'}
 		    ]]
 
 	  });

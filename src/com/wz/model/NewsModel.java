@@ -191,7 +191,12 @@ public class NewsModel extends Model<NewsModel> {
 	public static boolean checkNew(String id) {
 		NewsModel m = NewsModel.getNewsId(id);
 		m.setReleastime(new Date());
-		m.setStatus(0);
+		if(m.getStatus()== -1) {
+			m.setStatus(0);
+		}
+		else {
+			m.setStatus(-1);
+		}
 		return m.update();
 	}
 }
