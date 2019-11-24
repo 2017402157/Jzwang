@@ -53,14 +53,13 @@
         </ul>
       </div>
       <div class="contact-r">
-        <form name="addform" action="updateUserInfo" class="contact-form" enctype="multipart/form-data" method="post">
+      <form class="contact-form layui-form">
           <div class="">
             <input type="text" class="inp l" name="username" id="username" placeholder="您的姓名">
             <input type="text" class="inp r" name="phone" id="phone" placeholder="您的联系方式">
           </div>
           <textarea cols="30" rows="10" name="massage" id="massage" placeholder="请输入需求"></textarea>
-          
-          <input type="submit" value="提交您的需求" class="sub" id="sub" lay-filter="add">
+          <button class="sub" lay-submit="" lay-filter="add">提交您的需求</button>
           
         </form>
       </div>
@@ -180,26 +179,6 @@
 <script type="text/javascript" src="../../skin/js/lib.js" ></script>
 <script type="text/javascript" src="../../layui/layui.js"></script>
 <script type="text/javascript" src="../js/jz/contact/contact.js"></script>
-<script type="text/javascript" src="../js/jz/contact/contactAdd.js"></script>
-<script type="text/javascript">
-function updateUserInfo() {
-    $.ajax({
-      url: "addContact",
-      dataType: "json",
-      type: 'POST',
-      data: {'username':'sean','message':'123'},
-      xhrFields: {
-        withCredentials: true
-      },
-      crossDomain: true,
-      success: function (obj) {
-    	  alert('服务器请求成功');
-      },
-      error: function (obj) {
-    	  alert('服务器请求成功');
-      }
-    });
-  }
-</script>
+
 </body>
 </html>
