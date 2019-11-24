@@ -4,6 +4,7 @@ import com.jfinal.core.Controller;
 import com.jfinal.plugin.activerecord.Page;
 import com.wz.model.ContactModel;
 import com.wz.model.InviteModel;
+import com.wz.model.MessageModel;
 import com.wz.model.NewsModel;
 import com.wz.model.ShowactivityModel;
 
@@ -159,6 +160,17 @@ public class JzControl extends Controller{
 		Page<ContactModel> user = ContactModel.getList(1, 10, "");
 		setAttr("m", user.getList());
 		renderJson(); 
+	}
+	
+	public void addContact() {
+		String title = getPara("title");
+		String username = getPara("username");
+		String phone = getPara("phone");
+		String massage = getPara("massage");
+		String email = getPara("email");
+		boolean result = MessageModel.save(title, username, massage, phone, email);
+		setAttr("result", result);
+		renderJson();
 	}
 
 }
