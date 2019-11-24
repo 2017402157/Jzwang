@@ -608,6 +608,7 @@ public class AdminControll extends Controller {
 	}
 	public void saveInvite() {
 		String name = getPara("name");
+		String workpro = getPara("workpro");
 		String addr = getPara("addr");
 		int number = getParaToInt("number");
 		String workexp = getPara("workexp");
@@ -617,13 +618,14 @@ public class AdminControll extends Controller {
 		String company = getPara("company");
 		String type = getPara("type");
 		int label = getParaToInt("label");
-		boolean result = InviteModel.save(name, addr, number, workexp, education, worktime, reward, company, type, label);
+		boolean result = InviteModel.save(name, workpro, addr, number, workexp, education, worktime, reward, company, type, label);
 		setAttr("result", result);
 		renderJson();
 	}
 	public void updateInvite() {
 		String id = getPara("id");
 		String name = getPara("name");
+		String workpro = getPara("workpro");
 		String addr = getPara("addr");
 		int number = getParaToInt("number");
 		String workexp = getPara("workexp");
@@ -633,7 +635,7 @@ public class AdminControll extends Controller {
 		String company = getPara("company");
 		String type = getPara("type");
 		int label = getParaToInt("label");
-		boolean result = InviteModel.update(id, name, addr, number, workexp, education, worktime, reward, company, type, label);
+		boolean result = InviteModel.update(id, name, workpro, addr, number, workexp, education, worktime, reward, company, type, label);
 		setAttr("result", result);
 		renderJson();
 	}
