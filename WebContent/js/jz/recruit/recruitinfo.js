@@ -17,16 +17,43 @@ layui.config({
 		form.render();
 	});
 	//加载页面数据
-	var myid=$("#myid").val();
-	$.get("getNewsInfo?id="+myid, function(data){
+	var recruitinfoid=$("#recruitinfoid").val();
+	$.get("getRecruitInfo?id="+recruitinfoid, function(data){
 			var d = data.m;
 			var arr = [];
-				arr.push("<h1>"+d.title+"</h1>");
-				arr.push("<p class='time'>时间："+d.releastime+"</p>");
-				arr.push("<div>"+d.massage+"</div>");
-		
-			    
-			$("#mynewsinfo").append(arr.join(''));
+				arr.push("<div class='job-short-detail'>");
+				arr.push("<div class='heading-inner'>");
+				arr.push("<p class='title'>职位详情</p>");
+				arr.push("</div>");
+				arr.push("<div class='col-md-12 col-sm-12 col-xs-12 nopadding'>");
+				arr.push("<dl>");
+				arr.push("<dt>工作类型：</dt>");
+				arr.push("<dd>"+d.name+"</dd>");
+				arr.push("<dt>工作经验：</dt>");
+				arr.push("<dd>"+d.workexp+"</dd>");
+				arr.push("<dt>工作时间：</dt>");
+				arr.push("<dd>"+d.worktime+"</dd>");
+				arr.push("<dt>发表于：</dt>");
+				arr.push("<dd>"+d.releasetime+"</dd>");
+				arr.push("<dt>招聘人数:</dt>");
+				arr.push("<dd>"+d.number+"</dd>");
+				arr.push("<dt>工作位置：</dt>");
+				arr.push("<dd>"+d.addr+"</dd>");
+				arr.push("<dt>薪水：</dt>");
+				arr.push("<dd>"+d.reward+"</dd>");
+				arr.push("</dl>");
+				arr.push("</div>");
+				arr.push("</div>");
+				arr.push("<div class='heading-inner'>");
+				arr.push("<p class='title'>职位描述</p>");
+				arr.push("</div>");
+				arr.push("<div class='job-desc job-detail-boxes'>");
+				arr.push("<p>");
+				arr.push(""+d.massage+"");
+				arr.push("</p>");
+				arr.push("</div>");
+				arr.push("</div>");
+			$("#myrecruitinfo").append(arr.join(''));
 			form.render();
 		});
 		

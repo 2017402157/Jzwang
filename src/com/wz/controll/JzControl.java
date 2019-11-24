@@ -46,6 +46,19 @@ public class JzControl extends Controller{
 		setAttr("id", id);
 		renderFreeMarker("page/recruit/recruitinfo.htm");
 	}
+	/**
+	 * ªÒ»°’–∆∏œÍ«È
+	 */
+	public void getRecruitInfo() {
+		String id = getPara("id");
+		InviteModel recruitinfo = InviteModel.getById(id);
+		setAttr("m", recruitinfo);
+		renderJson();
+		
+	}
+	
+	
+	
 	
 	
 	
