@@ -117,7 +117,7 @@ public class JzControl extends Controller{
 //		String key = getPara("key");
 //		int limit = getParaToInt("limit");
 //		int page = getParaToInt("page");
-		Page<NewsModel> user = NewsModel.getList(1, 10, "");
+		Page<NewsModel> user = NewsModel.getList(1, 10, 0);
 		setAttr("m", user.getList());
 		renderJson(); 
 	}
