@@ -14,6 +14,7 @@ layui.config({
 //			var obj = $.parseJSON(m.permission);
 	        //执行加载数据的方法
 			$("input[name='name']").val(m.name);
+			$("input[name='workpro']").val(m.workpro);
 			$("input[name='addr']").val(m.addr);
 			$("input[name='number']").val(m.number);
 			$("input[name='workexp']").val(m.workexp);

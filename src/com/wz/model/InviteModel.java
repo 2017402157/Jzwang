@@ -23,6 +23,12 @@ public class InviteModel extends Model<InviteModel> {
 	public void setName(String name) {
 		set("name", name);
 	}
+	public String getWorkpro() {
+		return get("workpro");
+	}
+	public void setWorkpro(String workpro) {
+		set("workpro", workpro);
+	}
 	public String getAddr() {
 		return get("addr");
 	}
@@ -108,11 +114,12 @@ public class InviteModel extends Model<InviteModel> {
 		return dao.paginate(pageNumber, pageSize, select_sql, from_sql.toString());
 	}
 	
-	public static boolean save(String name, String addr, int number, String workexp, String education,
+	public static boolean save(String name, String workpro, String addr, int number, String workexp, String education,
 							String worktime, String reward, String company, String type, int label) {
 		InviteModel m = new InviteModel();
 		m.setId(StringUtil.getId());
 		m.setName(name);
+		m.setWorkpro(workpro);
 		m.setAddr(addr);
 		m.setNumber(number);
 		m.setWorkexp(workexp);
@@ -126,10 +133,11 @@ public class InviteModel extends Model<InviteModel> {
 		return m.save();
 	}
 	
-	public static boolean update(String id ,String name, String addr, int number, String workexp, String education,
+	public static boolean update(String id ,String name, String workpro, String addr, int number, String workexp, String education,
 						String worktime, String reward, String company, String type, int label) {
 		InviteModel m = InviteModel.getById(id);
 		m.setName(name);
+		m.setWorkpro(workpro);
 		m.setAddr(addr);
 		m.setNumber(number);
 		m.setWorkexp(workexp);

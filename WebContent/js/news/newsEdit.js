@@ -41,6 +41,8 @@ layui.config({
 				}
 				form.render();
 			});
+		   
+			
 			layedit.set({
 				  uploadImage: {
 				    url: '/upload/uploadImg' //接口url
