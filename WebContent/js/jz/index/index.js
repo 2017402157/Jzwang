@@ -11,41 +11,27 @@ layui.config({
 		var d = data;
 		var arr = [];
 		var arr2 = [];
-		layui.each(d, function(index, item){
 		     arr.push("<li><a href="+item.href+" >"+item.title+"</a></li>");
 		     arr2.push("<li><a href="+item.href+" class='v1'>"+item.title+"</a></li>");
-		      
-	    });
 		$("#myindex").append(arr.join(''));
 		$("#myindex2").append(arr2.join(''));
 		form.render();
 	});
 	//加载页面数据
-	$.get("getindex", function(data){
+	$.get("getNewsListTop", function(data){
 			var d = data.m;
 			var arr = [];
 			    layui.each(d, function(index, item){
-			      arr.push('<li>');
+			      arr.push("<li>");
 			      arr.push("<div class='pad'>");
-			      arr.push("<div class='pic'>");
-			      arr.push("<a href='openNewsInfo?id='111' >");
-			      arr.push("<img src='../../uploads/news/1604211611180.png'  alt='《领导者说》栏目采访'>");
-			      arr.push("</a></div>");
-			      arr.push("<div class='bor'>");
-			      arr.push("<div class='txt'>");
-			      arr.push("<div class='title'>");
-			      arr.push("<span><em>01/18</em>2019</span>");
-			      arr.push("<h3><a href='openNewsInfo?id='111' >《领导者说》栏目采访</a></h3>");
+			      arr.push("<div class='txt'> <span><em>"+item.releastime.substring(5,10)+"</em>"+item.releastime.substring(0,4)+"</span>");
+			      arr.push("<h3><a href='openNewsInfo?id="+item.id+"' >"+item.title+"</a></h3>");
+			      arr.push("<p style='display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 5;overflow: hidden;'>"+item.outline+"</p>");
+			      arr.push("<a href='openNewsInfo?id="+item.id+"'  class='more'></a> </div>");
 			      arr.push("</div>");
-			      arr.push("<a href='openNewsInfo?id='111'   style='color:#666;'>");
-			      arr.push("<p>2018年11月17日，由《领导者说》栏目主办的“一带一路.中国品牌故事甄选活动”在北京星光影视园隆重召开...</p>");
-			      arr.push("</a> </div>");
-			      arr.push("<div class='more'><a href='openNewsInfo?id='111'   class='r'>查看更多 ></a></div>");
-			      arr.push("</div></div>");
-			      arr.push('</li>');
+			      arr.push("</li>");
 			    });
-			    
-			$("#list").append(arr.join(''));
+			$("#myindexnews").append(arr.join(''));
 			form.render();
 		});
 		
@@ -54,5 +40,3 @@ layui.config({
 		  ,count: 50 //数据总数，从服务端得到
 		  });
 })
-
-

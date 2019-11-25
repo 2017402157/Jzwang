@@ -49,7 +49,7 @@ layui.config({
 				arr.push("</div>");
 				arr.push("<div class='job-desc job-detail-boxes'>");
 				arr.push("<p>");
-				arr.push(""+d.massage+"");
+				arr.push(""+d.workpro+"");
 				arr.push("</p>");
 				arr.push("</div>");
 				arr.push("</div>");

@@ -122,6 +122,14 @@ public class JzControl extends Controller{
 		renderJson(); 
 	}
 	/**
+	 * 获取新闻数据
+	 */
+	public void getNewsListTop() {
+		Page<NewsModel> user = NewsModel.getListTop(1, 4);
+		setAttr("m", user.getList());
+		renderJson(); 
+	}
+	/**
 	 * 打开新闻详情页面
 	 */
 	public void openNewsInfo() {
