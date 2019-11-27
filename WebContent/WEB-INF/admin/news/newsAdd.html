@@ -40,8 +40,7 @@
 		<div class="layui-form-item">
 			<label class="layui-form-label">作者</label>
 			<div class="layui-input-inline">
-				<select name="userid"  id="selectId" lay-filter="state">
-			      <option value="-1">请选择学生ID</option>
+				<input type="text" class="layui-input" name="userid" lay-verify="required" placeholder="请输入作者"  autocomplete="off">
       		</select>
 			</div>
 		</div>
@@ -108,12 +107,12 @@
 	        UE.getEditor('editor').setDisabled('fullscreen');
 	        disableBtn("enable");
 	    }
-	 
+
 	    function setEnabled() {
 	        UE.getEditor('editor').setEnabled();
 	        enableBtn();
 	    }
-	 
+
 	    function getText() {
 	        //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
 	        var range = UE.getEditor('editor').selection.getRange();
@@ -121,7 +120,7 @@
 	        var txt = UE.getEditor('editor').selection.getText();
 	        alert(txt)
 	    }
-	 
+
 	    function getContentTxt() {
 	        var arr = [];
 	        arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
@@ -161,11 +160,11 @@
 	            UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
 	        }
 	    }
-	 
+
 	    function getLocalData () {
 	        alert(UE.getEditor('editor').execCommand( "getlocaldata" ));
 	    }
-	 
+
 	    function clearLocalData () {
 	        UE.getEditor('editor').execCommand( "clearlocaldata" );
 	        alert("已清空草稿箱")

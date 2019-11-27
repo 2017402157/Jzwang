@@ -14,12 +14,10 @@ layui.config({
 			var m=data.result;
 //			var obj = $.parseJSON(m.permission);
 	        //执行加载数据的方法
-			$("input[name='title']").val(m.title);
 			$("input[name='massage']").val(m.massage);
 			$("input[name='username']").val(m.username);
 			$("input[name='phone']").val(m.phone);
 			$("input[name='time']").val(m.time);
-			$("input[name='email']").val(m.email);
 			
 			var texts = layedit.build('demo');
 			layedit.setContent(texts,m.massage);

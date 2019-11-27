@@ -19,18 +19,19 @@ layui.config({
 			$("input[name='title']").val(m.title);
 			$("input[name='massage1']").val(m.massage);
 			$("input[name='outline']").val(m.outline);
+			$("input[name='userid']").val(m.userid);
 			form.render();
-			$.get("getUsers", function(data){
-				var d = data.m;
-				for(var i=0;i<d.length;i++){
-					if(d[i].id==m.userid){
-						$("#selectId").append("<option selected='true' value='"+d[i].id+"'>"+d[i].username+"</option>");
-    				}else{
-    					$("#selectId").append("<option value='"+d[i].id+"'>"+d[i].username+"</option>");
-    				}
-				}
-				form.render();
-			});
+//			$.get("getUsers", function(data){
+//				var d = data.m;
+//				for(var i=0;i<d.length;i++){
+//					if(d[i].id==m.userid){
+//						$("#selectId").append("<option selected='true' value='"+d[i].id+"'>"+d[i].username+"</option>");
+//    				}else{
+//    					$("#selectId").append("<option value='"+d[i].id+"'>"+d[i].username+"</option>");
+//    				}
+//				}
+//				form.render();
+//			});
 			$.get("getTypes", function(data){
 				var d = data.m;
 				for(var i=0;i<d.length;i++){
@@ -44,19 +45,19 @@ layui.config({
 			});
 		   
 			
-			layedit.set({
-				  uploadImage: {
-				    url: '/upload/uploadImg' //接口url
-				    ,type: 'post' //默认post
-				  }
-				});
-			var texts = layedit.build('demo');
-			layedit.setContent(texts,m.massage);
-			form.verify({
-				massage: function(data){
-					layedit.sync(texts);
-				}
-			});
+//			layedit.set({
+//				  uploadImage: {
+//				    url: '/upload/uploadImg' //接口url
+//				    ,type: 'post' //默认post
+//				  }
+//				});
+//			var texts = layedit.build('demo');
+//			layedit.setContent(texts,m.massage);
+//			form.verify({
+//				massage: function(data){
+//					layedit.sync(texts);
+//				}
+//			});
 		});
 		
 		
