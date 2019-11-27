@@ -15,8 +15,8 @@ layui.config({
 //			var obj = $.parseJSON(m.permission);
 	        //执行加载数据的方法
 			$("input[name='title']").val(m.title);
-			$("input[name='massage']").val(m.massage);
-			$("#demoText").append('<img src="'+ m.photor +'" alt="'+ m.id +'" class="layui-upload-img">');
+			$("textarea[name='massage']").val(m.massage);
+			$("#demoText").append('<img src="'+ m.photor +'" alt="'+ m.id +'" class="layui-upload-img" style="width:500px;height:300px;">');
 			$("input[name='photor']").val(m.photor);
 		})
 		

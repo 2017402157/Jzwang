@@ -38,7 +38,7 @@ public class Config extends JFinalConfig {
 		me.setBaseViewPath("WEB-INF");
 		me.add("/admin", AdminControll.class, "admin");
 		me.add("/", JzControl.class, "jz");
-//		me.add("/upload", UploadsConteroll.class, "file");
+		me.add("/upload", UploadsConteroll.class, "file");
 		
 	}
 

@@ -7,26 +7,26 @@ layui.config({
 		laypage = layui.laypage;
 		$ = layui.$
 		,laydate = layui.laydate;
-		var layedit = layui.layedit;
-		layedit.set({
-			uploadImage: {
-				url: '../upload/uploadImg',
-				type: 'post'
-			}
-		})
-		var texts = layedit.build('demo');
-		form.verify({
-			massage: function(data){
-				return layedit.sync(texts);
-			}
-		}); 
-		$.get("getUsers", function(data){
-			var m = data.m;
-			for(var i=0;i<m.length;i++){
-				$("#selectId").append("<option value='"+m[i].id+"'>"+m[i].username+"</option>");
-			}
-			form.render();
-		});
+//		var layedit = layui.layedit;
+//		layedit.set({
+//			uploadImage: {
+//				url: '../upload/uploadImg',
+//				type: 'post'
+//			}
+//		})
+//		var texts = layedit.build('demo');
+//		form.verify({
+//			massage: function(data){
+//				return layedit.sync(texts);
+//			}
+//		}); 
+//		$.get("getUsers", function(data){
+//			var m = data.m;
+//			for(var i=0;i<m.length;i++){
+//				$("#selectId").append("<option value='"+m[i].id+"'>"+m[i].username+"</option>");
+//			}
+//			form.render();
+//		});
 		$.get("getTypes", function(data){
 			var m=data.m;
 			for(var i=0;i<m.length;i++){

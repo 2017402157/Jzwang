@@ -17,12 +17,10 @@ layui.config({
 	    id: 'testReload',
 	    cols: [[ //表头
 	      {field: 'id', title: 'ID', sort: true, fixed: 'left'}
-	      ,{field: 'title', title: '标题', align:'center'} 
 	      ,{field: 'massage', title: '内容', align:'center'} 
 	      ,{field: 'username', title: '留言者',align:'center' }
 	      ,{field: 'phone', title: '电话',align:'center' }
 	      ,{field: 'time', title: '留言时间',align:'center' }
-	      ,{field: 'email', title: '邮箱',align:'center' }
 	      ,{fixed: 'right', align:'center',title:'操作', toolbar: '#barDemo'}
 	    ]]
 	  });

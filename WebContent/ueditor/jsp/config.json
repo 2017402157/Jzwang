@@ -12,7 +12,7 @@
     
     "scrawlActionName": "uploadscrawl",
     "scrawlFieldName": "upfile",
-    "scrawlPathFormat": "/upload/{rand:6}",
+    "scrawlPathFormat": "/upload/{rand:10}",
     "scrawlMaxSize": 2048000, 
     "scrawlUrlPrefix": "", 
     "scrawlInsertAlign": "none",

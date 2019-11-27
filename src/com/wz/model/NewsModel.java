@@ -116,11 +116,10 @@ public class NewsModel extends Model<NewsModel> {
 	 * @return
 	 */
 	public static Page<NewsModel> getList(int pageNumber, int pageSize, String key) {
-		String sele_sql = "select a.*,b.username as userid,c.name as type";
+		String sele_sql = "select a.*,c.name as type";
 		StringBuffer from_sql = new StringBuffer();
 		from_sql.append("from ").append(tableName).append(" a left join ");
-		from_sql.append(UserModel.tableName).append(" b on a.userid=b.id ");
-		from_sql.append("left join ").append(TypeModel.tableName).append(" c on c.id=a.type");
+		from_sql.append(TypeModel.tableName).append(" c on c.id=a.type");
 		if(!StringUtil.isBlankOrEmpty(key)) {
 			from_sql.append(" where  a.title like '%" + key + "%'");
 		}
