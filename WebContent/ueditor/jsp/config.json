@@ -6,20 +6,20 @@
     "imageCompressEnable": true, 
     "imageCompressBorder": 1600, 
     "imageInsertAlign": "none", 
-    "imageUrlPrefix": "/Jzwang", 
+    "imageUrlPrefix": "", 
     "imagePathFormat": "/upload/{rand:6}",
 
     
     "scrawlActionName": "uploadscrawl",
     "scrawlFieldName": "upfile",
-    "scrawlPathFormat": "/ueditor/jsp/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}",
+    "scrawlPathFormat": "/upload/{rand:6}",
     "scrawlMaxSize": 2048000, 
     "scrawlUrlPrefix": "", 
     "scrawlInsertAlign": "none",
 
 
     "snapscreenActionName": "uploadimage",
-    "snapscreenPathFormat": "/ueditor/jsp/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}",
+    "snapscreenPathFormat": "/upload/{rand:6}",
     "snapscreenUrlPrefix": "",
     "snapscreenInsertAlign": "none",
 
@@ -27,7 +27,7 @@
     "catcherLocalDomain": ["127.0.0.1", "localhost", "img.baidu.com"],
     "catcherActionName": "catchimage",
     "catcherFieldName": "source",
-    "catcherPathFormat": "/ueditor/jsp/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}", 
+    "catcherPathFormat": "/upload/{rand:6}", 
     "catcherUrlPrefix": "",
     "catcherMaxSize": 2048000,
     "catcherAllowFiles": [".png", ".jpg", ".jpeg", ".gif", ".bmp"],
@@ -58,7 +58,7 @@
 
    
     "imageManagerActionName": "listimage",
-    "imageManagerListPath": "/ueditor/jsp/upload/image/",
+    "imageManagerListPath": "/upload/",
     "imageManagerListSize": 20,
     "imageManagerUrlPrefix": "",
     "imageManagerInsertAlign": "none",

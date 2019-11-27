@@ -10,13 +10,14 @@ layui.config({
 		
 		
 		var id=$("input[name='id']").val();
+		
 		//加载页面数据
 		$.get("getNews?id="+id, function(data){
 			var m=data.result;
 //			var obj = $.parseJSON(m.permission);
 	        //执行加载数据的方法
 			$("input[name='title']").val(m.title);
-			$("input[name='massage']").val(m.massage);
+			$("input[name='massage1']").val(m.massage);
 			$("input[name='outline']").val(m.outline);
 			form.render();
 			$.get("getUsers", function(data){

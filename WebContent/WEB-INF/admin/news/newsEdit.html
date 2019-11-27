@@ -42,7 +42,7 @@
 		</div> -->
 		<div class="layui-form-item">
 			<script id="editor" type="text/plain" style="width:1024px;height:500px;" name="massage"></script>
-			<input type="demo" class="layui-input" name="massage1" type="">
+			<input type="hidden" id="massage1" class="layui-input" name="massage1" type="">
 		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">作者</label>
@@ -70,15 +70,19 @@
 	<script type="text/javascript" src="../../layui/layui.js"></script>
 	<script type="text/javascript" src="../js/news/newsEdit.js"></script>
  	<script type="text/javascript">
-		var ue = UE.getEditor('editor');
+ 		
+		 	setTimeout(function () {
+		 			UE.getEditor("editor").addListener("ready", function () {
+			 		
+			 		var content = document.getElementById("massage1").value;
+			        UE.getEditor('editor').setContent(content);
+			 });
+		    }, 500);
+ 		
+	 	
+ 		
+ 		
 		
-		var content = $('massage1').val();
-		alert(content);
-	        //判断ueditor 编辑器是否创建成功
-	    ue.addListener("ready", function () {
-	        // editor准备好之后才可以使用
-	    	ue.setContent(content, false);
-	    });
 		
 		function isFocus(e){
 	        alert(UE.getEditor('editor').isFocus());
