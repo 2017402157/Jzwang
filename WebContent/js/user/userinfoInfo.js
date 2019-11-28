@@ -15,11 +15,10 @@ layui.config({//框架的固定，配置的使用
 	    where: {key: ''},//给后台传的参数
 	    page: true, //开启分页
 	    limit: 10,//每页显示信息条数
+	    toolbar: '#toolbarDemo',
 	    id: 'testReload',
 	    cols: [[ //表头
-	      {field: 'id', title: '用户ID', sort: true, fixed: 'left'}
-	      ,{field: 'username', title: '用户名',align:'center'}
-	      ,{field: 'password', title: '登陆密码', align:'center'}
+	       {field: 'username', title: '用户名', align:'center', sort: true, fixed: 'left'}
 	      ,{field: 'roleid', title: '角色', align:'center'}
 	      ,{field: 'phone', title: '电话号码', align:'center'}
 	      ,{field: 'posititoned', title: '职位', align:'center'}

@@ -14,10 +14,10 @@ layui.config({
 	    where: {key: ''},//给后台传的参数
 	    page: true, //开启分页
 	    limit: 10,//每页显示信息条数
+	    toolbar: '#toolbarDemo',
 	    id: 'testReload',
 	    cols: [[ //表头
-	      {field: 'id', title: 'ID', sort: true, fixed: 'left'}
-	      ,{field: 'title', title: '标题', align:'center'} 
+	       {field: 'title', title: '标题', align:'center', sort: true, fixed: 'left'} 
 	      ,{field: 'massage', title: '内容', align:'center'} 
 	      ,{field: 'photor', title: '图片',align:'center' }
 	      ,{field: 'time', title: '时间',align:'center' }

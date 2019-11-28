@@ -16,8 +16,7 @@ layui.config({
 	    limit: 10,//每页显示信息条数
 	    id: 'testReload',
 	    cols: [[ //表头
-	      {field: 'id', title: 'ID', sort: true, fixed: 'left'}
-	      ,{field: 'title', title: '标题', align:'center'} 
+	       {field: 'title', title: '标题', align:'center', sort: true, fixed: 'left'} 
 	      ,{field: 'massage', title: '内容', align:'center'} 
 	      ,{field: 'userid', title: '作者',align:'center' }
 	      ,{field: 'creattime', title: '编写时间',align:'center' }

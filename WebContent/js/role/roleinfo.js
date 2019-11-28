@@ -8,18 +8,6 @@ layui.config({
 		laytpl = layui.laytpl,
 		$ = layui.$;//以上只是将所需要的文件拿出来，以便于后面使用。
 		
-	//设置权限
-//	$.get("getPermission", function(data){
-//		var p=data.user.permission;
-//		var obj = $.parseJSON(p);
-//		var v=obj['c101'];
-//		per=v;
-//		if(v==1){
-//			var arr=new Array();
-//			arr.push("<a class='layui-btn layui-btn-normal add_btn' id='add_b'> <i class='layui-icon'>&#xe608;</i>添加</a>");
-//			$("#add_xiao").append(arr.join("\n"));
-//		}
-//	});
 	
 //==================一个table实例================================
 	var ins=  table.render({
@@ -32,10 +20,9 @@ layui.config({
 	    toolbar: '#toolbarDemo',
 	    id: 'testReload',
 	    cols: [[ //表头
-		      {field: 'id', title: 'ID', sort: true, fixed: 'left',width:150}
-		      ,{field: 'rolename', title: '角色名称',width:150}
-		      ,{field: 'permission' ,title:'权限'}
-		      ,{fixed: 'right', align:'center',title:'操作', toolbar: '#barDemo'
+		   {field: 'rolename', title: '角色名称', align:'center', sort: true, fixed: 'left'}
+		  ,{field: 'permission' ,title:'权限', align:'center'}
+		  ,{fixed: 'right', align:'center',title:'操作', toolbar: '#barDemo'
 //		    	  templet:function(d){
 //		    	  var arr=new Array();
 //		    	  if(per==1){
@@ -47,13 +34,8 @@ layui.config({
 		      } //这里的toolbar值是模板元素的选择器
 		    ]]
 
-	  });
-	  
-
-	  
-	  
-	  
-	  
+	  });  
+	  	  
 //====================点击【搜索】按钮事件===========================
   var active = {
 		  reload : function() {

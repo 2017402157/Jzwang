@@ -88,7 +88,8 @@ public class AdminControll extends Controller {
 	
 	public void openUpdateUserPassword() {
 		String id = getPara("id");
-		setAttr("id", id);
+		UserModel m = UserModel.getById(id);
+		setAttr("user", m);
 		renderFreeMarker("user/uppassword.html");
 	}
 	

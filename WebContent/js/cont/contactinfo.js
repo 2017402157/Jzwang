@@ -16,8 +16,7 @@ layui.config({
 	    limit: 10,//每页显示信息条数
 	    id: 'testReload',
 	    cols: [[ //表头
-	      {field: 'id', title: 'ID', sort: true, fixed: 'left'}
-	      ,{field: 'name', title: '联系人', align:'center'} 
+	       {field: 'name', title: '联系人', align:'center', sort: true, fixed: 'left'} 
 	      ,{field: 'phone', title: '电话', align:'center'} 
 	      ,{field: 'addr', title: '地址',align:'center' }
 	      ,{field: 'inteteraddr', title: '网址',align:'center' }

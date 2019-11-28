@@ -16,8 +16,7 @@ layui.config({
 	    limit: 10,//每页显示信息条数
 	    id: 'testReload',
 	    cols: [[ //表头
-	      {field: 'id', title: 'ID', sort: true, fixed: 'left'}
-	      ,{field: 'name', title: '姓名', align:'center'} 
+	       {field: 'name', title: '姓名', align:'center', sort: true, fixed: 'left'} 
 	      ,{field: 'sex', title: '性别', align:'center',
 	    	  templet:function(d){
 		    	  if(d.sex==0){

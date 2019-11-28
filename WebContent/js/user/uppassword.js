@@ -5,6 +5,16 @@ layui.config({
 	var form = layui.form,
 		layer = parent.layer === undefined ? layui.layer : parent.layer,
 		$ = layui.jquery;
+	
+//	var id=$("input[name='id']").val();
+//	$.get("getUser?id="+id,function(data){	
+//		var d = data.m;
+//		var state;
+//        // 执行加载数据的方法
+//		//修改页面从此更新页面
+//        $("input[name='username']").val(d.username); 
+//	});
+	
 	/**
 	 * 密码验证
 	 */
@@ -20,7 +30,7 @@ layui.config({
  	form.on("submit(updatepassword)",function(data){
  		var index;
  		 $.ajax({//异步请求返回给后台
-	    	  url:'updatePassword',
+	    	  url:'updateUserPassword',
 	    	  type:'POST',
 	    	  data:data.field,
 	    	  dataType:'json',
