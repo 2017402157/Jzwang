@@ -113,6 +113,17 @@ public class InviteModel extends Model<InviteModel> {
 		}
 		return dao.paginate(pageNumber, pageSize, select_sql, from_sql.toString());
 	}
+	public static Page<InviteModel> getListTop(int pageNumber , int pageSize) {
+		String select_sql = "select a.*,b.name as type,c.name as company ";
+		StringBuffer from_sql = new StringBuffer();
+		from_sql.append("from ").append(tableName).append(" a left join ");
+		from_sql.append(TypeModel.tableName).append(" b on a.type=b.id left join ");
+		from_sql.append(CompanyModel.tableName).append(" c on c.id=a.company ");
+		from_sql.append(" ORDER BY a.releasetime desc ");
+		
+		
+		return dao.paginate(pageNumber, pageSize, select_sql, from_sql.toString());
+	}
 	
 	public static boolean save(String name, String workpro, String addr, int number, String workexp, String education,
 							String worktime, String reward, String company, String type, int label) {

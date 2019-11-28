@@ -40,6 +40,14 @@ public class JzControl extends Controller{
 		renderJson(); 
 	}
 	/**
+	 * 获取新闻数据
+	 */
+	public void getRecruitListTop() {
+		Page<InviteModel> user = InviteModel.getListTop(1, 4);
+		setAttr("m", user.getList());
+		renderJson(); 
+	}
+	/**
 	 * 打开招聘详情页面
 	 */
 	public void openRecruitInfo() {
