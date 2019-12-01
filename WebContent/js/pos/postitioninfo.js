@@ -76,6 +76,8 @@ layui.config({
 				title : "【添加信息】",
 				icon: 2,
 				type : 2,
+				skin: 'layui-layer-lan',
+	            area: ['600px', '400px'],
 				content : "openAddPostition",
 				success : function(layero, index){
 					setTimeout(function(){
@@ -137,6 +139,8 @@ layui.config({
 		  var index = layui.layer.open({
               title : "修改信息",
               type : 2,
+              skin: 'layui-layer-lan',
+              area: ['600px', '400px'],
               content : "openEditPostition?id="+data.id,
               success : function(layero, index){
                   setTimeout(function(){

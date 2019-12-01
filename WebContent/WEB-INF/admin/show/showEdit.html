@@ -33,9 +33,8 @@
 <body class="childrenBody">
 	<form class="layui-form layui-form-pane" name="updateform">
 		<div class="layui-form-item">
-			<label class="layui-form-label">ID</label>
 			<div class="layui-input-inline">
-				<input type="text" class="layui-input layui-disabled" name="id" value=${(id)}>
+				<input type="hidden" class="layui-input layui-disabled" name="id" value="${(id)}">
 			</div>
 		</div>
 		<div class="layui-form-item">
@@ -44,15 +43,7 @@
 				<input type="text" class="layui-input" name="title"  lay-verify="required" placeholder="请输入标题"  autocomplete="off">
 			</div>
 		</div>
-		<!-- <div class="layui-form-item">
-			<label class="layui-form-label">图片</label>
-			<div class="layui-input-inline">
-				<input type="text" class="layui-input" name="photor"  lay-verify="required" placeholder="请输入图片"  autocomplete="off">
-			</div>
-			  <div class="layui-input-block" id="permission">
-				
-			</div>
-		</div> -->
+		
 		<div class="layui-form-item" pane="">
 				<label class="layui-form-label">头像</label>
 				<div class="layui-input-block">

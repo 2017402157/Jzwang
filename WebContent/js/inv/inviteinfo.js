@@ -25,10 +25,10 @@ layui.config({
 	      ,{field: 'worktime', title: '工作时间',align:'center' }
 	      ,{field: 'reward', title: '工资待遇',align:'center' }
 	      ,{field: 'releasetime', title: '发布时间',align:'center' }
-	      ,{field: 'pageview', title: '浏览量',align:'center' }
+//	      ,{field: 'pageview', title: '浏览量',align:'center' }
 	      ,{field: 'company', title: '招聘公司',align:'center' }
 	      ,{field: 'type', title: '工作类型',align:'center' }
-	      ,{field: 'label', title: '标签',align:'center' }
+//	      ,{field: 'label', title: '标签',align:'center' }
 	      ,{fixed: 'right', align:'center',title:'操作', toolbar: '#barDemo'}
 	    ]]
 	  });
@@ -63,7 +63,7 @@ layui.config({
 				icon: 2,
 				type : 2,
 				skin: 'layui-layer-lan',
-				area: ['800px', '600px'],
+	            area: ['600px', '400px'],
 				content : "openAddInvite",
 				success : function(layero, index){
 					setTimeout(function(){

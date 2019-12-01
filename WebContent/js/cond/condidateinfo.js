@@ -62,7 +62,7 @@ layui.config({
 				icon: 2,
 				type : 2,
 				skin: 'layui-layer-lan',
-				area: ['800px', '600px'],
+				area: ['600px', '400px'],
 				content : "openAddCondidate",
 				success : function(layero, index){
 					setTimeout(function(){
@@ -124,7 +124,7 @@ layui.config({
               title : "修改信息",
               type : 2,
               skin: 'layui-layer-lan',
-              area: ['800px', '600px'],
+              area: ['600px', '400px'],
               content : "openEditCondidate?id="+data.id,
               success : function(layero, index){
                   setTimeout(function(){
