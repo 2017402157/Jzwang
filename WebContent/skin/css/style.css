@@ -96,7 +96,7 @@ a:hover {
 	border-bottom: 3px solid #e4392a;
 }
 #hd .tel {
-	background: url("../images/tel_bg.png"/*tpa=http://dede05.va666.com/skin/images/tel_bg.png*/) left center no-repeat;
+	background: url("../images/tel_bg.png") left center no-repeat;
 	line-height: 90px;
 	float: right;
 	padding-left: 37px;
@@ -130,7 +130,7 @@ a:hover {
 	font-size: 30px;
 	line-height: 45px;
 	cursor: pointer;
-	background: url("../images/menu_add.png"/*tpa=http://dede05.va666.com/skin/images/menu_add.png*/) center center no-repeat;
+	background: url("../images/menu_add.png") center center no-repeat;
 	-webkit-background-size: 50px;
 	background-size: 25px;
 	height: 50px;
@@ -141,7 +141,7 @@ a:hover {
 	top: 50px;
 	width: 100%;
 	left: 0;
-	background: url("../images/alpha_black_70.png"/*tpa=http://dede05.va666.com/skin/images/alpha_black_70.png*/) repeat;
+	background: url("../images/alpha_black_70.png") repeat;
 	text-align: center;
 	display: none;
 }
@@ -171,7 +171,7 @@ a:hover {
 }
 /*搴曢儴*/
 #fd {
-	background: url("../images/fd_bg.png"/*tpa=http://dede05.va666.com/skin/images/fd_bg.png*/) center top no-repeat;
+	background: url("../images/fd_bg.png") center top no-repeat;
 	padding-top: 75px;
 }
 .index-fd {

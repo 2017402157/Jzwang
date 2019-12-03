@@ -25,8 +25,8 @@ layui.config({
 			      arr.push("<li>");
 			      arr.push("<div class='pad'>");
 			      arr.push("<div class='txt'> <span><em>"+item.releastime.substring(5,10)+"</em>"+item.releastime.substring(0,4)+"</span>");
-			      arr.push("<h3><a href='openNewsInfo?id="+item.id+"' >"+item.title+"</a></h3>");
-			      arr.push("<p style='display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 5;overflow: hidden;'>"+item.outline+"</p>");
+				      arr.push("<h3><a href='openNewsInfo?id="+item.id+"'>"+item.title+"</a></h3>");
+			      arr.push("<p style='display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;'>"+item.outline+"</p>");
 			      arr.push("<a href='openNewsInfo?id="+item.id+"'  class='more'></a> </div>");
 			      arr.push("</div>");
 			      arr.push("</li>");
