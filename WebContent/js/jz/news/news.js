@@ -9,11 +9,13 @@ layui.config({
 	$.getJSON("../json/indexnvs.json", function(data){
 		var d = data;
 		var arr = [];
+		var arr2 = [];
 		layui.each(d, function(index, item){
 		     arr.push("<li><a href="+item.href+" >"+item.title+"</a></li>");
-		      
-	    });
+		     arr2.push("<li><a href="+item.href+" class='v1'>"+item.title+"</a></li>");
+		});
 		$("#myindex").append(arr.join(''));
+		$("#myindex2").append(arr2.join(''));
 		form.render();
 	});
 	//加载页面数据
@@ -31,10 +33,10 @@ layui.config({
 			      arr.push("<div class='txt'>");
 			      arr.push("<div class='title'>");
 			      arr.push("<span><em>"+item.releastime.substring(5,10)+"</em>"+item.releastime.substring(0,4)+"</span>");
-			      arr.push("<h3><a href='openNewsInfo?id="+item.id+"' >"+item.title+"</a></h3>");
+			      arr.push("<h3><a href='openNewsInfo?id="+item.id+"' style='display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;'>"+item.title+"</a></h3>");
 			      arr.push("</div>");
 			      arr.push("<a href='openNewsInfo?id="+item.id+"'   style='color:#666;'>");
-			      arr.push("<div>"+item.outline+"</div>");
+			      arr.push("<div><p style='display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;'>"+item.outline+"</p></div>");
 			      arr.push("</a> </div>");
 			      arr.push("<div class='more'><a href='openNewsInfo?id="+item.id+"'   class='r'>查看更多 ></a></div>");
 			      arr.push("</div></div>");
