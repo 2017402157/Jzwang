@@ -44,7 +44,7 @@ public class LogsModel extends Model<LogsModel> {
 	public static Page<LogsModel> getList(int pageNumber, int pageSize, String key) {
 		String sele_sql = "select * ";
 		StringBuffer from_sql = new StringBuffer();
-		from_sql.append("from ").append(tableName);
+		from_sql.append("from ").append(tableName).append(" ORDER BY logintime DESC");
 		if(!StringUtil.isBlankOrEmpty(key)) {
 			from_sql.append(" where  title like '%" + key + "%'");
 		}

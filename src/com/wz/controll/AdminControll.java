@@ -68,7 +68,7 @@ public class AdminControll extends Controller {
 		else {
 			setAttr("result", 2);//用户名不存在
 		}
-//		LogsModel.save(username, status);
+		LogsModel.save(username, status);
 		renderJson();
 	}
 	
@@ -437,6 +437,11 @@ public class AdminControll extends Controller {
 		setAttr("m", m);
 		renderJson();
 	}
+	public void getMessagedata() {
+		List<MessageModel> m = MessageModel.getData();
+		setAttr("m", m);
+		renderJson();
+	}
 	
 	/**
 	 * 联系我们表
@@ -799,6 +804,24 @@ public class AdminControll extends Controller {
 		String id = getPara("id");
 		boolean result = CandidateModel.delById(id);
 		setAttr("result", result);
+		renderJson();
+	}
+	
+	/**
+	 * 日志表
+	 */
+	public void openLogs() {
+		render("log/logsinfo.html");
+	}
+	public void queryLogs() {
+		// 获取页面查询的关键字
+		String key = getPara("key");
+		int limit = getParaToInt("limit");
+		int page = getParaToInt("page");
+		Page<LogsModel> list = LogsModel.getList(page, limit, key);
+		setAttr("code", 0);
+		setAttr("count", list.getTotalRow());
+		setAttr("data", list.getList());
 		renderJson();
 	}
 	

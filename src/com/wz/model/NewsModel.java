@@ -120,7 +120,7 @@ public class NewsModel extends Model<NewsModel> {
 		String sele_sql = "select a.*,c.name as type";
 		StringBuffer from_sql = new StringBuffer();
 		from_sql.append("from ").append(tableName).append(" a left join ");
-		from_sql.append(TypeModel.tableName).append(" c on c.id=a.type");
+		from_sql.append(TypeModel.tableName).append(" c on c.id=a.type").append(" ORDER BY releastime DESC");
 		if(!StringUtil.isBlankOrEmpty(key)) {
 			from_sql.append(" where  a.title like '%" + key + "%'");
 		}

@@ -112,4 +112,8 @@ public class MessageModel extends Model<MessageModel> {
 		String count = "select count(*) as data from "+ tableName;
 		return dao.find(count);
 	}
+	public static List<MessageModel> getData() {
+		String count = "select * from "+ tableName +" ORDER BY time DESC limit 0, 8" ;
+		return dao.find(count);
+	}
 }

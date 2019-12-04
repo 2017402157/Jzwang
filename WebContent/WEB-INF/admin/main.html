@@ -22,9 +22,12 @@
     <link href="../../assets/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../../assets/css/lib/helper.css" rel="stylesheet">
     <link href="../../assets/css/style.css" rel="stylesheet">
-	<style type="text/css" media="screen">
-
- </style>
+	<style type="text/css">
+	  .layui-table-cell{
+	  	height: auto;
+		line-height: 28px;
+	  }
+	</style>
 </head>
 <body class="childrenBody">
 <div class="layui-fluid">
@@ -111,18 +114,19 @@
                                     <div class="col-lg-12">
                                         <div class="card bg-primary">
                                             <div class="weather-widget">
-                                                <div id="weather-one" class="weather-one p-22"><h4 style="color:white;">登录日志</h4></div>
+                                                <div id="weather-one" class="weather-one p-22"><h4 style="color:white;">最近留言</h4></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="card">
                                             <div class="testimonial-widget-one p-17">
-                                                <div class="testimonial-widget-one owl-carousel owl-theme">
-                                                </div>
+                                            <div class="layui-card-body layui-text">
+										        <ul class="layui-box" id="data">
+    											</ul>  
+										     </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -130,14 +134,11 @@
                             <div class="col-lg-8">
                                 <div class="card">
                                     <div class="card-title pr">
-                                        <h4>最近留言</h4>
+                                        <h4>登录日志</h4>
 
                                     </div>
                                     <div class="card-body">
-                                        <div class="table-responsive">
-                                            <table class="table student-data-table m-t-20" id="masseage">
-                                                
-                                            </table>
+                                        <div class="table-responsive" id="logs">
                                         </div>
                                     </div>
                                 </div>

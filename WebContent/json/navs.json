@@ -10,49 +10,49 @@
 	"spread" : true,
 	"children" : [
 		{
-			"title" : "用户表",
+			"title" : "用户信息管理",
 			"icon" : "&#xe61c;",
 			"href" : "admin/openUser",
 			"spread" : false
 		},
 		{
-			"title" : "角色表",
+			"title" : "角色信息管理",
 			"icon" : "&#xe61c;",
 			"href" : "admin/openRole",
 			"spread" : false
 		},
 		{
-			"title" : "联系我们表",
+			"title" : "我们的信息",
 			"icon" : "&#xe61c;",
 			"href" : "admin/openContact",
 			"spread" : false
 		},
 		{
-			"title" : "新闻类型表",
+			"title" : "新闻信息管理",
 			"icon" : "&#xe61c;",
 			"href" : "admin/openType",
 			"spread" : false
 		},
 		{
-			"title" : "职位表",
+			"title" : "职位信息管理",
 			"icon" : "&#xe61c;",
 			"href" : "admin/openPostition",
 			"spread" : false
 		},
 		{
-			"title" : "招聘表",
+			"title" : "招聘信息管理",
 			"icon" : "&#xe61c;",
 			"href" : "admin/openInvite",
 			"spread" : false
 		},
 		{
-			"title" : "公司表",
+			"title" : "公司信息管理",
 			"icon" : "&#xe61c;",
 			"href" : "admin/openCompany",
 			"spread" : false
 		},
 		{
-			"title" : "应聘表",
+			"title" : "应聘信息管理",
 			"icon" : "&#xe61c;",
 			"href" : "admin/openCondidate",
 			"spread" : false

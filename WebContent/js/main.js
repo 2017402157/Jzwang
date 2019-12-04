@@ -44,21 +44,48 @@ layui.config({
 		$("#show").append(arr.join(''));
 		form.render();
 	});
+	$.get("getMessagedata" , function(data){
+		var d = data.m;
+		var arr = [];
+		layui.each(d, function(index, item){
+			arr.push('<li>');
+			arr.push("<div class='pic'>");
+			arr.push("<a href='openEditMessage?id="+item.id+"'>");
+			arr.push("<div style='float:right;width:32%;padding: 2px;font-size:20px;'>"+item.username+"</div>");
+			arr.push("<div style='float:right;width:32%;padding: 2px;font-size:20px;'>"+item.time.substring(0,11)+"</div>");
+			arr.push("<div style='float:right;width:32%;padding: 2px;font-size:20px;'>"+item.phone+"</div>");
+			arr.push("</a></div><br></div><br>");
+			arr.push('</li>');
+		});
+		$("#data").append(arr.join(''));
+		form.render();
+	});
 	
-	table.render({
-	    elem: '#masseage',//渲染对象
-	    height: 'full-88',//表格高度
-	    url: 'queryMessage', //数据接口
-	    where: {key: ''},//给后台传的参数
-	    page: true, //开启分页
-	    limit: 10,//每页显示信息条数
-	    cols: [[ //表头
-	       {field: 'massage', title: '内容', align:'center', sort: true, fixed: 'left'} 
-	      ,{field: 'username', title: '留言者',align:'center' }
-	      ,{field: 'phone', title: '电话',align:'center' }
-	      ,{field: 'time', title: '留言时间',align:'center', fixed: 'right' }
-	    ]]
-	  });
+	 table.render({
+		    elem: '#logs',//渲染对象
+		    height: 'full-300',//表格高度
+		    url: 'queryLogs', //数据接口
+		    where: {key: ''},//给后台传的参数
+		    page: true, //开启分页
+		    limit: 15,//每页显示信息条数
+		    id: 'testReload',
+		    cols: [[ //表头
+		       {field: 'username', title: '用户', align:'center', sort: true, fixed: 'left'}
+		      ,{field: 'logintime', title: '登录时间',align:'center' }
+		      ,{field: 'status', title: '状态',align:'center', fixed: 'right', 
+		    	  templet: function(d){
+		    		  var arr = new Array();
+		    		  if(d.status == 0){
+		    			  arr.push("<a class='layui-btn layui-btn-xs layui-bg-blue'><i class='layui-icon'>&#xe642;</i>正常</a>");
+		    		  }
+		    		  else{
+		    			  arr.push("<a class='layui-btn layui-btn-xs layui-bg-red'><i class='layui-icon'>&#xe642;</i>异常</a>");
+		    		  }
+		    		  return arr.join("\n");
+		    	  	} 
+		      	}
+		    ]]
+		  });
 	// 基于准备好的dom，初始化echarts实例
 	var myChart = echarts.init(document.getElementById('pie_echarts'));
 	// 指定图表的配置项和数据
