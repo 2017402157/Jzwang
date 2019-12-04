@@ -72,4 +72,8 @@ public class TypeModel extends Model<TypeModel> {
 		sql.append("select *  from ").append(tableName);
 		return dao.find(sql.toString());
 	}
+	public static List<TypeModel> getListName() {
+		String sql = "select distinct * from type";
+		return dao.find(sql.toString());
+	}
 }

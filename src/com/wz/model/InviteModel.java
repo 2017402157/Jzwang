@@ -1,6 +1,8 @@
 package com.wz.model;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Model;
@@ -126,7 +128,7 @@ public class InviteModel extends Model<InviteModel> {
 	}
 	
 	public static boolean save(String name, String workpro, String addr, int number, String workexp, String education,
-							String worktime, String reward, String company, String type, int label) {
+							String worktime, String reward, String company, String type) {
 		InviteModel m = new InviteModel();
 		m.setId(StringUtil.getId());
 		m.setName(name);
@@ -140,12 +142,11 @@ public class InviteModel extends Model<InviteModel> {
 		m.setReleasetime(new Date());
 		m.setCompany(company);
 		m.setType(type);
-		m.setLabel(label);
 		return m.save();
 	}
 	
 	public static boolean update(String id ,String name, String workpro, String addr, int number, String workexp, String education,
-						String worktime, String reward, String company, String type, int label) {
+						String worktime, String reward, String company, String type) {
 		InviteModel m = InviteModel.getById(id);
 		m.setName(name);
 		m.setWorkpro(workpro);
@@ -158,7 +159,6 @@ public class InviteModel extends Model<InviteModel> {
 		m.setReleasetime(new Date());
 		m.setCompany(company);
 		m.setType(type);
-		m.setLabel(label);
 		return m.update();
 	}
 	
@@ -175,6 +175,22 @@ public class InviteModel extends Model<InviteModel> {
 			e.printStackTrace();
 			return false;
 		}
+	}
+	public static List<InviteModel> getListByYeanMonth(int month) {
+		StringBuffer sql = new StringBuffer();
+		Calendar now = Calendar.getInstance();
+		int yean = now.get(Calendar.YEAR);
+		StringBuffer m = new StringBuffer();
+		m.append(yean).append("-");
+		if(month<10) {
+			m.append("0").append(month);
+		}
+		else {
+			m.append(month);
+		}
+		sql.append("select *  from ").append(tableName);
+		sql.append(" where releasetime like '%" + m + "%'");
+		return dao.find(sql.toString());
 	}
 	
 }

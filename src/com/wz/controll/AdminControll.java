@@ -1,12 +1,21 @@
 package com.wz.controll;
 
+import java.io.BufferedReader;
+import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import com.alibaba.druid.support.json.JSONParser;
 import com.jfinal.aop.Before;
 import com.jfinal.aop.Clear;
 import com.jfinal.core.Controller;
+import com.jfinal.kit.JsonKit;
 import com.jfinal.plugin.activerecord.Page;
+import com.jfinal.plugin.activerecord.Record;
 import com.wz.Interceptor.AdminInterceptor;
+import com.wz.bean.TDvoBean;
 import com.wz.model.CandidateModel;
 import com.wz.model.CompanyModel;
 import com.wz.model.ContactModel;
@@ -22,7 +31,9 @@ import com.wz.model.UserModel;
 
 @Before(AdminInterceptor.class)
 public class AdminControll extends Controller {
-	
+	public void find() {
+		render("404.html");
+	}
 	
 	public void index() {
 		setAttr("user", getSessionAttr("user"));
@@ -156,6 +167,12 @@ public class AdminControll extends Controller {
 		renderJson();
 	}
 	
+	public void getUsercount() {
+		List<UserModel> m = UserModel.getCount();
+		setAttr("m", m);
+		renderJson();
+	}
+	
 	/**
 	 * 新闻表
 	 */
@@ -225,6 +242,13 @@ public class AdminControll extends Controller {
 		setAttr("result", result);
 		renderJson();
 	}
+	
+	//获取新闻数量
+		public void getNewscount() {
+			List<NewsModel> m = NewsModel.getCount();
+			setAttr("m", m);
+			renderJson();
+		}
 	
 	/**
 	 * 角色表
@@ -342,6 +366,12 @@ public class AdminControll extends Controller {
 		renderJson();
 	}
 	
+	public void getShowcount() {
+		List<ShowactivityModel> m = ShowactivityModel.getCount();
+		setAttr("m", m);
+		renderJson();
+	}
+	
 	/**
 	 * 留言表
 	 */
@@ -399,6 +429,12 @@ public class AdminControll extends Controller {
 		String id = getPara("id");
 		boolean result = MessageModel.delById(id);
 		setAttr("result", result);
+		renderJson();
+	}
+	
+	public void getMessagecount() {
+		List<MessageModel> m = MessageModel.getCount();
+		setAttr("m", m);
 		renderJson();
 	}
 	
@@ -618,8 +654,8 @@ public class AdminControll extends Controller {
 		String reward = getPara("reward");
 		String company = getPara("company");
 		String type = getPara("type");
-		int label = getParaToInt("label");
-		boolean result = InviteModel.save(name, workpro, addr, number, workexp, education, worktime, reward, company, type, label);
+//		int label = getParaToInt("label");
+		boolean result = InviteModel.save(name, workpro, addr, number, workexp, education, worktime, reward, company, type);
 		setAttr("result", result);
 		renderJson();
 	}
@@ -635,8 +671,8 @@ public class AdminControll extends Controller {
 		String reward = getPara("reward");
 		String company = getPara("company");
 		String type = getPara("type");
-		int label = getParaToInt("label");
-		boolean result = InviteModel.update(id, name, workpro, addr, number, workexp, education, worktime, reward, company, type, label);
+//		int label = getParaToInt("label");
+		boolean result = InviteModel.update(id, name, workpro, addr, number, workexp, education, worktime, reward, company, type);
 		setAttr("result", result);
 		renderJson();
 	}
@@ -763,6 +799,48 @@ public class AdminControll extends Controller {
 		String id = getPara("id");
 		boolean result = CandidateModel.delById(id);
 		setAttr("result", result);
+		renderJson();
+	}
+	
+	/**
+	 * 折线图
+	 */
+	public void getTubiaoinfo() {
+		List<TDvoBean> td = new ArrayList<TDvoBean>();
+		for(int i = 1; i<=12; i++) {
+			int num=0;
+			List<InviteModel> list = InviteModel.getListByYeanMonth(i);
+			for(InviteModel m:list) {
+				num++;
+			}
+			TDvoBean a = new TDvoBean();
+			a.setName("发布");
+			a.setValue(num);
+			td.add(a);
+		}
+		setAttr("td", td);
+		renderJson();
+	}
+	
+	/**
+	 * 饼图
+	 */
+	public void getBinTuinfo() {
+		List<TDvoBean> tb = new ArrayList<TDvoBean>();
+		List<TypeModel> names = TypeModel.getListName();
+		for(TypeModel m:names) {
+			TDvoBean a = new TDvoBean();
+			a.setName(m.toString());
+			String id = m.getId();
+			List<NewsModel> list = NewsModel.getListName(id);
+			int num=0;
+			for(NewsModel n: list) {
+				num++;
+			}
+			a.setValue(num);
+			tb.add(a);
+		}
+		setAttr("tb", tb);
 		renderJson();
 	}
 }

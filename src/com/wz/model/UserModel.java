@@ -129,4 +129,8 @@ public class UserModel extends Model<UserModel> {
 		sql.append("select *  from ").append(tableName);
 		return dao.find(sql.toString());
 	}
+	public static List<UserModel> getCount() {
+		String count = "select count(*) as data from "+ tableName;
+		return dao.find(count);
+	}
 }

@@ -1,6 +1,7 @@
 package com.wz.model;
 
 import java.util.Date;
+import java.util.List;
 
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Model;
@@ -91,5 +92,9 @@ public class ShowactivityModel extends Model<ShowactivityModel> {
 			e.printStackTrace();
 			return false;
 		}
+	}
+	public static List<ShowactivityModel> getCount() {
+		String count = "select count(*) as data from "+ tableName;
+		return dao.find(count);
 	}
 }

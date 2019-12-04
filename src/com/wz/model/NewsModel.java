@@ -1,6 +1,7 @@
 package com.wz.model;
 
 import java.util.Date;
+import java.util.List;
 
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Model;
@@ -229,5 +230,19 @@ public class NewsModel extends Model<NewsModel> {
 			m.setStatus(-1);
 		}
 		return m.update();
+	}
+	
+	public static List<NewsModel> getCount() {
+		String count = "select count(*) as data from news";
+		return dao.find(count);
+	}
+	public static List<NewsModel> getLists() {
+		String sql = "select * from "+tableName+" where status=0";
+		List<NewsModel> list = dao.find(sql);
+		return list;
+	}
+	public static List<NewsModel> getListName(String id) {
+		String sql = "select *, type from "+ tableName + " where status=0 and type = ? ";
+		return dao.find(sql, id);
 	}
 }

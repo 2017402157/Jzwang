@@ -11,83 +11,140 @@
 	<link rel="stylesheet" href="../layui/css/layui.css" media="all" />
 	<link rel="stylesheet" href="//at.alicdn.com/t/font_tnyc012u2rlwstt9.css" media="all" />
 	<link rel="stylesheet" href="../css/main.css" media="all" />
+	<link href="../../assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
+    <link href="../../assets/css/lib/chartist/chartist.min.css" rel="stylesheet">
+    <link href="../../assets/css/lib/font-awesome.min.css" rel="stylesheet">
+    <link href="../../assets/css/lib/themify-icons.css" rel="stylesheet">
+    <link href="../../assets/css/lib/owl.carousel.min.css" rel="stylesheet" />
+    <link href="../../assets/css/lib/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="../../assets/css/lib/weather-icons.css" rel="stylesheet" />
+    <link href="../../assets/css/lib/menubar/sidebar.css" rel="stylesheet">
+    <link href="../../assets/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/css/lib/helper.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
 	<style type="text/css" media="screen">
 
  </style>
 </head>
 <body class="childrenBody">
 <div class="layui-fluid">
-  	<div class="layui-col-sm6 layui-col-md3">
-  	<a href = "javascript:;" data-url="admin/openStudentInfo" >
-      <div class="layui-card" id="student">
-        <div class="layui-card-header">
-          学生管理
-          <span class="layui-badge layui-bg-blue layuiadmin-badge">人</span>
-        </div>
-        <div class="layui-card-body layuiadmin-card-list">
-          <p class="layuiadmin-big-font">33,555</p>
-          <p>
-            学生人数 
-            <span class="layuiadmin-span-color">10000人<i class="layui-icon"></i></span>
-          </p>
-        </div>
-      </div>
-      </a>
-    </div>
-    <div class="layui-col-sm6 layui-col-md3">
-    <a href = "javascript:;" data-url="admin/openTeacherInfo" >
-      <div class="layui-card">
-        <div class="layui-card-header">
-          教师管理
-          <span class="layui-badge layui-bg-cyan layuiadmin-badge">人</span>
-        </div>
-        <div class="layui-card-body layuiadmin-card-list">
-          <p class="layuiadmin-big-font">33,555</p>
-          <p>
-            教师人数 
-            <span class="layuiadmin-span-color">10% <i class="layui-icon"></i></span>
-          </p>
-        </div>
-      </div>
-      </a>
-    </div>
-    <div class="layui-col-sm6 layui-col-md3">
-    <a href = "javascript:;" data-url="admin/openStuRegisterInfo" >
-      <div class="layui-card">
-        <div class="layui-card-header">
-          签到管理
-          <span class="layui-badge layui-bg-green layuiadmin-badge">次</span>
-        </div>
-        <div class="layui-card-body layuiadmin-card-list">
+  	 <section id="main-content">
+                        <div class="row">
+                            <div class="col-lg-3">
+                            <a href="openNews">
+                                <div class="card">
+                                    <div class="stat-widget-one">
+                                        <div class="stat-icon dib"><i class="ti-money color-success border-success"></i></div>
+                                        <div class="stat-content dib">
+                                            <div class="stat-text">新闻数量</div>
+                                            <div class="stat-digit" id="news"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                             </a>
+                            </div>
+                            <div class="col-lg-3">
+                            <a href="openUser">
+                                <div class="card">
+                                    <div class="stat-widget-one">
+                                        <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i></div>
+                                        <div class="stat-content dib">
+                                            <div class="stat-text">用户数量</div>
+                                            <div class="stat-digit" id="user"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div class="col-lg-3">
+                            <a href="openMessage">
+                                <div class="card">
+                                    <div class="stat-widget-one">
+                                        <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i></div>
+                                        <div class="stat-content dib">
+                                            <div class="stat-text">留言数</div>
+                                            <div class="stat-digit" id="massage"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div class="col-lg-3">
+                            <a href="openShow">
+                                <div class="card">
+                                    <div class="stat-widget-one">
+                                        <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
+                                        <div class="stat-content dib">
+                                            <div class="stat-text">勤工俭学</div>
+                                            <div class="stat-digit" id="show"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                             </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="card">
+                                    <div class="card-title">
+                                        <h4>招聘数量分布</h4>
 
-          <p class="layuiadmin-big-font">999,666</p>
-          <p>
-            签到情况
-            <span class="layuiadmin-span-color">*** <i class="layui-icon"></i></span>
-          </p>
-        </div>
-      </div>
-      </a>
-    </div>
-    <div class="layui-col-sm6 layui-col-md3">
-    <a href = "javascript:;" data-url="admin/userinfo" >
-      <div class="layui-card">
-        <div class="layui-card-header">
-          用户管理
-          <span class="layui-badge layui-bg-orange layuiadmin-badge">人</span>
-        </div>
-        <div class="layui-card-body layuiadmin-card-list">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="ct-bar-chart m-t-30" id="speedChartMain"></div>
+                                    </div>
+                                </div>
+                            </div>
 
-          <p class="layuiadmin-big-font">66,666</p>
-          <p>
-            总数 
-            <span class="layuiadmin-span-color">5555 <i class="layui-icon"></i></span>
-          </p>
-        </div>
-      </div>
-      </a>
-    </div> 
-    <div id="tubiao" style="height:600px;"></div>  
+                            <div class="col-lg-4">
+                                <div class="card">
+
+                                    <div class="card-body">
+                                        <div class="ct-pie-chart" id="pie_echarts"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="card bg-primary">
+                                            <div class="weather-widget">
+                                                <div id="weather-one" class="weather-one p-22"><h4 style="color:white;">登录日志</h4></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="card">
+                                            <div class="testimonial-widget-one p-17">
+                                                <div class="testimonial-widget-one owl-carousel owl-theme">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /# column -->
+                            <div class="col-lg-8">
+                                <div class="card">
+                                    <div class="card-title pr">
+                                        <h4>最近留言</h4>
+
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table student-data-table m-t-20" id="masseage">
+                                                
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /# column -->
+                        </div>
+                    </section>  
 	<script type="text/javascript" src="../layui/layui.js"></script>
 	<script type="text/javascript" src="../js/echarts.min.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
