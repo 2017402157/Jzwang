@@ -109,6 +109,11 @@ public class NewsModel extends Model<NewsModel> {
 	public static NewsModel getNewsId(String id) {
 		return dao.findFirst("select * from " + tableName + " where id = ? ", id);
 	}
+	//分页
+	public static List<NewsModel>  getNewsTotal() {
+		List<NewsModel> list=dao.find("select count(*) as total from " + tableName + " where `status`=0");
+		return list;
+	}
 	/**
 	 * 按照标题查询
 	 * @param pageNumber

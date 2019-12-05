@@ -123,10 +123,16 @@ public class JzControl extends Controller{
 	 */
 	public void getNews() {
 //		String key = getPara("key");
-//		int limit = getParaToInt("limit");
-//		int page = getParaToInt("page");
-		Page<NewsModel> user = NewsModel.getList(1, 10, 0);
+		int limit = getParaToInt("limit");
+		int page = getParaToInt("page");
+		Page<NewsModel> user = NewsModel.getList(page,limit, 0);
 		setAttr("m", user.getList());
+		renderJson(); 
+	}
+	//·ÖÒ³
+	public void getNewsTotal() {
+//		
+		setAttr("total", NewsModel.getNewsTotal());
 		renderJson(); 
 	}
 	/**
