@@ -20,14 +20,6 @@
 <body class="childrenBody">
 	<form class="layui-form layui-form-pane" name="updateform">
 		<div class="layui-form-item">
-			<label class="layui-form-label">类型</label>
-			<div class="layui-input-inline">
-				<select name="type"  id="typeid" lay-filter="state">
-			      <option value="-1">请选择新闻类型</option>
-      		</select>
-			</div>
-		</div>
-		<div class="layui-form-item">
 			<div class="layui-input-inline">
 				<input type="hidden" class="layui-input layui-disabled" name="id" value="${(id)}">
 			</div>
@@ -58,7 +50,14 @@
 				<input type="text" class="layui-input" name="userid" lay-verify="required" placeholder="请输入作者"  autocomplete="off">
 			</div>
 		</div>
-		
+		<div class="layui-form-item">
+			<label class="layui-form-label">类型</label>
+			<div class="layui-input-inline">
+				<select name="type"  id="typeid" lay-filter="state">
+			      <option value="-1">请选择新闻类型</option>
+      		</select>
+			</div>
+		</div>
 		<div class="layui-form-item">
 			<div class="layui-input-block">
 				<button class="layui-btn" lay-submit="" lay-filter="update">立即提交</button>
@@ -71,10 +70,10 @@
  	<script type="text/javascript">
  		
 		 	setTimeout(function () {
-		 			UE.getEditor("editor").addListener("ready", function () {
+		 			UE.getEditor("editor", {zIndex: 100}).addListener("ready", function () {
 			 		
 			 		var content = document.getElementById("massage1").value;
-			        UE.getEditor('editor').setContent(content);
+			        UE.getEditor('editor', {zIndex: 100}).setContent(content);
 			 });
 		    }, 300);
  		
