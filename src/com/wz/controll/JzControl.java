@@ -39,8 +39,14 @@ public class JzControl extends Controller{
 		setAttr("m", user.getList());
 		renderJson(); 
 	}
+	//分页
+			public void getRecruitTotal() {
+//				
+				setAttr("total", InviteModel.getCount());
+				renderJson(); 
+			}
 	/**
-	 * 获取新闻数据
+	 * 获取首页招聘数据
 	 */
 	public void getRecruitListTop() {
 		Page<InviteModel> user = InviteModel.getListTop(1, 4);
@@ -88,6 +94,12 @@ public class JzControl extends Controller{
 		setAttr("m", user.getList());
 		renderJson(); 
 	}
+	//分页
+		public void getPhotosTotal() {
+//			
+			setAttr("total", ShowactivityModel.getCount());
+			renderJson(); 
+		}
 	/**
 	 * 打开剪影详情页面
 	 */
@@ -179,7 +191,7 @@ public class JzControl extends Controller{
 //		String key = getPara("key");
 //		int limit = getParaToInt("limit");
 //		int page = getParaToInt("page");
-		Page<ContactModel> user = ContactModel.getList(1, 10, "");
+		Page<ContactModel> user = ContactModel.getList(1, 1, "");
 		setAttr("m", user.getList());
 		renderJson(); 
 	}

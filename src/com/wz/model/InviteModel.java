@@ -103,6 +103,11 @@ public class InviteModel extends Model<InviteModel> {
 	public static InviteModel getById(String id) {
 		return dao.findFirst("select * from " + tableName + " where id = ?", id);
 	}
+	//·ÖÒ³
+	public static List<InviteModel> getCount() {
+		String count = "select count(*) as data from "+ tableName;
+		return dao.find(count);
+	}
 	
 	public static Page<InviteModel> getList(int pageNumber , int pageSize, String key) {
 		String select_sql = "select a.*,b.name as type,c.name as company ";

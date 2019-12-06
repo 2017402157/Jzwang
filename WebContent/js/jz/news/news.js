@@ -36,18 +36,18 @@
 									var d = data.m;
 									var arr = [];
 									    layui.each(d, function(index, item){
-//									    	var reg=/<img.+?src=('|")?([^'"]+)('|")?(?:\s+|>)/gim;
-//									    	arr1=[];
-//									    	while(tem=reg.exec(item.massage)){
-//									    		arr1.push(tem[2]);
-//									    	}
-//												
+									    	var reg=/<img.+?src=('|")?([^'"]+)('|")?(?:\s+|>)/gim;
+									    	arr1=[];
+									    	while(tem=reg.exec(item.massage)){
+									    		arr1.push(tem[2]);
+									    	}
+												
 									    	
 									      arr.push('<li>');
 									      arr.push("<div class='pad'>");
 									      arr.push("<div class='pic'>");
 									      arr.push("<a href='openNewsInfo?id="+item.id+"'>");
-//									      arr.push("<img src="+arr1[0]+">");
+									      arr.push("<img src="+arr1[0]+" height='250' width='165'/>");
 									      //arr.push("<img src="+item.massage.substring（.item.massage.indexOf('img src="')+1,item.massage.indexOf('"/>'))+"  alt=''>");
 									      arr.push("</a></div>");
 									      arr.push("<div class='bor'>");

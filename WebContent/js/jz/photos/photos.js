@@ -1,10 +1,13 @@
-layui.config({
-	base : "js/"
-}).use(['form','layer','jquery','laypage'],function(){
-	var form = layui.form,
-	layer = parent.layer === undefined ? layui.layer : parent.layer,
-	laypage = layui.laypage,
-	$ = layui.jquery;
+$.get("getNewsTotal", function(data){
+		var total=data.total[0].total;
+		 console.log("get:"+total); //得到当前页，以便向服务端请求对应页的数据。
+
+		 layui.config({
+				base : "js/"
+			}).use(['jquery','laypage','form'],function(){
+				var laypage = layui.laypage,
+				form = layui.form,
+				$ = layui.jquery;
 	//加载菜单栏
 	$.getJSON("../json/indexnvs.json", function(data){
 		var d = data;
@@ -18,8 +21,18 @@ layui.config({
 		$("#myindex2").append(arr2.join(''));
 		form.render();
 	});
+	
+	laypage.render({
+		  elem: 'mypage' //注意，这里 是 ID，不用加 # 号
+		  ,count: total //数据总数，从服务端得到
+		  ,limit:8
+		  ,jump: function(obj, first){
+			    //obj包含了当前分页的所有参数，比如：
+			    console.log(total); //得到当前页，以便向服务端请求对应页的数据。
+			    console.log(obj.limit); //得到每页显示的条数
+			  //加载页面数据
 	//加载页面数据
-	$.get("getPhotos", function(data){
+	$.get("getPhotos?page="+obj.curr+"&limit="+obj.limit, function(data){
 			var d = data.m;
 			var arr = [];
 			    layui.each(d, function(index, item){
@@ -39,8 +52,12 @@ layui.config({
 			form.render();
 		});
 		
-	  laypage.render({
-		  elem: 'mypage' //注意，这里 是 ID，不用加 # 号页数
-		  ,count: 50 //数据总数，从服务端得到
-		  });
+	//首次不执行
+    if(!first){
+      //do something
+    }
+		  }
+	  });
+	//  console.log($('#total').val()); //得到当前页，以便向服务端请求对应页的数据。
 })
+});
