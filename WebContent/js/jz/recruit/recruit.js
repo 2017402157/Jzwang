@@ -32,7 +32,7 @@ $.get("getNewsTotal", function(data){
 			    console.log(obj.limit); //得到每页显示的条数
 	
 	//加载页面数据
-	$.get("getRecruit", function(data){
+	$.get("getRecruit?page="+obj.curr+"&limit="+obj.limit, function(data){
 			var d = data.m;
 			var arr = [];
 			    layui.each(d, function(index, item){
@@ -62,6 +62,7 @@ $.get("getNewsTotal", function(data){
 	//首次不执行
     if(!first){
       //do something
+    	$('#myrecruit').empty();
     }
   }
 	  

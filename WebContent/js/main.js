@@ -51,9 +51,9 @@ layui.config({
 			arr.push('<li>');
 			arr.push("<div class='pic'>");
 			arr.push("<a href='openEditMessage?id="+item.id+"'>");
-			arr.push("<div style='float:right;width:32%;padding: 2px;font-size:20px;'>"+item.username+"</div>");
-			arr.push("<div style='float:right;width:32%;padding: 2px;font-size:20px;'>"+item.time.substring(0,11)+"</div>");
-			arr.push("<div style='float:right;width:32%;padding: 2px;font-size:20px;'>"+item.phone+"</div>");
+			arr.push("<div style='float:right;width:30%;padding: 2px;font-size:10px;'>"+item.username+"</div>");
+			arr.push("<div style='float:right;width:30%;padding: 2px;font-size:10px;'>"+item.time.substring(0,11)+"</div>");
+			arr.push("<div style='float:right;width:30%;padding: 2px;font-size:10px;'>"+item.phone+"</div>");
 			arr.push("</a></div><br></div><br>");
 			arr.push('</li>');
 		});
@@ -63,7 +63,7 @@ layui.config({
 	
 	 table.render({
 		    elem: '#logs',//渲染对象
-		    height: 'full-300',//表格高度
+		    height: 'full-22',//表格高度
 		    url: 'queryLogs', //数据接口
 		    where: {key: ''},//给后台传的参数
 		    page: true, //开启分页

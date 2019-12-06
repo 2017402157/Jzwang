@@ -25,38 +25,38 @@ $.get("getNewsTotal", function(data){
 	laypage.render({
 		  elem: 'mypage' //注意，这里 是 ID，不用加 # 号
 		  ,count: total //数据总数，从服务端得到
-		  ,limit:8
+		  ,limit:6
 		  ,jump: function(obj, first){
 			    //obj包含了当前分页的所有参数，比如：
 			    console.log(total); //得到当前页，以便向服务端请求对应页的数据。
 			    console.log(obj.limit); //得到每页显示的条数
-			  //加载页面数据
-	//加载页面数据
-	$.get("getPhotos?page="+obj.curr+"&limit="+obj.limit, function(data){
-			var d = data.m;
-			var arr = [];
-			    layui.each(d, function(index, item){
-			      arr.push("<li>");
-			      arr.push("<div class='card' data-groups='[&quot;nature&quot;]'><a href='openPhotosInfo?id="+item.id+"'>");
-			      arr.push("<figure class='pp-effect'>");
-			      arr.push("<img class='img-fluid' src='"+item.photor+"' alt='Nature'/>");
-			      arr.push("<figcaption>");
-			      arr.push("<div class='h4'>"+item.title+"</div>");
-			      arr.push("<p>"+item.time+"</p>");
-			      arr.push("</figcaption>");
-			      arr.push("</figure></a></div>");
-			      arr.push("</il>");
-			    });
-			    
-			$("#myphotos").append(arr.join(''));//从html  渲染
-			form.render();
-		});
+				//加载页面数据
+				$.get("getPhotos?page="+obj.curr+"&limit="+obj.limit, function(data){
+						var d = data.m;
+						var arr = [];
+						    layui.each(d, function(index, item){
+						      arr.push("<li>");
+						      arr.push("<div class='card' data-groups='[&quot;nature&quot;]'><a href='openPhotosInfo?id="+item.id+"'>");
+						      arr.push("<figure class='pp-effect'>");
+						      arr.push("<img class='img-fluid' src='"+item.photor+"' alt='Nature'/>");
+						      arr.push("<figcaption>");
+						      arr.push("<div class='h4'>"+item.title+"</div>");
+						      arr.push("<p>"+item.time+"</p>");
+						      arr.push("</figcaption>");
+						      arr.push("</figure></a></div>");
+						      arr.push("</il>");
+						    });
+						    
+						$("#myphotos").append(arr.join(''));//从html  渲染
+						form.render();
+					});
 		
-	//首次不执行
-    if(!first){
-      //do something
-    }
-		  }
+				//首次不执行
+			    if(!first){
+			      //do something
+			    	$('#myphotos').empty();
+			    }
+	}
 	  });
 	//  console.log($('#total').val()); //得到当前页，以便向服务端请求对应页的数据。
 })

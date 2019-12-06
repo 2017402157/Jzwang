@@ -70,7 +70,8 @@
 								
 						    //首次不执行
 						    if(!first){
-						      //do something
+						    	//do something
+						    	$('#list').empty();
 						    }
 						  }
 				 

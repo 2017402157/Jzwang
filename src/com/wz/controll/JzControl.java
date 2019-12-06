@@ -33,9 +33,9 @@ public class JzControl extends Controller{
 	 */
 	public void getRecruit() {
 //		String key = getPara("key");
-//		int limit = getParaToInt("limit");
-//		int page = getParaToInt("page");
-		Page<InviteModel> user = InviteModel.getList(1, 10, "");
+		int limit = getParaToInt("limit");
+		int page = getParaToInt("page");
+		Page<InviteModel> user = InviteModel.getList(page,limit, "");
 		setAttr("m", user.getList());
 		renderJson(); 
 	}
@@ -88,9 +88,9 @@ public class JzControl extends Controller{
 	 */
 	public void getPhotos() {
 //		String key = getPara("key");
-//		int limit = getParaToInt("limit");
-//		int page = getParaToInt("page");
-		Page<ShowactivityModel> user = ShowactivityModel.getList(1, 10, "");
+		int limit = getParaToInt("limit");
+		int page = getParaToInt("page");
+		Page<ShowactivityModel> user = ShowactivityModel.getList(page,limit, "");
 		setAttr("m", user.getList());
 		renderJson(); 
 	}
