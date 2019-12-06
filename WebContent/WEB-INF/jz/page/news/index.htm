@@ -16,7 +16,6 @@
 <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
 </head>
 <body>
-<input type="hidden" id="total" value="0">
 <div id="hd">
   <div class="wp">
     <div class="logo"><a href="index" ><img src="../../skin/images/logo.png"  alt=""></a></div>
@@ -108,13 +107,6 @@
   </ul>
 </div>
 <script type="text/javascript" src="../../skin/js/jquery.js" ></script> 
- <script type="text/javascript">
-	$.get("getNewsTotal", function(data){
-		console.log("qian:"+$('#total').val()); //得到当前页，以便向服务端请求对应页的数据。
-	$('#total').attr("value",data.total[0].total);
-	console.log("hou:"+$('#total').val()); //得到当前页，以便向服务端请求对应页的数据。
-});
-</script>
 <script type="text/javascript" src="../../skin/js/lib.js" ></script>
 <script type="text/javascript" src="../../layui/layui.js"></script>
 
