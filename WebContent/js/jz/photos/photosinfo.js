@@ -22,11 +22,13 @@ layui.config({
 			var d = data.m;
 			var arr = [];
 			      arr.push("<div class='h3 font-weight-normal'>"+d.title+"</div>");
-			      arr.push("<img class='img-fluid mt-4' src='"+d.photor+"'/>");
+			      arr.push("<img class='img-fluid mt-4' src='"+d.photor+"' height='1080' width='619'/>");
 			      arr.push("<div class='row mt-5'>");
 			      arr.push("<div class='col-md-3'>");
-			      arr.push("<div class='h5 pt-4'>Year</div>");
-			      arr.push("<p>"+d.time+"</p>");
+			      arr.push("<div class='h5'>标签</div><p>标签</p><a class='mr-1 badge badge-primary' href='#'>图片</a>");
+			      arr.push("<div class='h5 pt-4'>'Year'</div>");
+			      arr.push("<p>年份</p>");
+			      arr.push("<p>"+d.time.substring(0,4)+"</p>");
 			      arr.push("</div>");
 			      arr.push("<div class='col-md-9'>");
 			      arr.push("<p>"+d.massage+"</p>");
