@@ -197,5 +197,10 @@ public class InviteModel extends Model<InviteModel> {
 		sql.append(" where releasetime like '%" + m + "%'");
 		return dao.find(sql.toString());
 	}
+	public static Object getTotal() {
+		List<InviteModel> list=dao.find("select count(*) as total from " + tableName);
+		return list;
+	}
+	
 	
 }

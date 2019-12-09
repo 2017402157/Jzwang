@@ -32,6 +32,10 @@
 						    console.log(total); //得到当前页，以便向服务端请求对应页的数据。
 						    console.log(obj.limit); //得到每页显示的条数
 						  //加载页面数据
+						    if(!first){
+						    	//do something
+						    	$('#list').empty();
+						    }
 							$.get("getNews?page="+obj.curr+"&limit="+obj.limit, function(data){
 									var d = data.m;
 									var arr = [];
@@ -69,10 +73,7 @@
 								});
 								
 						    //首次不执行
-						    if(!first){
-						    	//do something
-						    	$('#list').empty();
-						    }
+						    
 						  }
 				 
 					  });

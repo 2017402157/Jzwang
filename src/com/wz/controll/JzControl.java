@@ -142,11 +142,19 @@ public class JzControl extends Controller{
 		renderJson(); 
 	}
 	//分页
-	public void getNewsTotal() {
-//		
+	public void getNewsTotal() {		
 		setAttr("total", NewsModel.getNewsTotal());
 		renderJson(); 
 	}
+	public void getPhotoTotal() {		
+		setAttr("total", ShowactivityModel.getTotal());
+		renderJson(); 
+	}
+	public void getInvTotal() {		
+		setAttr("total", InviteModel.getTotal());
+		renderJson(); 
+	}
+	
 	/**
 	 * 获取新闻数据
 	 */

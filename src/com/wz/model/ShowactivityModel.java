@@ -97,4 +97,8 @@ public class ShowactivityModel extends Model<ShowactivityModel> {
 		String count = "select count(*) as data from "+ tableName;
 		return dao.find(count);
 	}
+	public static Object getTotal() {
+		List<ShowactivityModel> list=dao.find("select count(*) as total from " + tableName);
+		return list;
+	}
 }
