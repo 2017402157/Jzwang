@@ -33,10 +33,10 @@ public class UploadsConteroll extends Controller {
         String extName = StringUtil.getFileExt(file.getName());
         String filePath = upFile.getUploadPath();
         String fileName = System.currentTimeMillis() + extName;
-        file.renameTo(new File(filePath+"\\"+fileName));
+        file.renameTo(new File(filePath+"/"+fileName));
         
         JSONObject json = new JSONObject();
-        json.put("src", "\\upload\\"+fileName);
+        json.put("src", "/upload/"+fileName);
         json.put("title", fileName);
         
         setAttr("msg", "上传成功");
