@@ -2,6 +2,7 @@ package com.wz.controll;
 
 import com.jfinal.core.Controller;
 import com.jfinal.plugin.activerecord.Page;
+import com.wz.model.CandidateModel;
 import com.wz.model.ContactModel;
 import com.wz.model.InviteModel;
 import com.wz.model.MessageModel;
@@ -226,12 +227,15 @@ public class JzControl extends Controller{
 	 * 保存求职数据
 	 */
 	public void addjob() {
-		String title = getPara("title");
-		String username = getPara("username");
+		String name = getPara("name");
+		int sex = getParaToInt("sex");
 		String phone = getPara("phone");
-		String massage = getPara("massage");
-		String email = getPara("email");
-		boolean result = MessageModel.save(title, username, massage, phone, email);
+		String addr = getPara("addr");
+		int age = getParaToInt("age");
+		String qq = getPara("qq");
+		String weixin = getPara("weixin");
+		String type = getPara("type");
+		boolean result = CandidateModel.save(name, sex, phone, addr, age, qq, weixin, type);
 		setAttr("result", result);
 		renderJson();
 	}

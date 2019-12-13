@@ -99,7 +99,7 @@ legend {
 										<label for="username">姓名</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" name="username" id="username"
+										<input type="text" name="name" id="name"
 											class="layui-input" placeholder="请输入你的姓名" />
 									</div>
 								</div>
@@ -108,11 +108,11 @@ legend {
 										<label for="field6">性别</label>:
 									</div>
 									<div class="layui-input-inline">
-										<select id="field6" name="field6" class="layui-input-inline"
+										<select id="sex" name="sex" class="layui-input-inline"
 											title="请选择你的性别">
-											<option>点击选择</option>
-											<option>男</option>
-											<option>女</option>
+											<option value="-1">点击选择</option>
+											<option value="0">男</option>
+											<option value="1">女</option>
 										</select>
 									</div>
 								</div>
@@ -122,8 +122,8 @@ legend {
 										<label for="field5">年龄</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" class="layui-input" name="username"
-											id="username" placeholder="请输入您的年龄" />
+										<input type="text" class="layui-input" name="age"
+											id="age" placeholder="请输入您的年龄" />
 									</div>
 								</div>
 								<div class="form-row">
@@ -131,7 +131,7 @@ legend {
 										<label for="field5">学校</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" name="field5" id="field5"
+										<input type="text" name="addr" id="addr"
 											class="layui-input" placeholder="请输入你的学校" />
 									</div>
 								</div>
@@ -140,7 +140,7 @@ legend {
 										<label for="field5">手机</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" name="field5" id="field5"
+										<input type="text" name="phone" id="phone"
 											class="layui-input" placeholder="请输入你的手机号码" />
 									</div>
 								</div>
@@ -149,7 +149,7 @@ legend {
 										<label for="field5">微信</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" name="field5" id="field5"
+										<input type="text" name="weixin" id="weixin"
 											class="layui-input" placeholder="请输入你的微信号码" />
 									</div>
 								</div>
@@ -158,7 +158,7 @@ legend {
 										<label for="field5">QQ账号</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" name="field5" id="field5"
+										<input type="text" name="qq" id="qq"
 											class="layui-input" placeholder="请输入你的QQ号码" />
 									</div>
 								</div>
@@ -166,19 +166,19 @@ legend {
 									<div class="field-label">
 										<label for="field6">求职类型</label>:
 									</div>
-									<div class="field-widget">
-										<select id="field6" name="field6" class="validate-selection"
+									<div class="layui-input-inline">
+										<select id="type" name="type" class="layui-input-inline"
 											title="请选择你的类型">
-											<option>点击选择</option>
-											<option>兼职</option>
-											<option>全职</option>
+											<option value="-1">点击选择</option>
+											<option value="0">兼职</option>
+											<option value="1">全职</option>
 										</select>
 									</div>
 								</div>
 
 								<div class="layui-form-item">
 									<div class="layui-input-block">
-										<button class="layui-btn" lay-submit="" lay-filter="add">立即提交</button>
+										<button class="layui-btn" lay-submit="" lay-filter="jobadd">立即提交</button>
 										<button type="reset" class="layui-btn layui-btn-primary">重置</button>
 									</div>
 								</div>

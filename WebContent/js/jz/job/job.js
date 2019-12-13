@@ -20,10 +20,10 @@ layui.config({
 	});
 		
 	  
-	 	form.on("submit(add)",function(data){
+	 	form.on("submit(jobadd)",function(data){
 	 		console.log(data.field);
 	 		 $.ajax({//异步请求返回给后台
-		    	  url:'addContact',
+		    	  url:'addjob',
 		    	  type:'POST',
 		    	  data:data.field,
 		    	  dataType:'json',
