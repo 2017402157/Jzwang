@@ -786,7 +786,11 @@ public class AdminControll extends Controller {
 		int sex = getParaToInt("sex");
 		String phone = getPara("phone");
 		String addr = getPara("addr");
-		boolean result = CandidateModel.save(name, sex, phone, addr);
+		int age = getParaToInt("age");
+		String qq = getPara("qq");
+		String weixin = getPara("weixin");
+		String type = getPara("type");
+		boolean result = CandidateModel.save(name, sex, phone, addr, age, qq, weixin, type);
 		setAttr("result", result);
 		renderJson();
 	}
@@ -796,7 +800,11 @@ public class AdminControll extends Controller {
 		int sex = getParaToInt("sex");
 		String phone = getPara("phone");
 		String addr = getPara("addr");
-		boolean result = CandidateModel.update(id, name, sex, phone, addr);
+		int age = getParaToInt("age");
+		String qq = getPara("qq");
+		String weixin = getPara("weixin");
+		String type = getPara("type");
+		boolean result = CandidateModel.update(id, name, sex, phone, addr, age, qq, weixin, type);
 		setAttr("result", result);
 		renderJson();
 	}

@@ -16,7 +16,8 @@ layui.config({
 	    limit: 10,//每页显示信息条数
 	    id: 'testReload',
 	    cols: [[ //表头
-	       {field: 'name', title: '姓名', align:'center', sort: true, fixed: 'left'} 
+	       {field: 'name', title: '姓名', align:'center', sort: true, fixed: 'left'}
+	       ,{field: 'age', title: '年龄',align:'center' }
 	      ,{field: 'sex', title: '性别', align:'center',
 	    	  templet:function(d){
 		    	  if(d.sex==0){
@@ -27,7 +28,18 @@ layui.config({
 		      }
 	      } 
 	      ,{field: 'phone', title: '联系电话',align:'center' }
-	      ,{field: 'addr', title: '邮箱',align:'center' }
+	      ,{field: 'addr', title: '地址',align:'center' }
+	      ,{field: 'qq', title: 'QQ',align:'center' }
+	      ,{field: 'weixin', title: '微信',align:'center' }
+	      ,{field: 'type', title: '求职类型', align:'center',
+	    	  templet:function(d){
+		    	  if(d.type==0){
+		    		  return '<span style="color: blue">兼职</span>'
+		    	  }else{
+		    		  return '<span style="color: red" >全职</span>'
+		    	  }
+		      }
+	      } 
 	      ,{fixed: 'right', align:'center',title:'操作', toolbar: '#barDemo'}
 	    ]]
 	  });

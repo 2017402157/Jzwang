@@ -39,6 +39,30 @@ public class CandidateModel extends Model<CandidateModel> {
 	public void setAddr(String addr) {
 		set("addr", addr);
 	}
+	public String getWeixin() {
+		return get("weixin");
+	}
+	public void setWeixin(String weixin) {
+		set("weixin", weixin);
+	}
+	public String getQQ() {
+		return get("qq");
+	}
+	public void setQQ(String qq) {
+		set("qq", qq);
+	}
+	public String getType() {
+		return get("type");
+	}
+	public void setType(String type) {
+		set("type", type);
+	}
+	public int getAge() {
+		return get("age");
+	}
+	public void setAge(int age) {
+		set("age", age);
+	}
 	
 	public static CandidateModel dao = new CandidateModel();
 	
@@ -56,22 +80,30 @@ public class CandidateModel extends Model<CandidateModel> {
 		return dao.paginate(pageNumber, pageSize, select_sql, from_sql.toString());
 	}
 	
-	public static boolean save(String name, int sex, String phone, String addr) {
+	public static boolean save(String name, int sex, String phone, String addr, int age, String qq, String weixin, String type) {
 		CandidateModel m = new CandidateModel();
 		m.setId(StringUtil.getId());
 		m.setName(name);
 		m.setSex(sex);
 		m.setPhone(phone);
 		m.setAddr(addr);
+		m.setAge(age);
+		m.setQQ(qq);
+		m.setWeixin(weixin);
+		m.setType(type);
 		return m.save();
 	}
 	
-	public static boolean update(String id, String name, int sex, String phone, String addr) {
+	public static boolean update(String id, String name, int sex, String phone, String addr, int age, String qq, String weixin, String type) {
 		CandidateModel m = CandidateModel.getById(id);
 		m.setName(name);
 		m.setSex(sex);
 		m.setPhone(phone);
 		m.setAddr(addr);
+		m.setAge(age);
+		m.setQQ(qq);
+		m.setWeixin(weixin);
+		m.setType(type);
 		return m.update();
 	}
 	

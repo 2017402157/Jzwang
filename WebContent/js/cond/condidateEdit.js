@@ -14,9 +14,13 @@ layui.config({
 //			var obj = $.parseJSON(m.permission);
 	        //执行加载数据的方法
 			$("input[name='name']").val(m.name);
+			$("input[name='age']").val(m.age);
 			$("input[name='sex']").val(m.sex);
 			$("input[name='phone']").val(m.phone);
 			$("input[name='addr']").val(m.addr);
+			$("input[name='qq']").val(m.qq);
+			$("input[name='weixin']").val(m.weixin);
+			$("input[name='type']").val(m.type);
 		})
 
  	form.on("submit(update)",function(data){
