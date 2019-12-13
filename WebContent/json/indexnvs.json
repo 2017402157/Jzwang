@@ -11,7 +11,10 @@
 	"title" : "新闻动态",
 	"href" : "news"
 },{
-	"title" : "关于我们",
+	"title" : "求职&招聘",
+	"href" : "job"
+},{
+	"title" : "联系我们",
 	"href" : "contact"
 }
 ]

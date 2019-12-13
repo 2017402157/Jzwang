@@ -203,7 +203,9 @@ public class JzControl extends Controller{
 		setAttr("m", user.getList());
 		renderJson(); 
 	}
-	
+	/**
+	 * 保存联系我们数据
+	 */
 	public void addContact() {
 		String title = getPara("title");
 		String username = getPara("username");
@@ -214,5 +216,38 @@ public class JzControl extends Controller{
 		setAttr("result", result);
 		renderJson();
 	}
+	/**
+	 *求职&招聘
+	 **/
+	public void job() {
+		render("page/job/index.htm");
+	}
+	/**
+	 * 保存求职数据
+	 */
+	public void addjob() {
+		String title = getPara("title");
+		String username = getPara("username");
+		String phone = getPara("phone");
+		String massage = getPara("massage");
+		String email = getPara("email");
+		boolean result = MessageModel.save(title, username, massage, phone, email);
+		setAttr("result", result);
+		renderJson();
+	}
+	/**
+	 * 保存招聘数据
+	 */
+	public void addrecruitment() {
+		String title = getPara("title");
+		String username = getPara("username");
+		String phone = getPara("phone");
+		String massage = getPara("massage");
+		String email = getPara("email");
+		boolean result = MessageModel.save(title, username, massage, phone, email);
+		setAttr("result", result);
+		renderJson();
+	}
+	
 
 }

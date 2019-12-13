@@ -6,7 +6,7 @@ function initMap(){
     }
     function createMap(){ 
       map = new BMap.Map("map"); 
-      map.centerAndZoom(new BMap.Point(107.88766,26.523026),17);//107.88766,26.523026
+      map.centerAndZoom(new BMap.Point(107.894801,26.535576),17);//107.88766,26.523026
     }
     function setMapEvent(){
       map.enableScrollWheelZoom();
@@ -21,7 +21,7 @@ function initMap(){
     }
     function addMapOverlay(){
       var markers = [
-        {content:"",title:"",imageOffset: {width:-46,height:-21},position:{lat:26.523026,lng:107.88766}}
+        {content:"",title:"",imageOffset: {width:-46,height:-21},position:{lat:26.535576,lng:107.894801}}
       ];
       for(var index = 0; index < markers.length; index++ ){
         var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
