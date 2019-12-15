@@ -51,6 +51,37 @@ layui.config({
 	 		
 	 		return false;
 	 	})
+	 	form.on("submit(add)",function(data){
+	 		console.log(data.field);
+	 		 $.ajax({//异步请求返回给后台
+		    	  url:'add',
+		    	  type:'POST',
+		    	  data:data.field,
+		    	  dataType:'json',
+		    	  success:function(d){
+		    		
+		    		//墨绿深蓝风
+
+		    		  layer.alert('感谢您的来信，我们会第一时间于您联系，谢谢！', {
+		    		    skin: 'layui-layer-molv' //样式类名
+		    		    ,closeBtn: 0
+		    		    ,anim: 4 //动画类型
+		    		  }, function(){
+		    			  parent.location.reload();	
+		    		    });
+				  	
+		    	  },
+		    	  error:function(XMLHttpRequest, textStatus, errorThrown){
+		    		  top.layer.msg('保存失败！！！服务器有问题！！！！<br>请检测服务器是否启动？', {
+		    		        time: 20000, //20s后自动关闭
+		    		        btn: ['知道了']
+		    		      });
+		           }
+		      });
+	 		 
+	 		
+	 		return false;
+	 	})
 	  
 	  
 	  

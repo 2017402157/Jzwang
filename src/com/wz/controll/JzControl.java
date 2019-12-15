@@ -235,14 +235,15 @@ public class JzControl extends Controller{
 		String qq = getPara("qq");
 		String weixin = getPara("weixin");
 		String type = getPara("type");
-		boolean result = CandidateModel.save(name, sex, phone, addr, age, qq, weixin, type);
+		String jobmassage = getPara("jobmassage");
+		boolean result = CandidateModel.save(name, sex, phone, addr, age, qq, weixin, type, jobmassage);
 		setAttr("result", result);
 		renderJson();
 	}
 	/**
 	 * ±£´æÕÐÆ¸Êý¾Ý
 	 */
-	public void addrecruitment() {
+	public void add() {
 		String title = getPara("title");
 		String username = getPara("username");
 		String phone = getPara("phone");
