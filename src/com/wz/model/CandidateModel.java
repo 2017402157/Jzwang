@@ -1,5 +1,8 @@
 package com.wz.model;
 
+import java.util.Date;
+import java.util.List;
+
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Model;
 import com.jfinal.plugin.activerecord.Page;
@@ -63,6 +66,30 @@ public class CandidateModel extends Model<CandidateModel> {
 	public void setAge(int age) {
 		set("age", age);
 	}
+	public int getStatus() {
+		return get("status");
+	}
+	public void setStatus(int status) {
+		set("status", status);
+	}
+	public Date getCreattime() {
+		return get("creattime");
+	}
+	public void setCreattime(Date creattime) {
+		set("creattime", creattime);
+	}
+	public Date getReleastime() {
+		return get("releastime");
+	}
+	public void setReleastime(Date releastime) {
+		set("releastime", releastime);
+	}
+	public String getJobmessage() {
+		return get("jobmessage");
+	}
+	public void setJobmessage(String jobmessage) {
+		set("jobmessage", jobmessage);
+	}
 	
 	public static CandidateModel dao = new CandidateModel();
 	
@@ -80,21 +107,24 @@ public class CandidateModel extends Model<CandidateModel> {
 		return dao.paginate(pageNumber, pageSize, select_sql, from_sql.toString());
 	}
 	
-	public static boolean save(String name, int sex, String phone, String addr, int age, String qq, String weixin, String type) {
+	public static boolean save(String name, int sex, String phone, String addr, int age, String qq, String weixin, String type, String jobmessage) {
 		CandidateModel m = new CandidateModel();
 		m.setId(StringUtil.getId());
 		m.setName(name);
 		m.setSex(sex);
 		m.setPhone(phone);
 		m.setAddr(addr);
+		m.setCreattime(new Date());
 		m.setAge(age);
 		m.setQQ(qq);
 		m.setWeixin(weixin);
 		m.setType(type);
+		m.setStatus(1);
+		m.setJobmessage(jobmessage);
 		return m.save();
 	}
 	
-	public static boolean update(String id, String name, int sex, String phone, String addr, int age, String qq, String weixin, String type) {
+	public static boolean update(String id, String name, int sex, String phone, String addr, int age, String qq, String weixin, String type, String jobmessage) {
 		CandidateModel m = CandidateModel.getById(id);
 		m.setName(name);
 		m.setSex(sex);
@@ -104,6 +134,7 @@ public class CandidateModel extends Model<CandidateModel> {
 		m.setQQ(qq);
 		m.setWeixin(weixin);
 		m.setType(type);
+		m.setJobmessage(jobmessage);
 		return m.update();
 	}
 	
@@ -120,5 +151,16 @@ public class CandidateModel extends Model<CandidateModel> {
 			e.printStackTrace();
 			return false;
 		}
+	}
+	public static boolean checkCand(String id) {
+		CandidateModel m = CandidateModel.getById(id);
+		m.setReleastime(new Date());
+		m.setStatus(0);
+		return m.update();
+	}
+	public static List<CandidateModel> getLists() {
+		String sql = "select * from "+tableName+" where status=0";
+		List<CandidateModel> list = dao.find(sql);
+		return list;
 	}
 }

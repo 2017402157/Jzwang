@@ -21,18 +21,6 @@ layui.config({
 	      ,{field: 'userid', title: '作者',align:'center' }
 	      ,{field: 'creattime', title: '编写时间',align:'center' }
 	      ,{field: 'releastime', title: '发布时间',align:'center' }
-	      ,{field: 'status', title: '状态',align:'center',
-	    	  templet: function(d){
-	    		  var arr = new Array();
-	    		  if(d.status == 0){
-	    			  arr.push("<a class='layui-btn layui-btn-xs layui-bg-blue'><i class='layui-icon'>&#xe642;</i>发布中</a>");
-	    		  }
-	    		  else{
-	    			  arr.push("<a class='layui-btn layui-btn-xs layui-bg-red'><i class='layui-icon'>&#xe642;</i>未审核</a>");
-	    		  }
-	    		  return arr.join("\n");
-	    	  }
-	      }
 	      ,{field: 'type', title: '类型',align:'center' }
 	      ,{field: 'outline', title: '概要',align:'center' }
 	      ,{fixed: 'right', align:'center',title:'操作',

@@ -116,4 +116,5 @@ public class MessageModel extends Model<MessageModel> {
 		String count = "select * from "+ tableName +" ORDER BY time DESC limit 0, 8" ;
 		return dao.find(count);
 	}
+	
 }

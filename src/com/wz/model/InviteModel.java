@@ -1,12 +1,25 @@
 package com.wz.model;
 
+import java.io.File;
+import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import com.jfinal.aop.Before;
 import com.jfinal.plugin.activerecord.Db;
+import com.jfinal.plugin.activerecord.IAtom;
 import com.jfinal.plugin.activerecord.Model;
 import com.jfinal.plugin.activerecord.Page;
+import com.jfinal.plugin.activerecord.tx.Tx;
+import com.wudi.model.ParentsModel;
+import com.wudi.model.StudentModel;
+import com.wudi.model.TeacherModel;
+import com.wudi.model.UserModel;
+import com.wudi.plugin.BaiduHttpPlugin;
+import com.wudi.util.Util;
 import com.wz.util.StringUtil;
 
 public class InviteModel extends Model<InviteModel> {
@@ -201,6 +214,24 @@ public class InviteModel extends Model<InviteModel> {
 		List<InviteModel> list=dao.find("select count(*) as total from " + tableName);
 		return list;
 	}
+	public static boolean saves(String name, String workpro, String addr, int number, String workexp, String education,
+			String worktime, String reward, String company, String type) {
+		InviteModel m = new InviteModel();
+		m.setId(StringUtil.getId());
+		m.setName(name);
+		m.setWorkpro(workpro);
+		m.setAddr(addr);
+		m.setNumber(number);
+		m.setWorkexp(workexp);
+		m.setEducation(education);
+		m.setWorktime(worktime);
+		m.setReward(reward);
+		m.setReleasetime(new Date());
+		m.setCompany(company);
+		m.setType(type);
+		return m.save();
+	}
+	
 	
 	
 }

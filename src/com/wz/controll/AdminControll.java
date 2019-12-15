@@ -790,7 +790,8 @@ public class AdminControll extends Controller {
 		String qq = getPara("qq");
 		String weixin = getPara("weixin");
 		String type = getPara("type");
-		boolean result = CandidateModel.save(name, sex, phone, addr, age, qq, weixin, type);
+		String jobmessage = getPara("jobmessage");
+		boolean result = CandidateModel.save(name, sex, phone, addr, age, qq, weixin, type, jobmessage);
 		setAttr("result", result);
 		renderJson();
 	}
@@ -804,7 +805,8 @@ public class AdminControll extends Controller {
 		String qq = getPara("qq");
 		String weixin = getPara("weixin");
 		String type = getPara("type");
-		boolean result = CandidateModel.update(id, name, sex, phone, addr, age, qq, weixin, type);
+		String jobmessage = getPara("jobmessage");
+		boolean result = CandidateModel.update(id, name, sex, phone, addr, age, qq, weixin, type, jobmessage);
 		setAttr("result", result);
 		renderJson();
 	}
@@ -813,6 +815,13 @@ public class AdminControll extends Controller {
 		boolean result = CandidateModel.delById(id);
 		setAttr("result", result);
 		renderJson();
+	}
+	public void checkCand() {
+		String id = getPara("id");
+		boolean result = CandidateModel.checkCand(id);
+		setAttr("result", result);
+		renderJson();
+		
 	}
 	
 	/**

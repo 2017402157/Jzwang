@@ -21,6 +21,9 @@ layui.config({
 			$("input[name='qq']").val(m.qq);
 			$("input[name='weixin']").val(m.weixin);
 			$("input[name='type']").val(m.type);
+			$("input[name='creattime']").val(m.creattime);
+			$("input[name='releasetime']").val(m.releasetime);
+			$("input[name='jobmessage']").val(m.jobmessage);
 		})
 
  	form.on("submit(update)",function(data){

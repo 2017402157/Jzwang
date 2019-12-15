@@ -3,6 +3,7 @@ package com.wz.controll;
 import com.jfinal.core.Controller;
 import com.jfinal.plugin.activerecord.Page;
 import com.wz.model.CandidateModel;
+import com.wz.model.CompanyModel;
 import com.wz.model.ContactModel;
 import com.wz.model.InviteModel;
 import com.wz.model.MessageModel;
@@ -234,8 +235,9 @@ public class JzControl extends Controller{
 		int age = getParaToInt("age");
 		String qq = getPara("qq");
 		String weixin = getPara("weixin");
+		String jobmessage = getPara("jobmessage");
 		String type = getPara("type");
-		boolean result = CandidateModel.save(name, sex, phone, addr, age, qq, weixin, type);
+		boolean result = CandidateModel.save(name, sex, phone, addr, age, qq, weixin, type, jobmessage);
 		setAttr("result", result);
 		renderJson();
 	}
@@ -243,12 +245,22 @@ public class JzControl extends Controller{
 	 * ±£´æÕÐÆ¸Êý¾Ý
 	 */
 	public void addrecruitment() {
-		String title = getPara("title");
-		String username = getPara("username");
+		String name = getPara("name");
+		String workpro = getPara("workpro");
+		String addr = getPara("addr");
+		int number = getParaToInt("number");
+		String workexp = getPara("workexp");
+		String education = getPara("education");
+		String worktime = getPara("worktime");
+		String reward = getPara("reward");
+		String company = getPara("company");
+		String type = getPara("type");
+		String brief = getPara("brief");
 		String phone = getPara("phone");
-		String massage = getPara("massage");
 		String email = getPara("email");
-		boolean result = MessageModel.save(title, username, massage, phone, email);
+		boolean res = CompanyModel.save(company, brief, phone, email);
+		boolean result = InviteModel.saves(name, workpro, addr, number, workexp, education, worktime, reward, company, type);
+		setAttr("res", res);
 		setAttr("result", result);
 		renderJson();
 	}
