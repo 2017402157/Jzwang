@@ -174,10 +174,9 @@ legend {
 									<div class="field-label">
 										<label for="text">求职意向</label>:
 									</div>
-									<div class="field-widget">
-									
-										<input type="text" required lay-verify="required" name="jobmassage" id="jobmassage"
-											class="layui-input" placeholder="请输入你的意向" />
+									<div class="layui-input-block">
+										<textarea  type="text" required lay-verify="required" name="jobmessage" id="jobmessage"
+											class="layui-input"  placeholder="请输入内容" class="layui-textarea"></textarea>
 									</div>
 								</div>
 
@@ -202,7 +201,7 @@ legend {
 										<label for="username">企业全称</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" name="username" id="username"
+										<input type="text" name="company" id="company"
 											class="layui-input" placeholder="填写营业执照对应企业全称" />
 									</div>
 								</div>
@@ -211,7 +210,7 @@ legend {
 										<label for="username">企业简介</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" name="username" id="username"
+										<input type="text" name="brief" id="brief"
 											class="layui-input" placeholder="简短的介绍你的企业" />
 									</div>
 								</div>
@@ -220,7 +219,7 @@ legend {
 										<label for="username">招聘职位</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" name="username" id="username"
+										<input type="text" name="name" id="name"
 											class="layui-input" placeholder="" />
 									</div>
 								</div>
@@ -229,16 +228,16 @@ legend {
 										<label for="username">职位介绍</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" name="username" id="username"
+										<input type="text" name="workpro" id="workpro"
 											class="layui-input" placeholder="" />
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="field-label">
-										<label for="field6">职位类型</label>:
+										<label for="jobtype">职位类型</label>:
 									</div>
 									<div class="field-widget">
-										<select id="field6" name="field6" class="validate-selection">
+										<select id="jobtype" name="jobtype" class="validate-selection">
 											<option>点击选择</option>
 											<option>兼职</option>
 											<option>全职</option>
@@ -250,56 +249,55 @@ legend {
 										<label for="field5">招聘要求</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" class="layui-input" name="username"
-											id="username" placeholder="" />
+										<input type="text" class="layui-input" name="education"
+											id="education" placeholder="" />
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="field-label">
-										<label for="field5">招聘人数</label>:
+										<label for="number">招聘人数</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" name="field5" id="field5"
+										<input type="text" name="number" id="number"
 											class="layui-input" placeholder="" />
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="field-label">
-										<label for="field5">工作时间</label>:
+										<label for="worktime">工作时间</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" name="field5" id="field5"
+										<input type="text" name="worktime" id="worktime"
 											class="layui-input" placeholder="" />
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="field-label">
-										<label for="field5">工资待遇</label>:
+										<label for="reward">工资待遇</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" name="field5" id="field5"
+										<input type="text" name="reward" id="reward"
 											class="layui-input" placeholder="" />
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="field-label">
-										<label for="field6">工资发放方式</label>:
+										<label for="Settle">工资发放方式</label>:
 									</div>
 									<div class="field-widget">
-										<select id="field6" name="field6" class="validate-selection">
+										<select id="Settle" name="Settle" class="validate-selection">
 											<option>点击选择</option>
 											<option>工资日结</option>
 											<option>活动做完同一结算</option>
 										</select>
 									</div>
 								</div>
-								
 								<div class="form-row">
 									<div class="field-label">
-										<label for="field5">工作地址</label>:
+										<label for="addr">工作地址</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" name="field5" id="field5"
+										<input type="text" name="addr" id="addr"
 											class="layui-input" placeholder="" />
 									</div>
 								</div>
@@ -308,37 +306,45 @@ legend {
 										<label for="field5">联系人姓名</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" name="field5" id="field5"
+										<input type="text" name="linkman" id="linkman"
 											class="layui-input" placeholder="" />
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="field-label">
-										<label for="field5">公司职务</label>:
+										<label for="position">公司职务</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" name="field5" id="field5"
+										<input type="text" name="position" id="position"
 											class="layui-input" placeholder="" />
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="field-label">
-										<label for="field5">手机</label>:
+										<label for="phone">手机</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" name="field5" id="field5"
-											class="layui-input" placeholder="" />
+										<input type="text" name="phone" id="phone" class="layui-input" placeholder="" />
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="field-label">
-										<label for="field5">微信号</label>:
+										<label for="weixin">微信号</label>:
 									</div>
 									<div class="field-widget">
-										<input type="text" name="field5" id="field5"
-											class="layui-input" placeholder="" />
+										<input type="text" name="weixin" id="weixin" class="layui-input" placeholder="" />
 									</div>
 								</div>
+<!-- 图片上传有问题只是 -->
+								<div class="layui-upload">
+									<button type="button" class="layui-btn" name="datum" id="datum">上传图片</button>
+									<div class="layui-upload-list">
+										<img class="layui-upload-img" id="demo1">
+										<p id="demoText"></p>
+									</div>
+								</div>
+<!-- 收银台 -->
+
 
 								<div class="layui-form-item">
 									<div class="layui-input-block">

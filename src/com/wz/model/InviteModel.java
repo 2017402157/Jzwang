@@ -14,12 +14,6 @@ import com.jfinal.plugin.activerecord.IAtom;
 import com.jfinal.plugin.activerecord.Model;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.tx.Tx;
-import com.wudi.model.ParentsModel;
-import com.wudi.model.StudentModel;
-import com.wudi.model.TeacherModel;
-import com.wudi.model.UserModel;
-import com.wudi.plugin.BaiduHttpPlugin;
-import com.wudi.util.Util;
 import com.wz.util.StringUtil;
 
 public class InviteModel extends Model<InviteModel> {
