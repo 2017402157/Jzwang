@@ -75,6 +75,10 @@ public class CompanyModel extends Model<CompanyModel> {
 	
 	public static CompanyModel dao = new CompanyModel();
 	
+	public static CompanyModel getByName(String name) {
+		return dao.findFirst("select * from " + tableName + " where name = ?", name);
+	}
+	
 	public static CompanyModel getById(String id) {
 		return dao.findFirst("select * from " + tableName + " where id = ?", id);
 	}

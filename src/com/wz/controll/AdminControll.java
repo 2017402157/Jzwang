@@ -644,7 +644,7 @@ public class AdminControll extends Controller {
 	}
 	public void getInvite() {
 		String id = getPara("id");
-		InviteModel result = InviteModel.getById(id);
+		InviteModel result = InviteModel.getByIds(id);
 		setAttr("result", result);
 		renderJson();
 	}

@@ -265,8 +265,8 @@ public class JzControl extends Controller{
 		String email = getPara("email");
 		String settle = getPara("settle");
 		boolean res = CompanyModel.save(company, brief, phone, email, datum, linkman, qq, weixin, position);
-		CompanyModel m = new CompanyModel();
-		String companys = m.getId();
+		CompanyModel me = CompanyModel.getByName(company);
+		String companys = me.getId();
 		boolean result = InviteModel.saves(name, workpro, addr, number, workexp, education, worktime, reward, companys, type, settle);
 		setAttr("res", res);
 		setAttr("result", result);
