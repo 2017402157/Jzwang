@@ -25,13 +25,14 @@ layui.config({
 			$("input[name='type']").val(m.type);
 			$("input[name='settle']").val(m.settle);
 			$("input[name='creattime']").val(m.creattime);
+			$("input[name='releasetime']").val(m.releasetime);
 			$("input[name='brief']").val(m.brief);
 			$("input[name='linkman']").val(m.linkman);
 			$("input[name='position']").val(m.position);
 			$("input[name='datum']").val(m.datum);
 			$("input[name='email']").val(m.email);
 			$("input[name='weixin']").val(m.weixin);
-			$("input[name='releasetime']").val(m.releasetime);
+			$("#demoText").append('<img src="'+ m.datum +'" alt="'+ m.id +'" class="layui-upload-img" style="width:500px;height:300px;">');
 			$("input[name='phone']").val(m.phone);
 		});
 
