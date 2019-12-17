@@ -1,10 +1,12 @@
 layui.config({
 	base : "js/"
-}).use(['form','layer','jquery','laypage'],function(){
+}).use(['form','layer','jquery','laypage', 'upload'],function(){
 	var form = layui.form,
 	layer = parent.layer === undefined ? layui.layer : parent.layer,
 	laypage = layui.laypage,
-	$ = layui.jquery;
+	$ = layui.jquery
+	,laydate = layui.laydate
+	,upload = layui.upload;
 	//加载菜单栏
 	$.getJSON("../json/indexnvs.json", function(data){
 		var d = data;
@@ -20,7 +22,7 @@ layui.config({
 	});
 		
 	var uploadInst = upload.render({
-	    elem: '#upschool'
+	    elem: '#datum'
 	    ,url: '../upload/uploadImg'
 	    ,multiple:false
 	    ,before: function(obj){
