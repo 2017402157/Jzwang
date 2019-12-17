@@ -42,6 +42,36 @@ public class CompanyModel extends Model<CompanyModel> {
 	public void setEmail(String email) {
 		set("email", email);
 	}
+	public String getLinkman() {
+		return get("linkman");
+	}
+	public void setLinkman(String linkman) {
+		set("linkman", linkman);
+	}
+	public String getDatum() {
+		return get("datum");
+	}
+	public void setDatum(String datum) {
+		set("datum", datum);
+	}
+	public String getWeixin() {
+		return get("weixin");
+	}
+	public void setWeixin(String weixin) {
+		set("weixin", weixin);
+	}
+	public String getQQ() {
+		return get("qq");
+	}
+	public void setQQ(String qq) {
+		set("qq", qq);
+	}
+	public String getPosition() {
+		return get("position");
+	}
+	public void setPosition(String position) {
+		set("position", position);
+	}
 	
 	public static CompanyModel dao = new CompanyModel();
 	
@@ -59,22 +89,34 @@ public class CompanyModel extends Model<CompanyModel> {
 		return dao.paginate(pageNumber, pageSize, select_sql, from_sql.toString());
 	}
 	
-	public static boolean save(String name, String brief, String phone, String email) {
+	public static boolean save(String name, String brief, String phone, String email, String datum, String linkman,
+			String qq, String weixin, String position) {
 		CompanyModel m = new CompanyModel();
 		m.setId(StringUtil.getId());
 		m.setName(name);
 		m.setBrief(brief);
 		m.setPhone(phone);
 		m.setEmail(email);
+		m.setDatum(datum);
+		m.setLinkman(linkman);
+		m.setQQ(qq);
+		m.setWeixin(weixin);
+		m.setPosition(position);
 		return m.save();
 	}
 	
-	public static boolean update(String id, String name, String brief, String phone, String email) {
+	public static boolean update(String id, String name, String brief, String phone, String email, String datum, String linkman,
+			String qq, String weixin, String position) {
 		CompanyModel m = CompanyModel.getById(id);
 		m.setName(name);
 		m.setBrief(brief);
 		m.setPhone(phone);
 		m.setEmail(email);
+		m.setDatum(datum);
+		m.setLinkman(linkman);
+		m.setQQ(qq);
+		m.setWeixin(weixin);
+		m.setPosition(position);
 		return m.update();
 	}
 	

@@ -659,8 +659,9 @@ public class AdminControll extends Controller {
 		String reward = getPara("reward");
 		String company = getPara("company");
 		String type = getPara("type");
+		String settle = getPara("settle");
 //		int label = getParaToInt("label");
-		boolean result = InviteModel.save(name, workpro, addr, number, workexp, education, worktime, reward, company, type);
+		boolean result = InviteModel.save(name, workpro, addr, number, workexp, education, worktime, reward, company, type, settle);
 		setAttr("result", result);
 		renderJson();
 	}
@@ -676,14 +677,22 @@ public class AdminControll extends Controller {
 		String reward = getPara("reward");
 		String company = getPara("company");
 		String type = getPara("type");
+		String settle = getPara("settle");
 //		int label = getParaToInt("label");
-		boolean result = InviteModel.update(id, name, workpro, addr, number, workexp, education, worktime, reward, company, type);
+		boolean result = InviteModel.update(id, name, workpro, addr, number, workexp, education, worktime, reward, company, type, settle);
 		setAttr("result", result);
 		renderJson();
 	}
 	public void deleInvite() {
 		String id = getPara("id");
 		boolean result = InviteModel.delById(id);
+		setAttr("result", result);
+		renderJson();
+	}
+	
+	public void checkInv() {
+		String id = getPara("id");
+		boolean result = InviteModel.check(id);
 		setAttr("result", result);
 		renderJson();
 	}
@@ -729,7 +738,12 @@ public class AdminControll extends Controller {
 		String brief = getPara("brief");
 		String phone = getPara("phone");
 		String email = getPara("email");
-		boolean result = CompanyModel.save(name, brief, phone, email);
+		String datum = getPara("datum");
+		String linkman = getPara("linkman");
+		String qq = getPara("qq");
+		String weixin = getPara("weixin");
+		String position = getPara("position");
+		boolean result = CompanyModel.save(name, brief, phone, email, datum, linkman, qq, weixin, position);
 		setAttr("result", result);
 		renderJson();
 	}
@@ -739,7 +753,12 @@ public class AdminControll extends Controller {
 		String brief = getPara("brief");
 		String phone = getPara("phone");
 		String email = getPara("email");
-		boolean result = CompanyModel.update(id, name, brief, phone, email);
+		String datum = getPara("datum");
+		String linkman = getPara("linkman");
+		String qq = getPara("qq");
+		String weixin = getPara("weixin");
+		String position = getPara("position");
+		boolean result = CompanyModel.update(id, name, brief, phone, email, datum, linkman, qq, weixin, position);
 		setAttr("result", result);
 		renderJson();
 	}

@@ -14,12 +14,6 @@ import com.jfinal.plugin.activerecord.IAtom;
 import com.jfinal.plugin.activerecord.Model;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.tx.Tx;
-import com.wudi.model.ParentsModel;
-import com.wudi.model.StudentModel;
-import com.wudi.model.TeacherModel;
-import com.wudi.model.UserModel;
-import com.wudi.plugin.BaiduHttpPlugin;
-import com.wudi.util.Util;
 import com.wz.util.StringUtil;
 
 public class InviteModel extends Model<InviteModel> {
@@ -110,11 +104,30 @@ public class InviteModel extends Model<InviteModel> {
 	public void setLabel(int label) {
 		set("label", label);
 	}
+	public String getSettle() {
+		return get("settle");
+	}
+	public void setSettle(String settle) {
+		set("settle", settle);
+	}
+	public int getStatus() {
+		return get("status");
+	}
+	public void setStatus(int status) {
+		set("status", status);
+	}
+	public Date getCreattime() {
+		return get("creattime");
+	}
+	public void setCreattime(Date creattime) {
+		set("creattime", creattime);
+	}
 	
 	public static InviteModel dao = new InviteModel();
 	
 	public static InviteModel getById(String id) {
-		return dao.findFirst("select * from " + tableName + " where id = ?", id);
+		String select_sql = "select a.*,a.addr workaddr,a.name name,b.*,b.name company from " + tableName + " a left join "+CompanyModel.tableName+" as b on a.company=b.id where a.id = ?";
+		return dao.findFirst(select_sql, id);
 	}
 	//·ÖÒ³
 	public static List<InviteModel> getCount() {
@@ -140,13 +153,11 @@ public class InviteModel extends Model<InviteModel> {
 		from_sql.append(TypeModel.tableName).append(" b on a.type=b.id left join ");
 		from_sql.append(CompanyModel.tableName).append(" c on c.id=a.company ");
 		from_sql.append(" ORDER BY a.releasetime desc ");
-		
-		
 		return dao.paginate(pageNumber, pageSize, select_sql, from_sql.toString());
 	}
 	
 	public static boolean save(String name, String workpro, String addr, int number, String workexp, String education,
-							String worktime, String reward, String company, String type) {
+							String worktime, String reward, String company, String type, String settle) {
 		InviteModel m = new InviteModel();
 		m.setId(StringUtil.getId());
 		m.setName(name);
@@ -157,14 +168,16 @@ public class InviteModel extends Model<InviteModel> {
 		m.setEducation(education);
 		m.setWorktime(worktime);
 		m.setReward(reward);
-		m.setReleasetime(new Date());
+		m.setCreattime(new Date());
 		m.setCompany(company);
 		m.setType(type);
+		m.setSettle(settle);
+		m.setStatus(1);
 		return m.save();
 	}
 	
 	public static boolean update(String id ,String name, String workpro, String addr, int number, String workexp, String education,
-						String worktime, String reward, String company, String type) {
+						String worktime, String reward, String company, String type, String settle) {
 		InviteModel m = InviteModel.getById(id);
 		m.setName(name);
 		m.setWorkpro(workpro);
@@ -174,9 +187,9 @@ public class InviteModel extends Model<InviteModel> {
 		m.setEducation(education);
 		m.setWorktime(worktime);
 		m.setReward(reward);
-		m.setReleasetime(new Date());
 		m.setCompany(company);
 		m.setType(type);
+		m.setSettle(settle);
 		return m.update();
 	}
 	
@@ -215,7 +228,7 @@ public class InviteModel extends Model<InviteModel> {
 		return list;
 	}
 	public static boolean saves(String name, String workpro, String addr, int number, String workexp, String education,
-			String worktime, String reward, String company, String type) {
+			String worktime, String reward, String company, String type, String settle) {
 		InviteModel m = new InviteModel();
 		m.setId(StringUtil.getId());
 		m.setName(name);
@@ -226,12 +239,19 @@ public class InviteModel extends Model<InviteModel> {
 		m.setEducation(education);
 		m.setWorktime(worktime);
 		m.setReward(reward);
-		m.setReleasetime(new Date());
 		m.setCompany(company);
 		m.setType(type);
+		m.setSettle(settle);
+		m.setStatus(1);
 		return m.save();
 	}
 	
+	public static boolean check(String id) {
+		InviteModel m = InviteModel.getById(id);
+		m.setReleasetime(new Date());
+		m.setStatus(0);
+		return m.update();
+	}
 	
 	
 }

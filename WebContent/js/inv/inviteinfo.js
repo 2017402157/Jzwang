@@ -19,17 +19,23 @@ layui.config({
 	      {field: 'name', title: '工作名', align:'center', sort: true, fixed: 'left'}
 	      ,{field: 'workpro', title: '工作简介', align: 'center'}
 	      ,{field: 'addr', title: '工作地点', align:'center'} 
-	      ,{field: 'number', title: '招聘人数',align:'center' }
-	      ,{field: 'workexp', title: '工作经验',align:'center' }
-	      ,{field: 'education', title: '学历要求',align:'center' }
-	      ,{field: 'worktime', title: '工作时间',align:'center' }
 	      ,{field: 'reward', title: '工资待遇',align:'center' }
-	      ,{field: 'releasetime', title: '发布时间',align:'center' }
-//	      ,{field: 'pageview', title: '浏览量',align:'center' }
+	      ,{field: 'creattime', title: '上传时间',align:'center' }
 	      ,{field: 'company', title: '招聘公司',align:'center' }
-	      ,{field: 'type', title: '工作类型',align:'center' }
-//	      ,{field: 'label', title: '标签',align:'center' }
-	      ,{fixed: 'right', align:'center',title:'操作', toolbar: '#barDemo'}
+	      ,{fixed: 'right', align:'center',title:'操作',
+	    	  templet: function(d){
+	    		  var arr=new Array();
+	    		  arr.push("<a class='layui-btn layui-btn-xs' lay-event='edit'><i class='layui-icon'>&#xe642;</i>查看</a>");
+	    		  if(d.status != 0){
+	    			  arr.push("<a class='layui-btn layui-btn-xs layui-bg-orange' lay-event='check'><i class='layui-icon'>&#xe642;</i>未审核</a>");
+	    		  }
+	    		  else{
+	    			  arr.push("<a class='layui-btn layui-btn-xs layui-bg-blue' lay-event='check'><i class='layui-icon'>&#xe642;</i>已审核</a>");
+	    		  }
+	    		  arr.push("<a class='layui-btn layui-btn-xs layui-btn-danger' lay-event='del'><i class='layui-icon'></i>删除</a>");
+	    		  return arr.join("\n");
+	    	  }
+	      }
 	    ]]
 	  });
 	  
@@ -84,7 +90,30 @@ layui.config({
 	  var tr = obj.tr; //获得当前行 tr 的DOM对象
 	 
 	  if(layEvent === 'check'){ //查看
-		  
+		  var index;
+		  $.ajax({
+			  url: 'checkInv',
+			  type: 'POST',
+			  data: {'id':data.id},
+			  dataType: 'json',
+			  beforeSend: function(re){
+				  index = top.layer.msg('数据提交中，请稍候',{icon: 16,time:false,shade:0.8})
+			  },
+			  success:function(d){
+				//弹出loading
+			    top.layer.close(index);
+			  	top.layer.msg("审核通过！");
+			  	//刷新父页面
+				active_op.reload();
+			  },
+			  error:function(XMLHttpRequest, textStatus, errorThrown){
+	    		  top.layer.msg('操作失败！！！服务器有问题！！！！<br>请检测服务器是否启动？', {
+	    		        time: 20000, //20s后自动关闭
+	    		        btn: ['知道了']
+	    		      });
+	           }
+		  });
+		  return false;
 	  } else if(layEvent === 'del'){
 		  layer.confirm('确定删除此信息？',{icon:3, title:'提示信息'},function(index){
 				var msgid;
