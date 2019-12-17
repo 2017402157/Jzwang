@@ -131,7 +131,7 @@ public class InviteModel extends Model<InviteModel> {
 	}
 	
 	public static InviteModel getByIds(String id) {
-		String select_sql = "select a.id id,a.name name,a.workpro workpro,a.addr addr,a.number number,a.workexp workexp,a.education education,a.worktime worktime,a.reward reward,a.releasetime releasetime,b.name company,a.type type,a.settle settle,a.creattime creattime,b.brief brief,b.linkman linkman,b.position position,b.phone phone,b.datum datum,b.emile emile,b.qq qq,b.weixin weixin from " + tableName + " a left join " + CompanyModel.tableName+ " b on a.company=b.id" + "  where a.id = ?";
+		String select_sql = "select a.id id,a.name name,a.workpro workpro,a.addr addr,a.number number,a.workexp workexp,a.education education,a.worktime worktime,a.reward reward,a.releasetime releasetime,b.name company,a.type type,a.settle settle,a.creattime creattime,b.brief brief,b.linkman linkman,b.position position,b.phone phone,b.datum datum,b.email email,b.qq qq,b.weixin weixin from " + tableName + " a left join " + CompanyModel.tableName+ " b on a.company=b.id" + "  where a.id = ?";
 		return dao.findFirst(select_sql, id);
 	}
 	//·ÖÒ³

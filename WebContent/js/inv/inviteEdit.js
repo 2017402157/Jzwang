@@ -29,8 +29,10 @@ layui.config({
 			$("input[name='linkman']").val(m.linkman);
 			$("input[name='position']").val(m.position);
 			$("input[name='datum']").val(m.datum);
-			$("input[name='emile']").val(m.emile);
+			$("input[name='email']").val(m.email);
 			$("input[name='weixin']").val(m.weixin);
+			$("input[name='releasetime']").val(m.releasetime);
+			$("input[name='phone']").val(m.phone);
 		});
 
  	form.on("submit(update)",function(data){
