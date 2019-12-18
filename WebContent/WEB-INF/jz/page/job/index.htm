@@ -89,7 +89,14 @@ legend {
 					</h5>
 				</div>
 			</div>
-			<div style="">
+			<div class="layui-tab">
+			<ul class="layui-tab-title">
+    <li class="layui-this">求职信息登记</li>
+    <li>招聘信息登记</li>
+  	</ul>
+  	<div class="layui-tab-content">
+  	
+  			<div class="layui-tab-item layui-show">
 				<div class="layui-col-sm3">
 					<form class="layui-form">
 						<div class="form_content">
@@ -192,7 +199,10 @@ legend {
 						</div>
 					</form>
 				</div>
+				</div>
 
+
+			<div class="layui-tab-item">
 				<div class="layui-col-sm5">
 					<form class="layui-form">
 						<div class="form_content">
@@ -236,10 +246,10 @@ legend {
 								</div>
 								<div class="form-row">
 									<div class="field-label">
-										<label for="jobtype">职位类型</label>:
+										<label for="type">职位类型</label>:
 									</div>
 									<div class="field-widget">
-										<select id="jobtype" name="jobtype" class="validate-selection">
+										<select id="type" name="type" class="validate-selection">
 											<option>点击选择</option>
 											<option>兼职</option>
 											<option>全职</option>
@@ -248,7 +258,16 @@ legend {
 								</div>
 								<div class="form-row">
 									<div class="field-label">
-										<label for="field5">招聘要求</label>:
+										<label for="workexp">工作经验</label>:
+									</div>
+									<div class="field-widget">
+										<input type="text" class="layui-input" name="workexp" required lay-verify="required"
+											id="workexp" placeholder="" />
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="field-label">
+										<label for="education">学历要求</label>:
 									</div>
 									<div class="field-widget">
 										<input type="text" class="layui-input" name="education" required lay-verify="required"
@@ -367,7 +386,9 @@ legend {
 					</form>
 				</div>
 			</div>
+			</div>
 		</div>
+	</div>
 		<div class="map">
 			<p></p>
 			<p></p>
@@ -421,6 +442,14 @@ legend {
 	<script type="text/javascript" src="../../skin/js/lib.js"></script>
 	<script type="text/javascript" src="../../layui/layui.js"></script>
 	<script type="text/javascript" src="../js/jz/job/job.js"></script>
+	<script type="text/javascript">
+	//注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+	layui.use('element', function(){
+	  var element = layui.element;
+	  
+	  //…
+	}); 
+</script>
 
 
 </body>
