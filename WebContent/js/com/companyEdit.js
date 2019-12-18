@@ -15,8 +15,9 @@ layui.config({
 	        //执行加载数据的方法
 			$("input[name='name']").val(m.name);
 			$("input[name='brief']").val(m.brief);
+			$("input[name='linkman']").val(m.linkman);
+			$("input[name='position']").val(m.position);
 			$("input[name='phone']").val(m.phone);
-			$("input[name='email']").val(m.email);
 		})
 
  	form.on("submit(update)",function(data){

@@ -17,9 +17,10 @@ layui.config({
 	    id: 'testReload',
 	    cols: [[ //表头
 	       {field: 'name', title: '公司名称', align:'center', sort: true, fixed: 'left'} 
-	      ,{field: 'brief', title: '公司简介', align:'center'} 
+	      ,{field: 'brief', title: '公司简介', align:'center'}
+	      ,{field: 'linkman', title: '公司简介', align:'center'}
+	      ,{field: 'position', title: '公司简介', align:'center'}
 	      ,{field: 'phone', title: '联系电话', align:'center' }
-	      ,{field: 'email', title: '邮箱', align:'center' }
 	      ,{fixed: 'right', align:'center',title:'操作', toolbar: '#barDemo'}
 	    ]]
 	  });

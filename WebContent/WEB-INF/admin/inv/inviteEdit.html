@@ -13,6 +13,25 @@
 	<style type="text/css">
 		.layui-form { width:60%; float:left; margin-left:5%; margin-top: 3%}
 	</style>
+	<style type="text/css">
+		.layui-form { width:60%; float:left; margin-left:5%; margin-top: 3%},
+		#demoText{
+			margin-left:10%; 
+			margin-top: 5%;
+			width: 300px;
+			height: 300px;
+			border-radius: 5px;
+			border:1px solid greed;
+		}
+		.myinfo{
+			margin-left:10%; "WebContent/js/show/showAdd.js"
+			margin-top: 5%;
+			width: 300px;
+			height: 100px;
+			border-radius: 5px;
+			border:3px solid black;
+		}
+	</style>
 </head>
 <body class="childrenBody">
 	<div class="layui-form-item">
@@ -29,129 +48,146 @@
 		<div class="layui-main">
 			<label class="layui-form-label">工作名</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="name"  lay-verify="required" placeholder="请输入兼职名"  autocomplete="off">
+				<input type="text" class="layui-input" name="name"  lay-verify="required" placeholder=""  readonly="readonly" autocomplete="off">
 			</div>
 		</div>
 		<div class="layui-main">
 			<label class="layui-form-label">工作简介</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="workpro"  lay-verify="required" placeholder="请输入工作简介"  autocomplete="off">
+				<input type="text" class="layui-input" name="workpro"  lay-verify="required" placeholder=""  readonly="readonly" autocomplete="off">
 			</div>
 		</div>
 		<div class="layui-main">
 			<label class="layui-form-label">工作地点</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="addr"  lay-verify="required" placeholder="请输入工作地点"  autocomplete="off">
+				<input type="text" class="layui-input" name="addr"  lay-verify="required" placeholder=""  readonly="readonly" autocomplete="off">
 			</div>
 		</div>
 		<div class="layui-main">
 			<label class="layui-form-label">招聘人数</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="number"  lay-verify="required" placeholder="请输入招聘人数"  autocomplete="off">
+				<input type="text" class="layui-input" name="number"  lay-verify="required" placeholder=""  readonly="readonly" autocomplete="off">
 			</div>
 		</div>
 		<div class="layui-main">
 			<label class="layui-form-label">工作经验</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="workexp"  lay-verify="required" placeholder="请输入要求工作经验"  autocomplete="off">
+				<input type="text" class="layui-input" name="workexp"  lay-verify="required" placeholder=""  readonly="readonly" autocomplete="off">
 			</div>
 		</div>
 		<div class="layui-main">
 			<label class="layui-form-label">学历要求</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="education"  lay-verify="required" placeholder="请输入学历要求"  autocomplete="off">
+				<input type="text" class="layui-input" name="education"  lay-verify="required" placeholder=""  readonly="readonly" autocomplete="off">
 			</div>
 		</div>
 		<div class="layui-main">
 			<label class="layui-form-label">兼职类型</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="type"  lay-verify="required" placeholder="请输入兼职类型"  autocomplete="off">
+				<input type="text" class="layui-input" name="type"  lay-verify="required" placeholder=""  readonly="readonly" autocomplete="off">
 			</div>
 		</div>
 		<div class="layui-main">
 			<label class="layui-form-label">工资待遇</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="reward"  lay-verify="required" placeholder="请输入工资待遇"  autocomplete="off">
+				<input type="text" class="layui-input" name="reward"  lay-verify="required" placeholder=""  readonly="readonly" autocomplete="off">
 			</div>
 		</div>
 		<div class="layui-main">
 			<label class="layui-form-label">招聘公司</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="company"  lay-verify="required" placeholder="请输入招聘公司"  autocomplete="off">
+				<input type="text" class="layui-input" name="company"  lay-verify="required" placeholder=""  readonly="readonly" autocomplete="off">
 			</div>
 		</div>
 		<!-- <div class="layui-form-item">
 			<label class="layui-form-label">标签</label>
 			<div class="layui-input-inline">
-				<input type="text" class="layui-input" name="label"  lay-verify="required" placeholder="请输入兼职类型"  autocomplete="off">
+				<input type="text" class="layui-input" name="label"  lay-verify="required" placeholder=""  autocomplete="off">
 			</div>
 		</div> -->
 		<div class="layui-main">
 			<label class="layui-form-label">工作时间</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="worktime"  lay-verify="required" placeholder="请输入工作时间"  autocomplete="off">
+				<input type="text" class="layui-input" name="worktime"  lay-verify="required" placeholder=""  readonly="readonly" autocomplete="off">
 			</div>
 		</div>
 		<div class="layui-main">
 			<label class="layui-form-label">审核时间</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="releastime"  lay-verify="required" placeholder="请输入工作时间"  autocomplete="off">
+				<input type="text" class="layui-input" name="releasetime"  lay-verify="required" placeholder=""  readonly="readonly" autocomplete="off">
+			</div>
+		</div>
+		<div class="layui-main">
+			<label class="layui-form-label">上传时间</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input" name="creattime"  lay-verify="required" placeholder=""  readonly="readonly" autocomplete="off">
 			</div>
 		</div>
 		<div class="layui-main">
 			<label class="layui-form-label">公司名称</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="name"  lay-verify="required" placeholder="请输入工作时间"  autocomplete="off">
+				<input type="text" class="layui-input" name="name"  lay-verify="required" placeholder=""  readonly="readonly" autocomplete="off">
 			</div>
 		</div>
 		<div class="layui-main">
 			<label class="layui-form-label">公司简介</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="brief"  lay-verify="required" placeholder="请输入工作时间"  autocomplete="off">
+				<input type="text" class="layui-input" name="brief"  lay-verify="required" placeholder=""  readonly="readonly" autocomplete="off">
 			</div>
 		</div>
 		<div class="layui-main">
 			<label class="layui-form-label">联系人</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="linkman"  lay-verify="required" placeholder="请输入工作时间"  autocomplete="off">
+				<input type="text" class="layui-input" name="linkman"  lay-verify="required" placeholder=""  readonly="readonly" autocomplete="off">
 			</div>
 		</div>
 		<div class="layui-main">
 			<label class="layui-form-label">公司职务</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="position"  lay-verify="required" placeholder="请输入工作时间"  autocomplete="off">
+				<input type="text" class="layui-input" name="position"  lay-verify="required" placeholder=""  readonly="readonly" autocomplete="off">
 			</div>
 		</div>
 		<div class="layui-main">
 			<label class="layui-form-label">联系电话</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="phone"  lay-verify="required" placeholder="请输入工作时间"  autocomplete="off">
+				<input type="text" class="layui-input" name="phone"  lay-verify="required" placeholder=""  readonly="readonly" autocomplete="off">
 			</div>
 		</div>
-		<div class="layui-main">
-			<label class="layui-form-label">证明材料</label>
-			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="datum"  lay-verify="required" placeholder="请输入工作时间"  autocomplete="off">
-			</div>
-		</div>
+		
+		<!--
 		<div class="layui-main">
 			<label class="layui-form-label">邮箱</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="emile"  lay-verify="required" placeholder="请输入工作时间"  autocomplete="off">
+				<input type="text" class="layui-input" name="email"  lay-verify="required" placeholder=""  autocomplete="off">
 			</div>
-		</div>
+		</div> 
+		 -->
 		<div class="layui-main">
 			<label class="layui-form-label">微信</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="weixin"  lay-verify="required" placeholder="请输入工作时间"  autocomplete="off">
+				<input type="text" class="layui-input" name="weixin"  lay-verify="required" placeholder=""  readonly="readonly"  autocomplete="off">
 			</div>
 		</div>
-		<div class="layui-form-item">
+		<div class="layui-main">
+			<label class="layui-form-label">图片路径</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input" name="datum"  lay-verify="required" placeholder=""  readonly="readonly" autocomplete="off">
+			</div>
+		</div>
+		<div class="layui-main" pane="">
+				<label class="layui-form-label">证明材料</label>
+				<div class="layui-input-block">
+					<div class="layui-input-block">
+	    			<p id="demoText"></p>
+	  				</div>
+				</div> 
+		</div>
+		<!-- <div class="layui-form-item">
 			<div class="layui-input-block">
 				<button class="layui-btn" lay-submit="" lay-filter="update">保存修改</button>
 				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
 		    </div>
-		</div>
+		</div> -->
 	</form>
 	<script type="text/javascript" src="../../layui/layui.js"></script>
 	<script type="text/javascript" src="../js/inv/inviteEdit.js"></script>
