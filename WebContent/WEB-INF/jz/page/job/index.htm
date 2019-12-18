@@ -130,7 +130,7 @@ legend {
 									</div>
 									<div class="field-widget">
 										<input type="text" required lay-verify="required"
-											class="layui-input" name="age" id="age" placeholder="请输入您的年龄" />
+											class="layui-input" oninput = "value=value.replace(/[^\d]/g,'')" name="age" id="age" placeholder="输入数字即可" />
 									</div>
 								</div>
 								<div class="form-row">
@@ -281,7 +281,7 @@ legend {
 									</div>
 									<div class="field-widget">
 										<input type="text" name="number" id="number" required lay-verify="required"
-											class="layui-input" placeholder="填写数字即可" />
+											class="layui-input" oninput = "value=value.replace(/[^\d]/g,'')" placeholder="填写数字即可" />
 									</div>
 								</div>
 								<div class="form-row">

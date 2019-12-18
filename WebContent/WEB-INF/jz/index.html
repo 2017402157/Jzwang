@@ -165,10 +165,10 @@
       <div class="contact-r">
         <form class="contact-form layui-form">
           <div class="">
-            <input type="text" class="inp l" name="username" id="username" placeholder="您的姓名">
-            <input type="text" class="inp r" name="phone" id="phone" placeholder="您的联系方式">
+            <input type="text" class="inp l" required lay-verify="required" name="username" id="username" placeholder="您的姓名">
+            <input type="text" class="inp r" required lay-verify="required" name="phone" id="phone" placeholder="您的联系方式">
           </div>
-          <textarea cols="30" rows="10" name="massage" id="massage" placeholder="请输入需求"></textarea>
+          <textarea cols="30" rows="10" required lay-verify="required" name="massage" id="massage" placeholder="请输入需求"></textarea>
           <button class="sub" lay-submit="" lay-filter="add">提交您的需求</button>
           
         </form>
