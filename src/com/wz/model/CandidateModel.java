@@ -78,11 +78,11 @@ public class CandidateModel extends Model<CandidateModel> {
 	public void setCreattime(Date creattime) {
 		set("creattime", creattime);
 	}
-	public Date getReleastime() {
-		return get("releastime");
+	public Date getReleasetime() {
+		return get("releasetime");
 	}
-	public void setReleastime(Date releastime) {
-		set("releastime", releastime);
+	public void setReleasetime(Date releasetime) {
+		set("releasetime", releasetime);
 	}
 	public String getJobmessage() {
 		return get("jobmessage");
@@ -154,7 +154,7 @@ public class CandidateModel extends Model<CandidateModel> {
 	}
 	public static boolean checkCand(String id) {
 		CandidateModel m = CandidateModel.getById(id);
-		m.setReleastime(new Date());
+		m.setReleasetime(new Date());
 		m.setStatus(0);
 		return m.update();
 	}

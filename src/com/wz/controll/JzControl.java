@@ -37,7 +37,7 @@ public class JzControl extends Controller{
 //		String key = getPara("key");
 		int limit = getParaToInt("limit");
 		int page = getParaToInt("page");
-		Page<InviteModel> user = InviteModel.getList(page,limit, "");
+		Page<InviteModel> user = InviteModel.getListes(page,limit, "");
 		setAttr("m", user.getList());
 		renderJson(); 
 	}
