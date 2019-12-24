@@ -16,19 +16,13 @@
 			"spread" : false
 		},
 		{
-			"title" : "角色信息管理",
-			"icon" : "&#xe61c;",
-			"href" : "admin/openRole",
-			"spread" : false
-		},
-		{
 			"title" : "我们的信息",
 			"icon" : "&#xe61c;",
 			"href" : "admin/openContact",
 			"spread" : false
 		},
 		{
-			"title" : "新闻信息管理",
+			"title" : "新闻类型信息管理",
 			"icon" : "&#xe61c;",
 			"href" : "admin/openType",
 			"spread" : false

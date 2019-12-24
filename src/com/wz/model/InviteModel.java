@@ -171,7 +171,7 @@ public class InviteModel extends Model<InviteModel> {
 		StringBuffer from_sql = new StringBuffer();
 		from_sql.append("from ").append(tableName).append(" a left join ");
 		from_sql.append(TypeModel.tableName).append(" b on a.type=b.id left join ");
-		from_sql.append(CompanyModel.tableName).append(" c on c.id=a.company ");
+		from_sql.append(CompanyModel.tableName).append(" c on c.id=a.company ").append("where  a.status=0");
 		from_sql.append(" ORDER BY a.releasetime desc ");
 		return dao.paginate(pageNumber, pageSize, select_sql, from_sql.toString());
 	}
