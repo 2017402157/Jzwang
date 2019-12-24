@@ -68,7 +68,7 @@ public class JzControl extends Controller{
 	 */
 	public void getRecruitInfo() {
 		String id = getPara("id");
-		InviteModel recruitinfo = InviteModel.getById(id);
+		InviteModel recruitinfo = InviteModel.getByIds(id);
 		setAttr("m", recruitinfo);
 		renderJson();
 		

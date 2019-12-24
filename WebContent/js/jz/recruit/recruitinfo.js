@@ -41,6 +41,8 @@ layui.config({
 				arr.push("<dd>"+d.addr+"</dd>");
 				arr.push("<dt>薪水：</dt>");
 				arr.push("<dd>"+d.reward+"</dd>");
+				arr.push("<dt>联系电话：</dt>");
+				arr.push("<dd>"+d.phone+"</dd>");
 				arr.push("</dl>");
 				arr.push("</div>");
 				arr.push("</div>");
